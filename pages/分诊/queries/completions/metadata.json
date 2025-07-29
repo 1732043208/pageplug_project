@@ -15,7 +15,7 @@
     },
     "pageId": "分诊",
     "actionConfiguration": {
-      "timeoutInMillisecond": 50000,
+      "timeoutInMillisecond": 500000,
       "paginationType": "NONE",
       "path": "/v1/chat/completions/chat/completions",
       "headers": [],
@@ -27,7 +27,7 @@
       ],
       "encodeParamsToggle": true,
       "queryParameters": [],
-      "body": "{\"model\":\"deepseek-chat\",\"temperature\":0.6,\"top_p\":1,\"frequency_penalty\":0,\"presence_penalty\":0,\"messages\":[{\"role\":\"user\",\"content\":{{TriageObject.InputValue}}}],\"stream\":true,\"stream_options\":{\"include_usage\":true}}",
+      "body": "{\"model\":\"deepseek-chat\",\"temperature\":0.6,\"top_p\":1,\"frequency_penalty\":0,\"presence_penalty\":0,\"messages\":[{\"role\":\"user\",\"content\":\"{{TriageObject.InputValue}}\"}]}",
       "bodyFormData": [],
       "httpMethod": "POST",
       "selfReferencingDataPaths": [],
@@ -47,7 +47,9 @@
       }
     ],
     "isValid": true,
-    "invalids": [],
+    "invalids": [
+      "'Query timeout' field must be an integer between 0 and 60000"
+    ],
     "messages": [],
     "jsonPathKeys": [
       "TriageObject.InputValue"

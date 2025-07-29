@@ -1,6 +1,7 @@
 {
     "mobileBottomRow": 8,
     "widgetName": "Text8",
+    "dynamicPropertyPathList": [],
     "displayName": "文本",
     "iconSVG": "/static/media/icon.a47d6d5dbbb718c4dc4b2eb4f218c1b7.svg",
     "searchTags": [
@@ -49,7 +50,7 @@
     "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
     "mobileLeftColumn": 0,
     "maxDynamicHeight": 9000,
-    "originalBottomRow": 7,
+    "originalBottomRow": 78,
     "fontSize": "1rem",
     "minDynamicHeight": 4
 }

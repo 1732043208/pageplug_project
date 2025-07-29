@@ -9,6 +9,11 @@ export default {
 		this.answerValue = ''
 		const res = await completions.run()
 		console.log(res)
+		this.answerValue = res.choices[0].message.content
+
+		/**
+		const res = await completions.run()
+		console.log(res)
 		// 正则表达式：匹配 "choices":[{"index":...,"delta":{"content":"(.*?)"
 		const regex = /"choices":\[\{"index":\d+,"delta":\{"content":"([^"]*)"/g;
 
@@ -23,5 +28,6 @@ export default {
 			console.log(`${index + 1}. '${content}'`);
 			this.answerValue +=content
 		});
+		**/
 	},
 }
