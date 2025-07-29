@@ -3,6 +3,10 @@
     {
       "id": "分诊",
       "isDefault": true
+    },
+    {
+      "id": "问诊",
+      "isDefault": false
     }
   ],
   "viewMode": false,

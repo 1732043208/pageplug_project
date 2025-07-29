@@ -2,8 +2,8 @@
   "pluginType": "JS",
   "pluginId": "js-plugin",
   "unpublishedAction": {
-    "name": "loadFile",
-    "fullyQualifiedName": "JSObject1.loadFile",
+    "name": "myFun1",
+    "fullyQualifiedName": "JSObject1.myFun1",
     "datasource": {
       "name": "UNUSED_DATASOURCE",
       "pluginId": "js-plugin",
@@ -13,8 +13,8 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": "分诊",
-    "collectionId": "分诊_JSObject1",
+    "pageId": "问诊",
+    "collectionId": "问诊_JSObject1",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
@@ -27,6 +27,7 @@
       ]
     },
     "executeOnLoad": false,
+    "clientSideExecution": true,
     "dynamicBindingPathList": [
       {
         "key": "body"
@@ -38,9 +39,10 @@
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
-    "userPermissions": []
+    "userPermissions": [],
+    "createdAt": "2025-07-22T09:36:48Z"
   },
-  "id": "分诊_JSObject1.loadFile",
+  "id": "问诊_JSObject1.myFun1",
   "deleted": false,
-  "gitSyncId": "6879f29dbd957f285c00cd26_68834be74f1652379d8b265b"
+  "gitSyncId": "6879f29dbd957f285c00cd26_6888320c5833d942b3a61b10"
 }

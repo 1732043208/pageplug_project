@@ -1,0 +1,20 @@
+{
+  "unpublishedCollection": {
+    "name": "JSObject1",
+    "pageId": "问诊",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [
+      {
+        "name": "colorValue",
+        "value": "'1'"
+      }
+    ],
+    "userPermissions": []
+  },
+  "id": "问诊_JSObject1",
+  "deleted": false,
+  "gitSyncId": "6879f29dbd957f285c00cd26_6888320c5833d942b3a61b15"
+}
