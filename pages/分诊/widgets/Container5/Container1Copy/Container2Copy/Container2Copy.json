@@ -4,7 +4,7 @@
     "widgetName": "Container2Copy",
     "borderColor": "#E0DEDE",
     "isCanvas": true,
-    "dynamicPropertyPathList": [],
+    "dynamicPropertyPathList": [{"key": "isVisible"}],
     "displayName": "容器",
     "iconSVG": "/static/media/icon.dd84eb5d6aace47e0ad7bc21ee73c84b.svg",
     "searchTags": [
@@ -13,8 +13,8 @@
         "group",
         "container"
     ],
-    "topRow": 8,
-    "bottomRow": 25,
+    "topRow": 5,
+    "bottomRow": 22,
     "parentRowSpace": 10,
     "type": "CONTAINER_WIDGET",
     "hideCard": false,
@@ -24,7 +24,10 @@
     "parentColumnSpace": 16.7578125,
     "dynamicTriggerPathList": [],
     "leftColumn": 16,
-    "dynamicBindingPathList": [{"key": "borderRadius"}],
+    "dynamicBindingPathList": [
+        {"key": "borderRadius"},
+        {"key": "isVisible"}
+    ],
     "children": [{
         "mobileBottomRow": 100,
         "widgetName": "Canvas3Copy",
@@ -70,7 +73,7 @@
     "widgetId": "xfgounxgx4",
     "containerStyle": "card",
     "minWidth": 450,
-    "isVisible": true,
+    "isVisible": "{{!TriageObject.answerValue}}",
     "version": 1,
     "parentId": "9658xqnxpk",
     "tags": ["通用类"],

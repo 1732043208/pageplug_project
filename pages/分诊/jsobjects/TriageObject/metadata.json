@@ -1,6 +1,6 @@
 {
   "unpublishedCollection": {
-    "name": "JSObject1",
+    "name": "TriageObject",
     "pageId": "分诊",
     "pluginId": "js-plugin",
     "pluginType": "JS",
@@ -8,13 +8,17 @@
     "archivedActions": [],
     "variables": [
       {
-        "name": "colorValue",
-        "value": "'1'"
+        "name": "InputValue",
+        "value": "\"\""
+      },
+      {
+        "name": "answerValue",
+        "value": "\"\""
       }
     ],
     "userPermissions": []
   },
-  "id": "分诊_JSObject1",
+  "id": "分诊_TriageObject",
   "deleted": false,
   "gitSyncId": "6879f29dbd957f285c00cd26_687f5bb0ef909531223473f8"
 }

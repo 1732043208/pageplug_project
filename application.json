@@ -36,7 +36,11 @@
   "publishedAppLayout": {
     "type": "FLUID"
   },
-  "unpublishedCustomJSLibs": [],
+  "unpublishedCustomJSLibs": [
+    {
+      "uidString": "FetchEventSource_https://cdn.jsdelivr.net/npm/fetch-event-source@1.0.0-alpha.2/index.min.js"
+    }
+  ],
   "publishedCustomJSLibs": [],
   "evaluationVersion": 2,
   "applicationVersion": 2,

@@ -3,6 +3,7 @@
     "boxShadow": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
     "mobileBottomRow": 56,
     "widgetName": "Button4Copy",
+    "onClick": "{{TriageObject.getCompletions();}}",
     "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
     "displayName": "按钮",
     "iconSVG": "/static/media/icon.05d209fafeb13a8569e3b4e97069d9ee.svg",
@@ -19,7 +20,7 @@
     "mobileRightColumn": 36,
     "animateLoading": false,
     "parentColumnSpace": 23.75,
-    "dynamicTriggerPathList": [],
+    "dynamicTriggerPathList": [{"key": "onClick"}],
     "leftColumn": 58,
     "dynamicBindingPathList": [
         {"key": "borderRadius"},
