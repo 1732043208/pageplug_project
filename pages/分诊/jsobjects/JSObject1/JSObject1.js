@@ -12,7 +12,6 @@ export default {
 	},
 	loadFile(val){
 		console.log('val',val);
-		console.log(FilePicker2)
 		console.log('ss',send.data)
 		console.log('hhh')
 	}
