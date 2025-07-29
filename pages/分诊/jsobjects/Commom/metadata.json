@@ -1,6 +1,6 @@
 {
   "unpublishedCollection": {
-    "name": "TriageObject",
+    "name": "Commom",
     "pageId": "分诊",
     "pluginId": "js-plugin",
     "pluginType": "JS",
@@ -8,21 +8,17 @@
     "archivedActions": [],
     "variables": [
       {
-        "name": "InputValue",
-        "value": "\"\""
+        "name": "model",
+        "value": "'qwen-vl-max'"
       },
       {
-        "name": "answerValue",
-        "value": "\"\""
-      },
-      {
-        "name": "filesList",
+        "name": "apiSearchContent",
         "value": "[]"
       }
     ],
     "userPermissions": []
   },
-  "id": "分诊_TriageObject",
+  "id": "分诊_Commom",
   "deleted": false,
-  "gitSyncId": "6879f29dbd957f285c00cd26_687f5bb0ef909531223473f8"
+  "gitSyncId": "6879f29dbd957f285c00cd26_68888ece5833d942b3a61b37"
 }
