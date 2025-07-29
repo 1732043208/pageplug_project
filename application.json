@@ -18,13 +18,13 @@
     },
     "navigationSetting": {
       "showNavbar": true,
-      "orientation": "top",
-      "navStyle": "stacked",
+      "orientation": "side",
+      "navStyle": "sidebar",
       "position": "static",
       "itemStyle": "text",
       "colorStyle": "light",
       "logoAssetId": "",
-      "logoConfiguration": "logoAndApplicationTitle",
+      "logoConfiguration": "logoOnly",
       "showSignIn": false
     }
   },
