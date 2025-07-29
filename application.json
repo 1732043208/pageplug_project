@@ -1,0 +1,42 @@
+{
+  "pages": [
+    {
+      "id": "分诊",
+      "isDefault": true
+    }
+  ],
+  "viewMode": false,
+  "appIsExample": false,
+  "unreadCommentThreads": 0,
+  "unpublishedApplicationDetail": {
+    "appPositioning": {
+      "type": "FIXED"
+    },
+    "navigationSetting": {
+      "showNavbar": true,
+      "orientation": "top",
+      "navStyle": "stacked",
+      "position": "static",
+      "itemStyle": "text",
+      "colorStyle": "light",
+      "logoAssetId": "",
+      "logoConfiguration": "logoAndApplicationTitle",
+      "showSignIn": false
+    }
+  },
+  "color": "#EAEDFB",
+  "icon": "hospital",
+  "unpublishedAppLayout": {
+    "type": "FLUID"
+  },
+  "publishedAppLayout": {
+    "type": "FLUID"
+  },
+  "unpublishedCustomJSLibs": [],
+  "publishedCustomJSLibs": [],
+  "evaluationVersion": 2,
+  "applicationVersion": 2,
+  "collapseInvisibleWidgets": true,
+  "isManualUpdate": false,
+  "deleted": false
+}

@@ -1,0 +1,20 @@
+{
+  "unpublishedCollection": {
+    "name": "JSObject1",
+    "pageId": "分诊",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [
+      {
+        "name": "colorValue",
+        "value": "'1'"
+      }
+    ],
+    "userPermissions": []
+  },
+  "id": "分诊_JSObject1",
+  "deleted": false,
+  "gitSyncId": "6879f29dbd957f285c00cd26_687f5bb0ef909531223473f8"
+}
