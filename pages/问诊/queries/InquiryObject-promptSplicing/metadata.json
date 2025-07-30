@@ -2,8 +2,8 @@
   "pluginType": "JS",
   "pluginId": "js-plugin",
   "unpublishedAction": {
-    "name": "fileLoad",
-    "fullyQualifiedName": "TriageObject.fileLoad",
+    "name": "promptSplicing",
+    "fullyQualifiedName": "InquiryObject.promptSplicing",
     "datasource": {
       "name": "UNUSED_DATASOURCE",
       "pluginId": "js-plugin",
@@ -13,8 +13,8 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": "分诊",
-    "collectionId": "分诊_TriageObject",
+    "pageId": "问诊",
+    "collectionId": "问诊_InquiryObject",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
@@ -22,7 +22,7 @@
       "selfReferencingDataPaths": [],
       "jsArguments": [
         {
-          "name": "files"
+          "name": "prompt"
         }
       ]
     },
@@ -38,9 +38,10 @@
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
-    "userPermissions": []
+    "userPermissions": [],
+    "createdAt": "2025-07-30T05:53:34Z"
   },
-  "id": "分诊_TriageObject.fileLoad",
+  "id": "问诊_InquiryObject.promptSplicing",
   "deleted": false,
-  "gitSyncId": "6879f29dbd957f285c00cd26_68888fa35833d942b3a61b39"
+  "gitSyncId": "688984c4f032bd71eea01831_6889b35ef032bd71eea01862"
 }

@@ -1,0 +1,40 @@
+{
+  "unpublishedCollection": {
+    "name": "InquiryObject",
+    "pageId": "问诊",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [
+      {
+        "name": "InputValue",
+        "value": "\"\""
+      },
+      {
+        "name": "mainResults",
+        "value": "\"\""
+      },
+      {
+        "name": "adviceResults",
+        "value": "\"\""
+      },
+      {
+        "name": "filesList",
+        "value": "[]"
+      },
+      {
+        "name": "mainPrompt",
+        "value": "`\n\t患者主述：%mainPrompt%，根据患者主述，把主述分类，并给出类别标题。\n\t要求如下：使用中文回复。\n\t`"
+      },
+      {
+        "name": "advicePrompt",
+        "value": "`\n\t患者主述：%advicePrompt%，根据主述结果，开出检验/检查处方。\n\t要求如下：使用中文回复。\n\t`"
+      }
+    ],
+    "userPermissions": []
+  },
+  "id": "问诊_InquiryObject",
+  "deleted": false,
+  "gitSyncId": "688984c4f032bd71eea01831_68899036f032bd71eea0185e"
+}

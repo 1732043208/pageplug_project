@@ -4,7 +4,7 @@
     "widgetName": "Container2Copy",
     "borderColor": "#E0DEDE",
     "isCanvas": true,
-    "dynamicPropertyPathList": [],
+    "dynamicPropertyPathList": [{"key": "isVisible"}],
     "displayName": "容器",
     "iconSVG": "/static/media/icon.dd84eb5d6aace47e0ad7bc21ee73c84b.svg",
     "searchTags": [
@@ -13,8 +13,8 @@
         "group",
         "container"
     ],
-    "topRow": 8,
-    "bottomRow": 25,
+    "topRow": 69,
+    "bottomRow": 87,
     "parentRowSpace": 10,
     "type": "CONTAINER_WIDGET",
     "hideCard": false,
@@ -24,13 +24,16 @@
     "parentColumnSpace": 16.7578125,
     "dynamicTriggerPathList": [],
     "leftColumn": 16,
-    "dynamicBindingPathList": [{"key": "borderRadius"}],
+    "dynamicBindingPathList": [
+        {"key": "borderRadius"},
+        {"key": "isVisible"}
+    ],
     "children": [{
         "mobileBottomRow": 100,
         "widgetName": "Canvas3Copy",
         "displayName": "Canvas",
         "topRow": 0,
-        "bottomRow": 170,
+        "bottomRow": 180,
         "parentRowSpace": 1,
         "type": "CANVAS_WIDGET",
         "canExtend": false,
@@ -70,7 +73,7 @@
     "widgetId": "xfgounxgx4",
     "containerStyle": "card",
     "minWidth": 450,
-    "isVisible": true,
+    "isVisible": "{{!InquiryObject.mainResults}}",
     "version": 1,
     "parentId": "9658xqnxpk",
     "tags": ["通用类"],
@@ -78,10 +81,10 @@
     "isLoading": false,
     "mobileTopRow": 10,
     "responsiveBehavior": "fill",
-    "originalTopRow": 8,
+    "originalTopRow": 5,
     "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
     "mobileLeftColumn": 20,
     "maxDynamicHeight": 9000,
-    "originalBottomRow": 25,
+    "originalBottomRow": 22,
     "minDynamicHeight": 10
 }

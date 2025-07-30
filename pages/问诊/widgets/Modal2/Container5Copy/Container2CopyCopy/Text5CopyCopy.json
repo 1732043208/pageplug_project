@@ -1,6 +1,6 @@
 {
     "mobileBottomRow": 12,
-    "widgetName": "Text5Copy",
+    "widgetName": "Text5CopyCopy",
     "displayName": "文本",
     "iconSVG": "/static/media/icon.a47d6d5dbbb718c4dc4b2eb4f218c1b7.svg",
     "searchTags": [
@@ -8,7 +8,7 @@
         "label"
     ],
     "topRow": 11,
-    "bottomRow": 16,
+    "bottomRow": 15,
     "parentRowSpace": 10,
     "type": "TEXT_WIDGET",
     "hideCard": false,
@@ -26,19 +26,19 @@
     ],
     "shouldTruncate": false,
     "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
-    "text": "请在上方输入您的症状描述，点击执行按钮获取分诊建议",
+    "text": "暂无检验/检查建议",
     "key": "2mj0yrn63s",
     "isDeprecated": false,
     "rightColumn": 57,
     "textAlign": "CENTER",
     "dynamicHeight": "AUTO_HEIGHT",
-    "widgetId": "bpq8ibyr7b",
+    "widgetId": "x4tubacupb",
     "minWidth": 450,
     "isVisible": true,
     "fontStyle": "",
     "textColor": "#9ca3af",
     "version": 1,
-    "parentId": "tj2fuwaupd",
+    "parentId": "fnlqk3vjw6",
     "tags": ["通用类"],
     "renderMode": "CANVAS",
     "isLoading": false,
@@ -48,7 +48,7 @@
     "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
     "mobileLeftColumn": 15,
     "maxDynamicHeight": 9000,
-    "originalBottomRow": 15,
+    "originalBottomRow": 16,
     "fontSize": "1rem",
     "minDynamicHeight": 4
 }

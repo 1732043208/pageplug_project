@@ -2,8 +2,8 @@
   "pluginType": "JS",
   "pluginId": "js-plugin",
   "unpublishedAction": {
-    "name": "myFun1",
-    "fullyQualifiedName": "JSObject1.myFun1",
+    "name": "getAdvice",
+    "fullyQualifiedName": "InquiryObject.getAdvice",
     "datasource": {
       "name": "UNUSED_DATASOURCE",
       "pluginId": "js-plugin",
@@ -14,20 +14,15 @@
       "userPermissions": []
     },
     "pageId": "问诊",
-    "collectionId": "问诊_JSObject1",
+    "collectionId": "问诊_InquiryObject",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
       "selfReferencingDataPaths": [],
-      "jsArguments": [
-        {
-          "name": "val"
-        }
-      ]
+      "jsArguments": []
     },
     "executeOnLoad": false,
-    "clientSideExecution": true,
     "dynamicBindingPathList": [
       {
         "key": "body"
@@ -40,9 +35,9 @@
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": [],
-    "createdAt": "2025-07-22T09:36:48Z"
+    "createdAt": "2025-07-30T03:57:03Z"
   },
-  "id": "问诊_JSObject1.myFun1",
+  "id": "问诊_InquiryObject.getAdvice",
   "deleted": false,
-  "gitSyncId": "6879f29dbd957f285c00cd26_6888320c5833d942b3a61b10"
+  "gitSyncId": "688984c4f032bd71eea01831_6889980ff032bd71eea01860"
 }

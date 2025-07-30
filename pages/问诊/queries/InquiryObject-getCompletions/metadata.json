@@ -3,7 +3,7 @@
   "pluginId": "js-plugin",
   "unpublishedAction": {
     "name": "getCompletions",
-    "fullyQualifiedName": "TriageObject.getCompletions",
+    "fullyQualifiedName": "InquiryObject.getCompletions",
     "datasource": {
       "name": "UNUSED_DATASOURCE",
       "pluginId": "js-plugin",
@@ -13,8 +13,8 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": "分诊",
-    "collectionId": "分诊_TriageObject",
+    "pageId": "问诊",
+    "collectionId": "问诊_InquiryObject",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
@@ -34,9 +34,10 @@
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
-    "userPermissions": []
+    "userPermissions": [],
+    "createdAt": "2025-07-30T03:23:34Z"
   },
-  "id": "分诊_TriageObject.getCompletions",
+  "id": "问诊_InquiryObject.getCompletions",
   "deleted": false,
-  "gitSyncId": "6879f29dbd957f285c00cd26_688842a95833d942b3a61b22"
+  "gitSyncId": "688984c4f032bd71eea01831_68899036f032bd71eea0185a"
 }
