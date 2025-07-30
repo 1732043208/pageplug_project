@@ -13,7 +13,7 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": "检查检验建议",
+    "pageId": "检验检查建议",
     "actionConfiguration": {
       "timeoutInMillisecond": 500000,
       "paginationType": "NONE",
@@ -61,7 +61,7 @@
     "userPermissions": [],
     "createdAt": "2025-07-29T02:49:26Z"
   },
-  "id": "检查检验建议_completions",
+  "id": "检验检查建议_completions",
   "deleted": false,
   "gitSyncId": "688984c4f032bd71eea01831_6889cd53f032bd71eea0187a"
 }

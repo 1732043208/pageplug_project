@@ -1,7 +1,7 @@
 {
   "unpublishedCollection": {
     "name": "TriageObject",
-    "pageId": "检查检验建议",
+    "pageId": "检验检查建议",
     "pluginId": "js-plugin",
     "pluginType": "JS",
     "actions": [],
@@ -26,7 +26,7 @@
     ],
     "userPermissions": []
   },
-  "id": "检查检验建议_TriageObject",
+  "id": "检验检查建议_TriageObject",
   "deleted": false,
   "gitSyncId": "688984c4f032bd71eea01831_6889cd53f032bd71eea01880"
 }

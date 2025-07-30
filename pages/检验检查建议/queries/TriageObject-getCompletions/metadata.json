@@ -2,8 +2,8 @@
   "pluginType": "JS",
   "pluginId": "js-plugin",
   "unpublishedAction": {
-    "name": "promptSplicing",
-    "fullyQualifiedName": "TriageObject.promptSplicing",
+    "name": "getCompletions",
+    "fullyQualifiedName": "TriageObject.getCompletions",
     "datasource": {
       "name": "UNUSED_DATASOURCE",
       "pluginId": "js-plugin",
@@ -14,8 +14,8 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": "检查检验建议",
-    "collectionId": "检查检验建议_TriageObject",
+    "pageId": "检验检查建议",
+    "collectionId": "检验检查建议_TriageObject",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
@@ -36,9 +36,9 @@
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": [],
-    "createdAt": "2025-07-30T07:06:31Z"
+    "createdAt": "2025-07-30T06:19:59Z"
   },
-  "id": "检查检验建议_TriageObject.promptSplicing",
+  "id": "检验检查建议_TriageObject.getCompletions",
   "deleted": false,
-  "gitSyncId": "688984c4f032bd71eea01831_6889cd53f032bd71eea01878"
+  "gitSyncId": "688984c4f032bd71eea01831_6889cd53f032bd71eea01876"
 }

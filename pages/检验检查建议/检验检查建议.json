@@ -1,6 +1,6 @@
 {
   "unpublishedPage": {
-    "name": "检查检验建议",
+    "name": "检验检查建议",
     "slug": "",
     "layouts": [
       {
@@ -31,7 +31,7 @@
         "layoutOnLoadActions": [],
         "layoutOnLoadActionErrors": [],
         "validOnPageLoadActions": true,
-        "id": "检查检验建议",
+        "id": "检验检查建议",
         "deleted": false,
         "policies": [],
         "userPermissions": []
