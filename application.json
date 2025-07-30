@@ -47,6 +47,9 @@
   "unpublishedCustomJSLibs": [
     {
       "uidString": "FetchEventSource_https://cdn.jsdelivr.net/npm/fetch-event-source@1.0.0-alpha.2/index.min.js"
+    },
+    {
+      "uidString": "marked_https://cdn.jsdelivr.net/npm/marked/marked.min.js"
     }
   ],
   "publishedCustomJSLibs": [],
