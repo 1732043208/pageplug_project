@@ -37,7 +37,7 @@ export default {
 	},
 
 	async getCompletions(){
-		if(!this.InputValue) return showAlert("请输入您的症状！")
+		if(!this.InputValue && !this.filesList.length) return showAlert("请输入您的症状！")
 		Commom.apiSearchContent = [
 			{type:'text',text:this.promptSplicing(this.mainPrompt)},
 			...this.filesList
