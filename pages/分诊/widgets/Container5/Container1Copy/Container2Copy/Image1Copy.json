@@ -27,7 +27,7 @@
     "image": "",
     "isDeprecated": false,
     "rightColumn": 37,
-    "objectFit": "cover",
+    "objectFit": "contain",
     "widgetId": "sv6uoocety",
     "isVisible": true,
     "version": 1,
