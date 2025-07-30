@@ -1,0 +1,24 @@
+{
+  "unpublishedCollection": {
+    "name": "Commom",
+    "pageId": "检查检验建议",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [
+      {
+        "name": "model",
+        "value": "'qwen-vl-max'"
+      },
+      {
+        "name": "apiSearchContent",
+        "value": "[]"
+      }
+    ],
+    "userPermissions": []
+  },
+  "id": "检查检验建议_Commom",
+  "deleted": false,
+  "gitSyncId": "688984c4f032bd71eea01831_6889cd53f032bd71eea01882"
+}

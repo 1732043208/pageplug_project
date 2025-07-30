@@ -7,6 +7,10 @@
     {
       "id": "问诊",
       "isDefault": false
+    },
+    {
+      "id": "检查检验建议",
+      "isDefault": false
     }
   ],
   "viewMode": false,
@@ -18,8 +22,8 @@
     },
     "navigationSetting": {
       "showNavbar": true,
-      "orientation": "side",
-      "navStyle": "sidebar",
+      "orientation": "top",
+      "navStyle": "stacked",
       "position": "static",
       "itemStyle": "text",
       "colorStyle": "light",
