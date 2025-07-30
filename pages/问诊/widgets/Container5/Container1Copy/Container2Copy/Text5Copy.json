@@ -8,7 +8,7 @@
         "label"
     ],
     "topRow": 11,
-    "bottomRow": 16,
+    "bottomRow": 15,
     "parentRowSpace": 10,
     "type": "TEXT_WIDGET",
     "hideCard": false,
@@ -29,7 +29,7 @@
     "text": "请在上方输入您的症状描述，点击执行按钮获取分诊建议",
     "key": "2mj0yrn63s",
     "isDeprecated": false,
-    "rightColumn": 57,
+    "rightColumn": 63,
     "textAlign": "CENTER",
     "dynamicHeight": "AUTO_HEIGHT",
     "widgetId": "bpq8ibyr7b",
@@ -44,11 +44,11 @@
     "isLoading": false,
     "mobileTopRow": 8,
     "responsiveBehavior": "fill",
-    "originalTopRow": 11,
+    "originalTopRow": 12,
     "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
     "mobileLeftColumn": 15,
     "maxDynamicHeight": 9000,
-    "originalBottomRow": 16,
+    "originalBottomRow": 17,
     "fontSize": "1rem",
     "minDynamicHeight": 4
 }
