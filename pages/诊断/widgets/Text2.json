@@ -26,7 +26,7 @@
     ],
     "shouldTruncate": false,
     "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
-    "text": "诊断",
+    "text": "智能诊断系统",
     "key": "2mj0yrn63s",
     "isDeprecated": false,
     "rightColumn": 18,
