@@ -34,7 +34,7 @@
     "minWidth": 120,
     "isVisible": true,
     "label": "上传附件",
-    "maxFileSize": "20",
+    "maxFileSize": "5",
     "dynamicTyping": true,
     "version": 1,
     "fileDataType": "Base64",

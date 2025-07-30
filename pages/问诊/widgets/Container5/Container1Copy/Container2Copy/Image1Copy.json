@@ -19,7 +19,7 @@
     "parentColumnSpace": 5.9716796875,
     "dynamicTriggerPathList": [],
     "imageShape": "RECTANGLE",
-    "leftColumn": 29,
+    "leftColumn": 27,
     "dynamicBindingPathList": [{"key": "borderRadius"}],
     "defaultImage": "http://192.168.5.199:8100/api/v1/images/robot-2-fill.jpg",
     "flexVerticalAlignment": "start",

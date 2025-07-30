@@ -4,18 +4,18 @@ export default {
 	adviceResults:"", //建议结果
 	filesList:[], //附件列表
 	mainPrompt:`
-	患者主述：%mainPrompt%，根据患者主述，把主述分类，并给出类别标题。
+	患者主述：%InputValue%，根据患者主述，把主述分类，并给出类别标题。
 	要求如下：使用中文回复。
 	`, //主述结果prompt
 	advicePrompt:`
-	患者主述：%advicePrompt%，根据主述结果，开出检验/检查处方。
+	患者主述：%mainResults%，根据主述结果，开出检验/检查处方。
 	要求如下：使用中文回复。
 	`,//建议prompt
 	// prompt拼接替换
 	promptSplicing(prompt){
 		const replacements = {
-			'%mainPrompt%': this.mainPrompt,
-			'%advicePrompt%': this.mainResults,
+			'%InputValue%': this.InputValue,
+			'%mainResults%': this.mainResults,
 		}
 		return Object.entries(replacements).reduce(
 			(text, [pattern, replacement]) => text.replace(new RegExp(pattern), replacement),
@@ -38,7 +38,6 @@ export default {
 
 	async getCompletions(){
 		if(!this.InputValue) return showAlert("请输入您的症状！")
-		this.mainResults = ''
 		Commom.apiSearchContent = [
 			{type:'text',text:this.promptSplicing(this.mainPrompt)},
 			...this.filesList
@@ -47,8 +46,6 @@ export default {
 		console.log(res)
 		this.mainResults = res.choices[0].message.content
 
-		//重置上传组件
-		resetWidget("Input1Copy", true);
 		//重置上传组件
 		resetWidget("FilePicker1Copy", true);
 		/**
@@ -78,6 +75,6 @@ export default {
 		console.log('res',res)
 		this.adviceResults = res.choices[0].message.content
 		console.log('this.adviceResults',this.adviceResults)
-		showModal('Modal2');
+		showModal('adviceResultPop');
 	}
 }

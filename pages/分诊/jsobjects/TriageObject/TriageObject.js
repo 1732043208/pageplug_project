@@ -2,7 +2,16 @@ export default {
 	InputValue : "",   //输入
 	answerValue:"",   //回答
 	filesList:[], //附件列表
-
+	prompt:'患者叙述：%InputValue%，根据患者叙述，推荐一个最合适的科室',
+	promptSplicing(){
+		const replacements = {
+			'%InputValue%': this.InputValue,
+		}
+		return Object.entries(replacements).reduce(
+			(text, [pattern, replacement]) => text.replace(new RegExp(pattern), replacement),
+			this.prompt
+		)
+	},
 	fileLoad(files){
 		this.filesList = []
 		console.log('files',files)
@@ -19,17 +28,14 @@ export default {
 
 	async getCompletions(){
 		if(!this.InputValue) return showAlert("请输入您的症状！")
-		this.answerValue = ''
 		Commom.apiSearchContent = [
-			{type:'text',text:this.InputValue},
+			{type:'text',text:this.promptSplicing()},
 			...this.filesList
 		]
 		const res = await completions.run()
 		console.log(res)
 		this.answerValue = res.choices[0].message.content
 
-		//重置上传组件
-		resetWidget("Input1Copy", true);
 		//重置上传组件
 		resetWidget("FilePicker1Copy", true);
 		/**

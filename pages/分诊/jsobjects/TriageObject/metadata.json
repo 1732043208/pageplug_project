@@ -18,6 +18,10 @@
       {
         "name": "filesList",
         "value": "[]"
+      },
+      {
+        "name": "prompt",
+        "value": "'患者叙述：%InputValue%，根据患者叙述，推荐一个最合适的科室'"
       }
     ],
     "userPermissions": []

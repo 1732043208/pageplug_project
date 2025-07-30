@@ -29,7 +29,7 @@
         "widgetName": "Canvas6Copy",
         "displayName": "Canvas",
         "topRow": 0,
-        "bottomRow": 980,
+        "bottomRow": 1270,
         "parentRowSpace": 1,
         "type": "CANVAS_WIDGET",
         "canExtend": false,
@@ -81,6 +81,6 @@
     "borderRadius": "0.375rem",
     "mobileLeftColumn": 13,
     "maxDynamicHeight": 91,
-    "originalBottomRow": 53,
+    "originalBottomRow": 99,
     "minDynamicHeight": 45
 }
