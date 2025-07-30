@@ -11,6 +11,10 @@
     {
       "id": "检验检查建议",
       "isDefault": false
+    },
+    {
+      "id": "诊断",
+      "isDefault": false
     }
   ],
   "viewMode": false,
