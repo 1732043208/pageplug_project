@@ -15,7 +15,7 @@ export default {
 	promptSplicing(prompt){
 		const replacements = {
 			'%mainPrompt%': this.mainPrompt,
-			'%advicePrompt%': this.advicePrompt,
+			'%advicePrompt%': this.mainResults,
 		}
 		return Object.entries(replacements).reduce(
 			(text, [pattern, replacement]) => text.replace(new RegExp(pattern), replacement),

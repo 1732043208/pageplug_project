@@ -41,7 +41,7 @@
     "widgetId": "nmng9s5rda",
     "bottomRowBeforeCollapse": 37,
     "minWidth": 120,
-    "isVisible": "{{InquiryObject.advicePrompt}}",
+    "isVisible": "{{!!InquiryObject.mainResults}}",
     "version": 1,
     "recaptchaType": "V3",
     "parentId": "g93whmrgg6",
