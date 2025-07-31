@@ -11,8 +11,8 @@
         "picker",
         "filepicker"
     ],
-    "topRow": 1,
-    "bottomRow": 7,
+    "topRow": 15,
+    "bottomRow": 21,
     "parentRowSpace": 10,
     "type": "FILE_PICKER_WIDGET_V2",
     "allowedFileTypes": ["*"],

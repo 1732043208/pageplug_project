@@ -1,0 +1,63 @@
+{
+    "boxShadow": "none",
+    "mobileBottomRow": 135,
+    "widgetName": "Custom1",
+    "borderColor": "",
+    "srcDoc": {
+        "css": "#app, div {\n  background: transparent;\n}\n\n.flex-box {\n  padding: 2px;\n  display: flex;\n  flex-wrap: wrap;\n}\n\n.img {\n  height: 100px;\n  border-radius: 4px;\n}",
+        "js": "appsmith.onReady(() => {\n  /*\n   * This handler function will get called when parent application is ready.\n   * Initialize your component here\n   * more info - https://docs.appsmith.com/reference/widgets/custom#onready\n   */\n  new Vue({\n    el: \"#app\",\n    data() {\n      return {\n        fileList: JSON.parse(appsmith.model.fileList)\n      };\n    },\n    created() {\n      console.log('fileList');\n    },\n    methods: {}\n  });\n});",
+        "html": "<div id=\"app\">\n\t<div v-for=\"item in fileList\" class=\"flex-box\">\n\t\t<img :src=\"item.image_url.url\" class=\"img\" />\n\t<\/div>\t\n<\/div>\n<script src=\"//cdnjs.cloudflare.com/ajax/libs/vue/2.1.6/vue.min.js\"><\/script>"
+    },
+    "isCanvas": false,
+    "dynamicPropertyPathList": [{"key": "isVisible"}],
+    "displayName": "自定义组件(New)",
+    "iconSVG": "/static/media/icon.867bcc8399fa3f897d425d72690b86e4.svg",
+    "searchTags": [
+        "external",
+        "custom",
+        "自定义"
+    ],
+    "topRow": 0,
+    "bottomRow": 12,
+    "parentRowSpace": 10,
+    "type": "CUSTOM_WIDGET",
+    "hideCard": false,
+    "mobileRightColumn": 23,
+    "shouldScrollContents": true,
+    "dynamicTriggerPathList": [{"key": "onResetClick"}],
+    "parentColumnSpace": 22.5625,
+    "dynamicBindingPathList": [
+        {"key": "theme"},
+        {"key": "borderRadius"},
+        {"key": "defaultModel"}
+    ],
+    "leftColumn": 5,
+    "defaultModel": "{\n\t\"fileList\":\"{{TriageObject.filesList}}\"\n}",
+    "borderWidth": "0",
+    "theme": "{{appsmith.theme}}",
+    "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
+    "events": ["onResetClick"],
+    "key": "rvfcjvgvq3",
+    "backgroundColor": "",
+    "isDeprecated": false,
+    "rightColumn": 28,
+    "dynamicHeight": "FIXED",
+    "isSearchWildcard": true,
+    "widgetId": "onn0ko7jk8",
+    "isVisible": "true",
+    "version": 1,
+    "uncompiledSrcDoc": {
+        "css": "#app,div{\n\tbackground:transparent\n}\n.flex-box{\n\tpadding:2px;\n\tdisplay:flex;\n\tflex-wrap:wrap\n}\n.img{\n\theight:100px;\n\tborder-radius:4px;\n}",
+        "js": "appsmith.onReady(() => {\n\t/*\n\t * This handler function will get called when parent application is ready.\n\t * Initialize your component here\n\t * more info - https://docs.appsmith.com/reference/widgets/custom#onready\n\t */\n\tnew Vue({\n\t\tel: \"#app\",\n\t\tdata() {\n\t\t\treturn {\n\t\t\t\tfileList: JSON.parse(appsmith.model.fileList),\n\t\t\t};\n\t\t},\n\t\tcreated(){\n\t\t\tconsole.log('fileList')\n\t\t},\n\t\tmethods: {\n\n\t\t},\n\t});\n});",
+        "html": "<div id=\"app\">\n\t<div v-for=\"item in fileList\" class=\"flex-box\">\n\t\t<img :src=\"item.image_url.url\" class=\"img\" />\n\t<\/div>\t\n<\/div>\n<script src=\"//cdnjs.cloudflare.com/ajax/libs/vue/2.1.6/vue.min.js\"><\/script>"
+    },
+    "parentId": "dhyv0llqnt",
+    "tags": ["数据展示类"],
+    "renderMode": "CANVAS",
+    "isLoading": false,
+    "mobileTopRow": 105,
+    "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+    "mobileLeftColumn": 0,
+    "maxDynamicHeight": 9000,
+    "minDynamicHeight": 4
+}
