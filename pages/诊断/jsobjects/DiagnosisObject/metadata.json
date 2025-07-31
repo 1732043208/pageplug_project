@@ -21,7 +21,7 @@
       },
       {
         "name": "prompt",
-        "value": "`\n\t患者主述：%InquiryMainResults%。\n\t检验检查处方：%InspectionAdvice%\n\t附言：%InputValue%。\n\t根据主述结果，开出检验/检查处方。\n\t`"
+        "value": "`\n\t患者主述：%InquiryMainResults%。\n\t检验检查处方：%InspectionAdvice%\n\t附言：%InputValue%。\n\t根据患者主述、检验检查处方、以及附言，给出诊断结果。\n\t`"
       }
     ],
     "userPermissions": []

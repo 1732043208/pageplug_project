@@ -1,12 +1,12 @@
 export default {
 	InputValue : "",   //输入
 	adviceResults:"",   //回答
-	filesList:[], //附件列表
+	filesList:[],  //附件列表
 	prompt:`
 	患者主述：%InquiryMainResults%。
 	检验检查处方：%InspectionAdvice%
 	附言：%InputValue%。
-	根据主述结果，开出检验/检查处方。
+	根据患者主述、检验检查处方、以及附言，给出诊断结果。
 	`,
 	promptSplicing(InquiryMainResults,InspectionAdvice){
 		const replacements = {
