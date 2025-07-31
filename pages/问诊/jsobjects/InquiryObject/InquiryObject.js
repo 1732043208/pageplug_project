@@ -37,7 +37,9 @@ export default {
 	},
 
 	async getCompletions(){
-		if(!this.InputValue && !this.filesList.length) return showAlert("请输入您的症状！")
+		const files = FilePicker1Copy.files
+		if(!this.InputValue && !files.length) return showAlert("请输入您的症状！")
+		this.fileLoad(files)
 		Commom.apiSearchContent = [
 			{type:'text',text:this.promptSplicing(this.mainPrompt)},
 			...this.filesList

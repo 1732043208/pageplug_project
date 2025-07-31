@@ -38,6 +38,8 @@ export default {
 
 		const text = this.promptSplicing(InquiryMainResults)
 		console.log('text',text)
+		const files = FilePicker1Copy.files
+		this.fileLoad(files)
 		Commom.apiSearchContent = [
 			{type:'text',text},
 			...this.filesList

@@ -25,7 +25,7 @@
     "dynamicBindingPathList": [],
     "isDisabled": false,
     "key": "6bwm8ropp3",
-    "onFilesSelected": "{{DiagnosisObject.fileLoad();}}",
+    "onFilesSelected": "",
     "isRequired": false,
     "isDeprecated": false,
     "rightColumn": 64,

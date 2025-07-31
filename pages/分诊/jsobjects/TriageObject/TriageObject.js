@@ -27,34 +27,19 @@ export default {
 	},
 
 	async getCompletions(){
-		if(!this.InputValue) return showAlert("请输入您的症状！")
+		const files = FilePicker1Copy.files
+		if(!this.InputValue && !files.length) return showAlert("请输入您的症状！")
+		this.fileLoad(files)
 		Commom.apiSearchContent = [
 			{type:'text',text:this.promptSplicing()},
 			...this.filesList
 		]
+		console.log('ssss',Commom.apiSearchContent )
 		const res = await completions.run()
 		console.log(res)
 		this.answerValue = res.choices[0].message.content
 
 		//重置上传组件
 		resetWidget("FilePicker1Copy", true);
-		/**
-		const res = await completions.run()
-		console.log(res)
-		// 正则表达式：匹配 "choices":[{"index":...,"delta":{"content":"(.*?)"
-		const regex = /"choices":\[\{"index":\d+,"delta":\{"content":"([^"]*)"/g;
-
-		// 使用 matchAll 获取所有匹配项
-		const matches = [...res.matchAll(regex)];
-
-		// 提取所有的 content 值
-		const contents = matches.map(match => match[1]);
-
-		// 打印所有 content 值
-		contents.forEach((content, index) => {
-			console.log(`${index + 1}. '${content}'`);
-			this.answerValue +=content
-		});
-		**/
 	},
 }
