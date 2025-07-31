@@ -73,7 +73,7 @@
     "widgetId": "xfgounxgx4",
     "containerStyle": "card",
     "minWidth": 450,
-    "isVisible": "{{!TriageObject.answerValue}}",
+    "isVisible": "{{!InspectionAdvice.adviceResults}}",
     "version": 1,
     "parentId": "9658xqnxpk",
     "tags": ["通用类"],
