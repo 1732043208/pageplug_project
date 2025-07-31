@@ -51,6 +51,7 @@ export default {
 			{type:'text',text},
 			...this.filesList
 		]
+		console.log(Commom.apiSearchContent)
 		const res = await completions.run()
 		console.log('res',res)
 		this.adviceResults = res.choices[0].message.content

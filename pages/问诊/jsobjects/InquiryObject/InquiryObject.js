@@ -44,6 +44,7 @@ export default {
 			{type:'text',text:this.promptSplicing(this.mainPrompt)},
 			...this.filesList
 		]
+		console.log(Commom.apiSearchContent)
 		const res = await completions.run()
 		console.log(res)
 		this.mainResults = res.choices[0].message.content
