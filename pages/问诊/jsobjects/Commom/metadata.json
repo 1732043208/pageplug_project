@@ -9,7 +9,7 @@
     "variables": [
       {
         "name": "model",
-        "value": "'qwen-vl-max'"
+        "value": "'medgemma-27b-it'"
       },
       {
         "name": "apiSearchContent",

@@ -1,4 +1,4 @@
 export default {
-	model:'qwen-vl-max',
+	model:'medgemma-27b-it',
 	apiSearchContent: [],
 }

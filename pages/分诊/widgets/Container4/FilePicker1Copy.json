@@ -26,7 +26,7 @@
     "dynamicBindingPathList": [],
     "isDisabled": false,
     "key": "6bwm8ropp3",
-    "onFilesSelected": "",
+    "onFilesSelected": "{{TriageObject.fileLoad(FilePicker1Copy.files);\nCommom.update(FilePicker1Copy.files, FilePicker1Copy.files.map(e => e.data));}}",
     "isRequired": false,
     "isDeprecated": false,
     "rightColumn": 64,
