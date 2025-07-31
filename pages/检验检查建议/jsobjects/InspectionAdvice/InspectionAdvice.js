@@ -48,6 +48,7 @@ export default {
 		const res = await completions.run()
 		console.log('res',res)
 		this.adviceResults = res.choices[0].message.content
+		storeValue('InspectionAdvice',this.adviceResults)
 		console.log('this.adviceResults',this.adviceResults)
 	}
 }
