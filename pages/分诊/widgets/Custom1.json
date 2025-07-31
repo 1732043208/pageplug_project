@@ -12,13 +12,13 @@
     "dynamicPropertyPathList": [{"key": "isVisible"}],
     "iconSVG": "/static/media/icon.867bcc8399fa3f897d425d72690b86e4.svg",
     "displayName": "自定义组件(New)",
-    "topRow": 80,
+    "topRow": 103,
     "searchTags": [
         "external",
         "custom",
         "自定义"
     ],
-    "bottomRow": 92,
+    "bottomRow": 115,
     "parentRowSpace": 10,
     "type": "CUSTOM_WIDGET",
     "hideCard": false,
@@ -57,10 +57,10 @@
     "isLoading": false,
     "renderMode": "CANVAS",
     "mobileTopRow": 105,
-    "originalTopRow": 80,
+    "originalTopRow": 104,
     "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
     "mobileLeftColumn": 0,
     "maxDynamicHeight": 9000,
-    "originalBottomRow": 92,
+    "originalBottomRow": 116,
     "minDynamicHeight": 4
 }
