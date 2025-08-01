@@ -51,7 +51,7 @@
     "labelTextSize": "1rem",
     "onTextChanged": "{{TriageObject.changeInputValue(Input1Copy.text);}}",
     "isDeprecated": false,
-    "rightColumn": 57,
+    "rightColumn": 56,
     "widgetId": "1ti53x0zp3",
     "minWidth": 450,
     "label": "",

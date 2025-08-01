@@ -13,8 +13,8 @@
         "submit",
         "button"
     ],
-    "topRow": 24,
-    "bottomRow": 30,
+    "topRow": 25,
+    "bottomRow": 31,
     "parentRowSpace": 10,
     "type": "BUTTON_WIDGET",
     "hideCard": false,
@@ -22,7 +22,7 @@
     "animateLoading": false,
     "parentColumnSpace": 23.75,
     "dynamicTriggerPathList": [{"key": "onClick"}],
-    "leftColumn": 58,
+    "leftColumn": 57,
     "dynamicBindingPathList": [
         {"key": "borderRadius"},
         {"key": "buttonColor"}
@@ -31,7 +31,7 @@
     "isDisabled": false,
     "key": "9f5ls12flw",
     "isDeprecated": false,
-    "rightColumn": 64,
+    "rightColumn": 63,
     "isDefaultClickDisabled": true,
     "iconName": "play",
     "widgetId": "tqsdskp4ds",

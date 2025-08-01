@@ -18,6 +18,11 @@ export default {
 			this.prompt
 		)
 	},
+		// 删除附件列表元素
+	deleteFile(index){
+		console.log(index)
+		this.filesList.splice(index, 1);
+	},
 	// 上传附件
 	fileLoad(files){
 		this.filesList = []

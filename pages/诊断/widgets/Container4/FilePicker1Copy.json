@@ -25,7 +25,7 @@
     "dynamicBindingPathList": [],
     "isDisabled": false,
     "key": "6bwm8ropp3",
-    "onFilesSelected": "",
+    "onFilesSelected": "{{DiagnosisObject.fileLoad(FilePicker1Copy.files);\nresetWidget(\"FilePicker1Copy\", true);}}",
     "isRequired": false,
     "isDeprecated": false,
     "rightColumn": 64,

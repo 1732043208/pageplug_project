@@ -2,7 +2,7 @@
     "boxShadow": "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
     "iconSVG": "/static/media/icon.f2c34197dbcf03595098986de898928f.svg",
     "onSubmit": "",
-    "topRow": 11,
+    "topRow": 10,
     "tooltip": "",
     "labelWidth": "4",
     "type": "INPUT_WIDGET_V2",
@@ -34,7 +34,7 @@
         "number",
         "textarea"
     ],
-    "bottomRow": 30,
+    "bottomRow": 29,
     "parentRowSpace": 10,
     "autoFocus": true,
     "hideCard": false,

@@ -29,6 +29,11 @@ export default {
 		})
 		console.log('filesList', this.filesList)
 	},
+	// 删除附件列表元素
+	deleteFile(index){
+		console.log(index)
+		this.filesList.splice(index, 1);
+	},
 	// 修改输入框内容
 	changeInputValue(value){
 		console.log('value',value)

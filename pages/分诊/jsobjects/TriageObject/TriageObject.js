@@ -15,6 +15,11 @@ export default {
 			this.prompt
 		)
 	},
+	// 删除附件列表元素
+	deleteFile(index){
+		console.log(index)
+		this.filesList.splice(index, 1);
+	},
 	// 文件上传
 	fileLoad(files){
 		this.filesList = []
@@ -31,9 +36,7 @@ export default {
 	},
 	// 执行按钮
 	async getCompletions(){
-		const files = FilePicker1Copy.files
-		if(!this.InputValue && !files.length) return showAlert("请输入您的症状！")
-		this.fileLoad(files)
+		if(!this.InputValue && !this.filesList.length) return showAlert("请输入您的症状！")
 		//清空上次的回答
 		this.answerValue = ''
 		const text = this.promptSplicing()
