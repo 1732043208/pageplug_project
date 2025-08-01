@@ -6,9 +6,9 @@ export default {
 	患者叙述：%InputValue%，根据患者叙述，推荐一个最合适的科室
 	`,
 	created(){
-		console.log('111')
+		console.log('1112')
 		resetWidget("FilePicker1Copy", true)
-		console.log('111')
+		console.log('1112')
 	},
 	//prompt拼接
 	promptSplicing(){

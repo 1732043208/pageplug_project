@@ -2,13 +2,16 @@ export default {
 	InputValue : "",   //输入
 	answerValue:"",   //主述结果
 	filesList:[], //附件列表
-
 	//主述结果prompt
 	mainPrompt:`
 	患者主述：%InputValue%，根据患者主述，把主述分类，并给出类别标题。
 	要求如下：使用中文回复。
 	`, 
-
+	created(){
+		console.log('1112')
+		resetWidget("FilePicker1Copy", true)
+		console.log('1112')
+	},
 	// prompt拼接替换
 	promptSplicing(){
 		const replacements = {
