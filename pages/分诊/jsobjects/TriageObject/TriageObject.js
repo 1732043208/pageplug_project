@@ -2,7 +2,9 @@ export default {
 	InputValue : "",   //输入
 	answerValue:"",   //回答
 	filesList:[], //附件列表
-	prompt:'患者叙述：%InputValue%，根据患者叙述，推荐一个最合适的科室',
+	prompt:`
+	患者叙述：%InputValue%，根据患者叙述，推荐一个最合适的科室
+	`,
 
 	//prompt拼接
 	promptSplicing(){
@@ -23,12 +25,12 @@ export default {
 		})
 		console.log('filesList', this.filesList)
 	},
-
+	// 修改输入框内容
 	changeInputValue(value){
 		console.log('value',value)
 		this.InputValue = value
 	},
-
+	// 执行按钮
 	async getCompletions(){
 		const files = FilePicker1Copy.files
 		if(!this.InputValue && !files.length) return showAlert("请输入您的症状！")
