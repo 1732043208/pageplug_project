@@ -10,6 +10,7 @@ export default {
 	created(){
 		console.log('1112')
 		resetWidget("FilePicker1Copy", true)
+		resetWidget("FilePicker2Copy", true)
 		console.log('1112')
 	},
 	// prompt拼接替换
@@ -38,7 +39,7 @@ export default {
 	},
 	// 执行按钮
 	async getCompletions(){
-		const files = FilePicker1Copy.files
+		const files = FilePicker2Copy.files
 		if(!this.InputValue && !files.length) return showAlert("请输入您的症状！")
 		this.fileLoad(files)
 		//清空上次的回答

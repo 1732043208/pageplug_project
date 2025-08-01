@@ -1,7 +1,7 @@
 {
     "boxShadow": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
     "mobileBottomRow": 48,
-    "widgetName": "FilePicker1Copy",
+    "widgetName": "FilePicker2Copy",
     "buttonColor": "#f3f4f6",
     "displayName": "文件上传",
     "iconSVG": "/static/media/icon.715769b31db833b32f40d9c90ec02de3.svg",

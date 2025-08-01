@@ -37,7 +37,7 @@
               "confirmBeforeExecute": false,
               "pluginType": "JS",
               "jsonPathKeys": [
-                "function () {\n  console.log('1112');\n  resetWidget(\"FilePicker1Copy\", true);\n  console.log('1112');\n}"
+                "function () {\n  console.log('1112');\n  resetWidget(\"FilePicker1Copy\", true);\n  resetWidget(\"FilePicker2Copy\", true);\n  console.log('1112');\n}"
               ],
               "timeoutInMillisecond": 10000
             }

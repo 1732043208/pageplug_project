@@ -8,6 +8,7 @@ export default {
 	created(){
 		console.log('1112')
 		resetWidget("FilePicker1Copy", true)
+		resetWidget("FilePicker2Copy", true)
 		console.log('1112')
 	},
 	//prompt拼接
