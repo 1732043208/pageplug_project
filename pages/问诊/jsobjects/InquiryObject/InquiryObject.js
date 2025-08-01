@@ -7,12 +7,6 @@ export default {
 	患者主述：%InputValue%，根据患者主述，把主述分类，并给出类别标题。
 	要求如下：使用中文回复。
 	`, 
-	created(){
-		console.log('1112')
-		resetWidget("FilePicker1Copy", true)
-		resetWidget("FilePicker2Copy", true)
-		console.log('1112')
-	},
 	// prompt拼接替换
 	promptSplicing(){
 		const replacements = {
@@ -39,7 +33,7 @@ export default {
 	},
 	// 执行按钮
 	async getCompletions(){
-		const files = FilePicker2Copy.files
+		const files = FilePicker1Copy.files
 		if(!this.InputValue && !files.length) return showAlert("请输入您的症状！")
 		this.fileLoad(files)
 		//清空上次的回答

@@ -28,21 +28,7 @@
           "leftColumn": 0,
           "positioning": "fixed"
         },
-        "layoutOnLoadActions": [
-          [
-            {
-              "id": "分诊_TriageObject.created",
-              "name": "TriageObject.created",
-              "collectionId": "分诊_TriageObject",
-              "confirmBeforeExecute": false,
-              "pluginType": "JS",
-              "jsonPathKeys": [
-                "function () {\n  console.log('1112');\n  resetWidget(\"FilePicker1Copy\", true);\n  resetWidget(\"FilePicker2Copy\", true);\n  console.log('1112');\n}"
-              ],
-              "timeoutInMillisecond": 10000
-            }
-          ]
-        ],
+        "layoutOnLoadActions": [],
         "layoutOnLoadActionErrors": [],
         "validOnPageLoadActions": true,
         "id": "分诊",

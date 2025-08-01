@@ -28,21 +28,7 @@
           "leftColumn": 0,
           "positioning": "fixed"
         },
-        "layoutOnLoadActions": [
-          [
-            {
-              "id": "问诊_InquiryObject.created",
-              "name": "InquiryObject.created",
-              "collectionId": "问诊_InquiryObject",
-              "confirmBeforeExecute": false,
-              "pluginType": "JS",
-              "jsonPathKeys": [
-                "function () {\n  console.log('1112');\n  resetWidget(\"FilePicker1Copy\", true);\n  resetWidget(\"FilePicker2Copy\", true);\n  console.log('1112');\n}"
-              ],
-              "timeoutInMillisecond": 10000
-            }
-          ]
-        ],
+        "layoutOnLoadActions": [],
         "layoutOnLoadActionErrors": [],
         "validOnPageLoadActions": true,
         "id": "问诊",
