@@ -33,7 +33,7 @@
         {"key": "defaultModel"}
     ],
     "leftColumn": 5,
-    "defaultModel": "{\n\"fileList\":\"{{FilePicker1Copy.files}}\"\n}",
+    "defaultModel": "{\n\"fileList\":\"{{FilePicker2Copy.files}}\"\n}",
     "borderWidth": "0",
     "theme": "{{appsmith.theme}}",
     "events": [],
