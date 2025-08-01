@@ -8,6 +8,7 @@ export default {
 	附言：%InputValue%。
 	根据患者主述、检验检查处方、以及附言，给出诊断结果。
 	`,
+	//prompt拼接
 	promptSplicing(InquiryMainResults,InspectionAdvice){
 		const replacements = {
 			'%InquiryMainResults%': InquiryMainResults,
@@ -19,6 +20,7 @@ export default {
 			this.prompt
 		)
 	},
+	// 上传附件
 	fileLoad(files){
 		this.filesList = []
 		console.log('files',files)
@@ -27,12 +29,12 @@ export default {
 		})
 		console.log('filesList', this.filesList)
 	},
-
+	// 修改输入框内容
 	changeInputValue(value){
 		console.log('value',value)
 		this.InputValue = value
 	},
-
+	// 获取诊断结果
 	async getAdvice(){
 		//检验/检查处方
 		const InspectionAdvice = global.store.InspectionAdvice
@@ -53,7 +55,6 @@ export default {
 		]
 		console.log(Commom.apiSearchContent)
 		const res = await completions.run()
-		console.log('res',res)
 		this.adviceResults = res.choices[0].message.content
 		console.log('this.adviceResults',this.adviceResults)
 	}
