@@ -3,6 +3,8 @@ export default {
 	answerValue:"",   //回答
 	filesList:[], //附件列表
 	prompt:'患者叙述：%InputValue%，根据患者叙述，推荐一个最合适的科室',
+
+	//prompt拼接
 	promptSplicing(){
 		const replacements = {
 			'%InputValue%': this.InputValue,
@@ -12,6 +14,7 @@ export default {
 			this.prompt
 		)
 	},
+	// 文件上传
 	fileLoad(files){
 		this.filesList = []
 		console.log('files',files)
@@ -38,8 +41,5 @@ export default {
 		const res = await completions.run()
 		console.log(res)
 		this.answerValue = res.choices[0].message.content
-
-		//重置上传组件
-		resetWidget("FilePicker1Copy", true);
 	},
 }
