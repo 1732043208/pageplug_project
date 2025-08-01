@@ -35,6 +35,10 @@ export default {
 		const files = FilePicker1Copy.files
 		if(!this.InputValue && !files.length) return showAlert("请输入您的症状！")
 		this.fileLoad(files)
+		//清空上次的回答
+		this.answerValue = ''
+		const text = this.promptSplicing()
+		console.log('prompt内容：', text)
 		Commom.apiSearchContent = [
 			{type:'text',text:this.promptSplicing()},
 			...this.filesList

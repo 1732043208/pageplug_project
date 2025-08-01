@@ -1,6 +1,6 @@
 export default {
 	InputValue : "",   //输入
-	adviceResults:"",   //回答
+	answerValue:"",   //回答
 	filesList:[],  //附件列表
 	prompt:`
 	患者主述：%InquiryMainResults%。
@@ -46,16 +46,18 @@ export default {
 		console.log('InquiryMainResults',InquiryMainResults)
 
 		const text = this.promptSplicing(InquiryMainResults)
-		console.log('text',text)
+		console.log('prompt内容：', text)
 		const files = FilePicker1Copy.files
 		this.fileLoad(files)
+		//清空上次的回答
+		this.answerValue = ''
 		Commom.apiSearchContent = [
 			{type:'text',text},
 			...this.filesList
 		]
 		console.log(Commom.apiSearchContent)
 		const res = await completions.run()
-		this.adviceResults = res.choices[0].message.content
-		console.log('this.adviceResults',this.adviceResults)
+		this.answerValue = res.choices[0].message.content
+		console.log('this.answerValue',this.answerValue)
 	}
 }

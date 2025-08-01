@@ -1,9 +1,8 @@
 export default {
 	InputValue : "",   //输入
-	mainResults:"",   //主述结果
-	adviceResults:"", //建议结果
+	answerValue:"",   //主述结果
 	filesList:[], //附件列表
-	
+
 	//主述结果prompt
 	mainPrompt:`
 	患者主述：%InputValue%，根据患者主述，把主述分类，并给出类别标题。
@@ -11,16 +10,16 @@ export default {
 	`, 
 
 	// prompt拼接替换
-	promptSplicing(prompt){
+	promptSplicing(){
 		const replacements = {
-			'%InputValue%': this.InputValue,
-			'%mainResults%': this.mainResults,
+			'%InputValue%': this.InputValue
 		}
 		return Object.entries(replacements).reduce(
 			(text, [pattern, replacement]) => text.replace(new RegExp(pattern), replacement),
-			prompt
+			this.mainPrompt
 		)
 	},
+	// 上传附件
 	fileLoad(files){
 		this.filesList = []
 		console.log('files',files)
@@ -29,24 +28,28 @@ export default {
 		})
 		console.log('filesList', this.filesList)
 	},
-
+	// 修改输入框内容
 	changeInputValue(value){
 		console.log('value',value)
 		this.InputValue = value
 	},
-
+	// 执行按钮
 	async getCompletions(){
 		const files = FilePicker1Copy.files
 		if(!this.InputValue && !files.length) return showAlert("请输入您的症状！")
 		this.fileLoad(files)
+		//清空上次的回答
+		this.answerValue = ''
+		const text = this.promptSplicing()
+		console.log('prompt内容：', text)
 		Commom.apiSearchContent = [
-			{type:'text',text:this.promptSplicing(this.mainPrompt)},
+			{type:'text',text},
 			...this.filesList
 		]
 		console.log(Commom.apiSearchContent)
 		const res = await completions.run()
 		console.log(res)
-		this.mainResults = res.choices[0].message.content
-		storeValue("InquiryMainResults", this.mainResults)
+		this.answerValue = res.choices[0].message.content
+		storeValue("InquiryMainResults", this.answerValue)
 	},
 }
