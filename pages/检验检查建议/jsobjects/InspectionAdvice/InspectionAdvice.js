@@ -42,8 +42,6 @@ export default {
 		// InquiryMainResults 问诊AI生成的内容
 		const InquiryMainResults = global.store.InquiryMainResults
 		if(!InquiryMainResults) return showAlert('请先执行问诊步骤！')
-		const files = FilePicker1Copy.files
-		this.fileLoad(files)
 		//清空上次的回答
 		this.answerValue = ''
 		const text = this.promptSplicing(InquiryMainResults)

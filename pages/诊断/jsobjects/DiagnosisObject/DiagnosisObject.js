@@ -52,8 +52,6 @@ export default {
 
 		const text = this.promptSplicing(InquiryMainResults)
 		console.log('prompt内容：', text)
-		const files = FilePicker1Copy.files
-		this.fileLoad(files)
 		//清空上次的回答
 		this.answerValue = ''
 		Commom.apiSearchContent = [
