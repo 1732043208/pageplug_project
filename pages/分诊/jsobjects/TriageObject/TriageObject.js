@@ -5,7 +5,11 @@ export default {
 	prompt:`
 	患者叙述：%InputValue%，根据患者叙述，推荐一个最合适的科室
 	`,
-
+	created(){
+		console.log('111')
+		resetWidget("FilePicker1Copy", true)
+		console.log('111')
+	},
 	//prompt拼接
 	promptSplicing(){
 		const replacements = {
