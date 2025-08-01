@@ -28,7 +28,7 @@
     ],
     "shouldTruncate": false,
     "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
-    "text": "{{DiagnosisObject.adviceResults}}",
+    "text": "{{DiagnosisObject.answerValue}}",
     "key": "j4bwt4syzv",
     "isDeprecated": false,
     "rightColumn": 62,
