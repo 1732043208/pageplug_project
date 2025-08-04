@@ -1,0 +1,32 @@
+{
+  "unpublishedCollection": {
+    "name": "InspectionAdvice",
+    "pageId": "治疗方案",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [
+      {
+        "name": "InputValue",
+        "value": "\"\""
+      },
+      {
+        "name": "adviceResults",
+        "value": "\"\""
+      },
+      {
+        "name": "filesList",
+        "value": "[]"
+      },
+      {
+        "name": "prompt",
+        "value": "`\n\t患者主述：%InquiryMainResults%。\n\t附言：%InputValue%。\n\t根据主述结果，开出检验/检查处方。\n\t`"
+      }
+    ],
+    "userPermissions": []
+  },
+  "id": "治疗方案_InspectionAdvice",
+  "deleted": false,
+  "gitSyncId": "688984c4f032bd71eea01831_689065a8ec248529315e3329"
+}

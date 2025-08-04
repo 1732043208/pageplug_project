@@ -15,6 +15,14 @@
     {
       "id": "诊断",
       "isDefault": false
+    },
+    {
+      "id": "治疗方案",
+      "isDefault": false
+    },
+    {
+      "id": "患者管理",
+      "isDefault": false
     }
   ],
   "viewMode": false,

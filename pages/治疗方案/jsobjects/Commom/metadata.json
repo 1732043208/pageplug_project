@@ -1,0 +1,24 @@
+{
+  "unpublishedCollection": {
+    "name": "Commom",
+    "pageId": "治疗方案",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [
+      {
+        "name": "model",
+        "value": "'medgemma-27b-it'"
+      },
+      {
+        "name": "apiSearchContent",
+        "value": "[]"
+      }
+    ],
+    "userPermissions": []
+  },
+  "id": "治疗方案_Commom",
+  "deleted": false,
+  "gitSyncId": "688984c4f032bd71eea01831_689065a8ec248529315e3325"
+}

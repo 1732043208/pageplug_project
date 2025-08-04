@@ -1,0 +1,32 @@
+{
+  "unpublishedCollection": {
+    "name": "TriageObject",
+    "pageId": "治疗方案",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [
+      {
+        "name": "InputValue",
+        "value": "\"\""
+      },
+      {
+        "name": "answerValue",
+        "value": "\"\""
+      },
+      {
+        "name": "filesList",
+        "value": "[]"
+      },
+      {
+        "name": "prompt",
+        "value": "'患者叙述：%InputValue%，根据患者叙述，推荐一个最合适的科室'"
+      }
+    ],
+    "userPermissions": []
+  },
+  "id": "治疗方案_TriageObject",
+  "deleted": false,
+  "gitSyncId": "688984c4f032bd71eea01831_689065a8ec248529315e3327"
+}
