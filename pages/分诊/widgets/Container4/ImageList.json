@@ -31,7 +31,8 @@
     "dynamicBindingPathList": [
         {"key": "theme"},
         {"key": "borderRadius"},
-        {"key": "defaultModel"}
+        {"key": "defaultModel"},
+        {"key": "isVisible"}
     ],
     "leftColumn": 5,
     "defaultModel": "{\n\"fileList\":\"{{TriageObject.filesList.map(e=>e.image_url.url)}}\"\n}",
@@ -46,7 +47,7 @@
     "isSearchWildcard": true,
     "widgetId": "onn0ko7jk8",
     "bottomRowBeforeCollapse": 92,
-    "isVisible": "true",
+    "isVisible": "{{!!TriageObject.filesList.length}}",
     "version": 1,
     "uncompiledSrcDoc": {
         "css": "#app,div{\n\tbackground:transparent\n}\n.flex-box{\n\tdisplay:flex;\n\tflex-wrap:wrap\n}\n.img-box{\n\tmargin-right:10px;\n\tposition: relative;\n}\n.img{\n\theight:100px;\n\tborder-radius:4px;\n}\n.delete-btn{\n\twidth:20px;\n\theight:20px;\n\tborder-radius:10px;\n\tposition: absolute;\n\ttop: 2px;\n\tright: 2px;\n\tcursor: pointer;\n\ttext-align: center;\n\tline-height: 20px;\n\tuser-select: none;\n}\n\n.delete-btn:hover{\n\tbackground-color: rgba(255, 255, 255, 0.2);\n}",
