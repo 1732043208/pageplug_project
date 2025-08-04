@@ -18,7 +18,7 @@ export default {
 			this.prompt
 		)
 	},
-		// 删除附件列表元素
+	// 删除附件列表元素
 	deleteFile(index){
 		console.log(index)
 		this.filesList.splice(index, 1);
@@ -51,10 +51,14 @@ export default {
 			...this.filesList
 		]
 		console.log(Commom.apiSearchContent)
-		const res = await completions.run()
-		console.log('res',res)
-		this.answerValue = res.choices[0].message.content
-		storeValue('InspectionAdvice',this.answerValue)
-		console.log('this.answerValue',this.answerValue)
+		try{
+			const res = await completions.run()
+			console.log('res',res)
+			this.answerValue = res.choices[0].message.content
+			storeValue('InspectionAdvice',this.answerValue)
+		}catch(error){
+			console.log('err',error)
+			showAlert('模型调用失败！', 'error')
+		}
 	}
 }

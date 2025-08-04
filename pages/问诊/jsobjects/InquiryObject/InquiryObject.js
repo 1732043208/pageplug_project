@@ -47,10 +47,15 @@ export default {
 			{type:'text',text},
 			...this.filesList
 		]
-		console.log(Commom.apiSearchContent)
-		const res = await completions.run()
-		console.log(res)
-		this.answerValue = res.choices[0].message.content
-		storeValue("InquiryMainResults", this.answerValue)
+		try{
+			console.log(Commom.apiSearchContent)
+			const res = await completions.run()
+			console.log(res)
+			this.answerValue = res.choices[0].message.content
+			storeValue("InquiryMainResults", this.answerValue)
+		}catch(error){
+			console.log('err',error)
+			showAlert('模型调用失败！', 'error')
+		}
 	},
 }

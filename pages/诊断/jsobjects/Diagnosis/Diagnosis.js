@@ -59,8 +59,13 @@ export default {
 			...this.filesList
 		]
 		console.log(Commom.apiSearchContent)
-		const res = await completions.run()
-		this.answerValue = res.choices[0].message.content
-		console.log('this.answerValue',this.answerValue)
+		try{
+			const res = await completions.run()
+			this.answerValue = res.choices[0].message.content
+			console.log('this.answerValue',this.answerValue)
+		}catch(error){
+			console.log('err',error)
+			showAlert('模型调用失败！', 'error')
+		}
 	}
 }
