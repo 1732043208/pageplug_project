@@ -1,6 +1,6 @@
 {
   "unpublishedCollection": {
-    "name": "DiagnosisObject",
+    "name": "Diagnosis",
     "pageId": "诊断",
     "pluginId": "js-plugin",
     "pluginType": "JS",
@@ -26,7 +26,7 @@
     ],
     "userPermissions": []
   },
-  "id": "诊断_DiagnosisObject",
+  "id": "诊断_Diagnosis",
   "deleted": false,
   "gitSyncId": "688984c4f032bd71eea01831_6889dea8f032bd71eea018bc"
 }

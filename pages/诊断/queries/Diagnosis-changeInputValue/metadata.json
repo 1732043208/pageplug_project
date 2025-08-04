@@ -2,8 +2,8 @@
   "pluginType": "JS",
   "pluginId": "js-plugin",
   "unpublishedAction": {
-    "name": "fileLoad",
-    "fullyQualifiedName": "DiagnosisObject.fileLoad",
+    "name": "changeInputValue",
+    "fullyQualifiedName": "Diagnosis.changeInputValue",
     "datasource": {
       "name": "UNUSED_DATASOURCE",
       "pluginId": "js-plugin",
@@ -14,7 +14,7 @@
       "userPermissions": []
     },
     "pageId": "诊断",
-    "collectionId": "诊断_DiagnosisObject",
+    "collectionId": "诊断_Diagnosis",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
@@ -22,7 +22,7 @@
       "selfReferencingDataPaths": [],
       "jsArguments": [
         {
-          "name": "files"
+          "name": "value"
         }
       ]
     },
@@ -41,7 +41,7 @@
     "userPermissions": [],
     "createdAt": "2025-07-30T08:58:56Z"
   },
-  "id": "诊断_DiagnosisObject.fileLoad",
+  "id": "诊断_Diagnosis.changeInputValue",
   "deleted": false,
-  "gitSyncId": "688984c4f032bd71eea01831_6889ded0f032bd71eea018be"
+  "gitSyncId": "688984c4f032bd71eea01831_6889ded0f032bd71eea018c1"
 }

@@ -2,8 +2,8 @@
   "pluginType": "JS",
   "pluginId": "js-plugin",
   "unpublishedAction": {
-    "name": "changeInputValue",
-    "fullyQualifiedName": "DiagnosisObject.changeInputValue",
+    "name": "deleteFile",
+    "fullyQualifiedName": "Diagnosis.deleteFile",
     "datasource": {
       "name": "UNUSED_DATASOURCE",
       "pluginId": "js-plugin",
@@ -14,7 +14,7 @@
       "userPermissions": []
     },
     "pageId": "诊断",
-    "collectionId": "诊断_DiagnosisObject",
+    "collectionId": "诊断_Diagnosis",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
@@ -22,7 +22,7 @@
       "selfReferencingDataPaths": [],
       "jsArguments": [
         {
-          "name": "value"
+          "name": "index"
         }
       ]
     },
@@ -39,9 +39,9 @@
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": [],
-    "createdAt": "2025-07-30T08:58:56Z"
+    "createdAt": "2025-08-01T09:09:07Z"
   },
-  "id": "诊断_DiagnosisObject.changeInputValue",
+  "id": "诊断_Diagnosis.deleteFile",
   "deleted": false,
-  "gitSyncId": "688984c4f032bd71eea01831_6889ded0f032bd71eea018c1"
+  "gitSyncId": "688984c4f032bd71eea01831_688c8433f032bd71eea01903"
 }

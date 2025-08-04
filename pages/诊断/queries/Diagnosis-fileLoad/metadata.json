@@ -2,8 +2,8 @@
   "pluginType": "JS",
   "pluginId": "js-plugin",
   "unpublishedAction": {
-    "name": "promptSplicing",
-    "fullyQualifiedName": "DiagnosisObject.promptSplicing",
+    "name": "fileLoad",
+    "fullyQualifiedName": "Diagnosis.fileLoad",
     "datasource": {
       "name": "UNUSED_DATASOURCE",
       "pluginId": "js-plugin",
@@ -14,7 +14,7 @@
       "userPermissions": []
     },
     "pageId": "诊断",
-    "collectionId": "诊断_DiagnosisObject",
+    "collectionId": "诊断_Diagnosis",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
@@ -22,10 +22,7 @@
       "selfReferencingDataPaths": [],
       "jsArguments": [
         {
-          "name": "InquiryMainResults"
-        },
-        {
-          "name": "InspectionAdvice"
+          "name": "files"
         }
       ]
     },
@@ -44,7 +41,7 @@
     "userPermissions": [],
     "createdAt": "2025-07-30T08:58:56Z"
   },
-  "id": "诊断_DiagnosisObject.promptSplicing",
+  "id": "诊断_Diagnosis.fileLoad",
   "deleted": false,
-  "gitSyncId": "688984c4f032bd71eea01831_6889ded0f032bd71eea018c4"
+  "gitSyncId": "688984c4f032bd71eea01831_6889ded0f032bd71eea018be"
 }
