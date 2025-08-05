@@ -271,7 +271,7 @@
     "iconSVG": "/static/media/icon.6bacf7df.svg",
     "onSubmit": "{{UpdateQuery.run(() => SelectQuery.run(), (error) => showAlert(`Error while updating resource!\\n ${error}`,'error'))}}",
     "topRow": 0,
-    "bottomRow": 86,
+    "bottomRow": 109,
     "fieldLimitExceeded": false,
     "parentRowSpace": 10,
     "title": "患者信息修改",

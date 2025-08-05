@@ -7,7 +7,7 @@
         {"key": "boxShadow"}
     ],
     "topRow": 0,
-    "bottomRow": 86,
+    "bottomRow": 109,
     "parentRowSpace": 10,
     "type": "CONTAINER_WIDGET",
     "shouldScrollContents": true,
@@ -27,7 +27,7 @@
         "widgetId": "59rw5mx0bq",
         "containerStyle": "none",
         "topRow": 0,
-        "bottomRow": 860,
+        "bottomRow": 1090,
         "parentRowSpace": 1,
         "isVisible": "true",
         "canExtend": false,

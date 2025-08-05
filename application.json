@@ -21,11 +21,15 @@
       "isDefault": false
     },
     {
+      "id": "患者列表",
+      "isDefault": false
+    },
+    {
       "id": "问诊记录",
       "isDefault": false
     },
     {
-      "id": "患者列表",
+      "id": "问诊详情",
       "isDefault": false
     }
   ],

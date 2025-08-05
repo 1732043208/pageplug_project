@@ -1,0 +1,9 @@
+UPDATE public."consultations" SET
+		"chief_complaint" = '{{update_form.fieldState.chief_complaint.isVisible ? update_form.formData.chief_complaint : update_form.sourceData.chief_complaint}}',
+		"patient_id" = '{{update_form.fieldState.patient_id.isVisible ? update_form.formData.patient_id : update_form.sourceData.patient_id}}',
+    "department" = '{{update_form.fieldState.department.isVisible ? update_form.formData.department : update_form.sourceData.department}}',
+		"status" = '{{update_form.fieldState.status.isVisible ? update_form.formData.status : update_form.sourceData.status}}',
+		"current_step" = '{{update_form.fieldState.current_step.isVisible ? update_form.formData.current_step : update_form.sourceData.current_step}}',
+		"created_at" = '{{update_form.fieldState.created_at.isVisible ? update_form.formData.created_at : update_form.sourceData.created_at}}',
+		"updated_at" = '{{update_form.fieldState.updated_at.isVisible ? update_form.formData.updated_at : update_form.sourceData.updated_at}}'
+WHERE "consultation_id" = {{data_table.selectedRow.consultation_id}};

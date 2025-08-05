@@ -1,0 +1,2 @@
+DELETE FROM public."consultations"
+  WHERE "consultation_id" = {{data_table.triggeredRow.consultation_id}};
