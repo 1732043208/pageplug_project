@@ -1,0 +1,22 @@
+INSERT INTO public."patients" (
+	"name",
+	"gender",
+	"birth_date",
+	"id_number",
+	"phone",
+	"address",
+	"medical_history",
+	"allergy_history",
+	"created_at",
+	"updated_at")
+VALUES (
+	'{{insert_form.formData.name}}',
+	'{{insert_form.formData.gender}}',
+	'{{insert_form.formData.birth_date}}',
+	'{{insert_form.formData.id_number}}',
+	'{{insert_form.formData.phone}}',
+	'{{insert_form.formData.address}}',
+	'{{insert_form.formData.medical_history}}',
+	'{{insert_form.formData.allergy_history}}',
+	'{{insert_form.formData.created_at}}',
+	'{{insert_form.formData.updated_at}}');

@@ -24,7 +24,7 @@
     ],
     "shouldTruncate": false,
     "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
-    "text": "新增患者",
+    "text": "选择患者",
     "key": "7ngdnrglbd",
     "isDeprecated": false,
     "rightColumn": 41,

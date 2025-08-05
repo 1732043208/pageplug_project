@@ -1,0 +1,12 @@
+UPDATE public."patients" SET
+		"name" = '{{update_form.fieldState.name.isVisible ? update_form.formData.name : update_form.sourceData.name}}',
+		"gender" = '{{update_form.fieldState.gender.isVisible ? update_form.formData.gender : update_form.sourceData.gender}}',
+    "birth_date" = '{{update_form.fieldState.birth_date.isVisible ? update_form.formData.birth_date : update_form.sourceData.birth_date}}',
+		"id_number" = '{{update_form.fieldState.id_number.isVisible ? update_form.formData.id_number : update_form.sourceData.id_number}}',
+		"phone" = '{{update_form.fieldState.phone.isVisible ? update_form.formData.phone : update_form.sourceData.phone}}',
+		"address" = '{{update_form.fieldState.address.isVisible ? update_form.formData.address : update_form.sourceData.address}}',
+		"medical_history" = '{{update_form.fieldState.medical_history.isVisible ? update_form.formData.medical_history : update_form.sourceData.medical_history}}',
+		"allergy_history" = '{{update_form.fieldState.allergy_history.isVisible ? update_form.formData.allergy_history : update_form.sourceData.allergy_history}}',
+		"created_at" = '{{update_form.fieldState.created_at.isVisible ? update_form.formData.created_at : update_form.sourceData.created_at}}',
+		"updated_at" = '{{update_form.fieldState.updated_at.isVisible ? update_form.formData.updated_at : update_form.sourceData.updated_at}}'
+WHERE "patient_id" = {{data_table.selectedRow.patient_id}};

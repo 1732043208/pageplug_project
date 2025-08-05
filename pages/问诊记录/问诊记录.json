@@ -1,6 +1,6 @@
 {
   "unpublishedPage": {
-    "name": "患者管理",
+    "name": "问诊记录",
     "slug": "",
     "layouts": [
       {
@@ -13,7 +13,7 @@
           "detachFromLayout": true,
           "widgetId": "0",
           "topRow": 0,
-          "bottomRow": 1070,
+          "bottomRow": 990,
           "containerStyle": "none",
           "snapRows": 95,
           "parentRowSpace": 1,
@@ -28,7 +28,7 @@
         "layoutOnLoadActions": [],
         "layoutOnLoadActionErrors": [],
         "validOnPageLoadActions": true,
-        "id": "患者管理",
+        "id": "问诊记录",
         "deleted": false,
         "policies": [],
         "userPermissions": []
@@ -39,5 +39,5 @@
     "isHidden": false
   },
   "deleted": false,
-  "gitSyncId": "688984c4f032bd71eea01831_6890792fec248529315e3330"
+  "gitSyncId": "688984c4f032bd71eea01831_689159b3ec248529315e3334"
 }

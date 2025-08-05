@@ -1,0 +1,2 @@
+DELETE FROM public."patients"
+  WHERE "patient_id" = {{data_table.triggeredRow.patient_id}};

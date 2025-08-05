@@ -26,7 +26,7 @@
         {"key": "buttonColor"},
         {"key": "borderRadius"}
     ],
-    "text": "新增患者",
+    "text": "选择患者",
     "isDisabled": false,
     "key": "l7ebl9kbb9",
     "isDeprecated": false,
