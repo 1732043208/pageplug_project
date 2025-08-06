@@ -28,7 +28,7 @@
     "tags": ["数据展示类"],
     "isLoading": false,
     "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-    "originalBottomRow": 22,
+    "originalBottomRow": 21,
     "mobileBottomRow": 135,
     "widgetName": "ImageList",
     "dynamicPropertyPathList": [{"key": "isVisible"}],
@@ -61,7 +61,7 @@
     "parentId": "0",
     "renderMode": "CANVAS",
     "mobileTopRow": 105,
-    "originalTopRow": 11,
+    "originalTopRow": 10,
     "mobileLeftColumn": 0,
     "maxDynamicHeight": 9000,
     "minDynamicHeight": 4

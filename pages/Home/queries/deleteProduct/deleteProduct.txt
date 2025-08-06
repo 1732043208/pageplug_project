@@ -1,2 +1,0 @@
-DELETE FROM product 
-WHERE id = {{lst_products.triggeredItem && lst_products.triggeredItem.id}};

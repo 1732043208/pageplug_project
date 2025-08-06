@@ -1,10 +1,6 @@
 {
   "pages": [
     {
-      "id": "Home",
-      "isDefault": false
-    },
-    {
       "id": "分诊",
       "isDefault": true
     },
