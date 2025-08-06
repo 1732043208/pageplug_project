@@ -8,12 +8,28 @@
     "archivedActions": [],
     "variables": [
       {
-        "name": "model",
-        "value": "'medgemma-27b-it'"
+        "name": "InputValue",
+        "value": "\"\""
       },
       {
-        "name": "apiSearchContent",
+        "name": "answerValue",
+        "value": "\"\""
+      },
+      {
+        "name": "filesList",
         "value": "[]"
+      },
+      {
+        "name": "treatContent",
+        "value": "''"
+      },
+      {
+        "name": "medicationContent",
+        "value": "''"
+      },
+      {
+        "name": "prompt",
+        "value": "`\n\t主述结果：%InquiryMainResults%。\n\t检验检查处方：%InspectionAdvice%\n\t诊断结果：%DiagnosisAdvice%\n\t附言：%InputValue%。\n\t根据主述结果、检验检查处方、诊断结果以及附言，给出%RequireType%。`"
       }
     ],
     "userPermissions": []

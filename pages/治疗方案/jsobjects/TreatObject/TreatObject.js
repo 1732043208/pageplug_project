@@ -9,18 +9,14 @@ export default {
 	检验检查处方：%InspectionAdvice%
 	诊断结果：%DiagnosisAdvice%
 	附言：%InputValue%。
-	根据主述结果、检验检查处方、诊断结果以及附言，给出治疗措及用药处方。
-	要求：
-	1、不要返回markdown格式；
-	2、"治疗措施"生成内容以&开头、&结尾包裹；
-	3、"用药处方"生成内容以%开头、%结尾包裹；
-	`,
+	根据主述结果、检验检查处方、诊断结果以及附言，给出%RequireType%。`,
 	//prompt拼接
-	promptSplicing(InquiryMainResults,InspectionAdvice,DiagnosisAdvice){
+	promptSplicing(InquiryMainResults,InspectionAdvice,DiagnosisAdvice,RequireType){
 		const replacements = {
 			'%InquiryMainResults%': InquiryMainResults,
 			'%InspectionAdvice%': InspectionAdvice,
 			'%DiagnosisAdvice%': DiagnosisAdvice,
+			'%RequireType%': RequireType,
 			'%InputValue%': this.InputValue,
 		}
 		return Object.entries(replacements).reduce(
@@ -60,29 +56,36 @@ export default {
 		const InquiryMainResults = global.store.InquiryMainResults
 		if(!InquiryMainResults) return showAlert('请先执行问诊步骤！')
 		console.log('InquiryMainResults',InquiryMainResults)
-
-		const text = this.promptSplicing(InquiryMainResults,InspectionAdvice,DiagnosisAdvice)
-		console.log('prompt内容：', text)
-		//清空上次的回答
+		// 清空上次回答
 		this.answerValue = ''
-		Commom.apiSearchContent = [
-			{type:'text',text},
-			...this.filesList
-		]
-		console.log(Commom.apiSearchContent)
-		try{
-			const res = await completions.run()
-			this.answerValue = res.choices[0].message.content
-			console.log('sss',this.answerValue)
-
-			this.treatContent = this.answerValue.match( /&([\s\S]+?)&/g)[0];   //治疗措施
-			console.log('this.treatContent',this.treatContent)
-			this.medicationContent =  this.answerValue.match( /%([\s\S]+?)%/g)[0];   //用药
-			console.log('this.medicationContent ',this.medicationContent )
-
-		}catch(error){
-			console.log('err',error)
-			showAlert('模型调用失败！', 'error')
+		const params1 = {
+			list:  [
+				{
+					type:'text',
+					text: this.promptSplicing(InquiryMainResults, InspectionAdvice, DiagnosisAdvice, '治疗措施')
+				},
+				...this.filesList
+			]
 		}
+		// 治疗措施
+		completions.run(params1).then(res=>{
+			console.log('res',res)
+			this.treatContent =  res.choices[0].message.content
+		})
+
+		const params2 = {
+			list:  [
+				{
+					type:'text',
+					text: this.promptSplicing(InquiryMainResults, InspectionAdvice, DiagnosisAdvice, '用药处方')
+				},
+				...this.filesList
+			]
+		}
+		// 用药
+		completions.run(params2).then(res=>{
+			console.log('res',res)
+			this.medicationContent =  res.choices[0].message.content
+		})
 	}
 }

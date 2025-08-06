@@ -14,7 +14,7 @@
         "container"
     ],
     "topRow": 0,
-    "bottomRow": 128,
+    "bottomRow": 23,
     "parentRowSpace": 10,
     "type": "CONTAINER_WIDGET",
     "hideCard": false,
@@ -30,7 +30,7 @@
         "widgetName": "Canvas2CopyCopy",
         "displayName": "Canvas",
         "topRow": 0,
-        "bottomRow": 1280,
+        "bottomRow": 230,
         "parentRowSpace": 1,
         "type": "CANVAS_WIDGET",
         "canExtend": false,
@@ -82,6 +82,6 @@
     "borderRadius": "0.8rem",
     "mobileLeftColumn": 7,
     "maxDynamicHeight": 9000,
-    "originalBottomRow": 37,
+    "originalBottomRow": 128,
     "minDynamicHeight": 10
 }

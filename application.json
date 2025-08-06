@@ -31,6 +31,10 @@
     {
       "id": "问诊详情",
       "isDefault": false
+    },
+    {
+      "id": "康复方案",
+      "isDefault": false
     }
   ],
   "viewMode": false,

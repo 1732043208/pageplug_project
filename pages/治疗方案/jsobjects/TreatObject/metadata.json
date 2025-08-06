@@ -29,12 +29,12 @@
       },
       {
         "name": "prompt",
-        "value": "`\n\t主述结果：%InquiryMainResults%。\n\t检验检查处方：%InspectionAdvice%\n\t诊断结果：%DiagnosisAdvice%\n\t附言：%InputValue%。\n\t根据主述结果、检验检查处方、诊断结果以及附言，给出治疗措及用药处方。\n\t要求：\n\t1、不要返回markdown格式；\n\t2、\"治疗措施\"生成内容以&开头、&结尾包裹；\n\t3、\"用药处方\"生成内容以%开头、%结尾包裹；\n\t`"
+        "value": "`\n\t主述结果：%InquiryMainResults%。\n\t检验检查处方：%InspectionAdvice%\n\t诊断结果：%DiagnosisAdvice%\n\t附言：%InputValue%。\n\t根据主述结果、检验检查处方、诊断结果以及附言，给出%RequireType%。`"
       }
     ],
     "userPermissions": []
   },
   "id": "治疗方案_TreatObject",
   "deleted": false,
-  "gitSyncId": "688984c4f032bd71eea01831_689065a8ec248529315e332b"
+  "gitSyncId": "688984c4f032bd71eea01831_689320d0ec248529315e3464"
 }

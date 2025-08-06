@@ -1,0 +1,32 @@
+{
+  "unpublishedCollection": {
+    "name": "RecoveryObject",
+    "pageId": "康复方案",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [
+      {
+        "name": "InputValue",
+        "value": "\"\""
+      },
+      {
+        "name": "answerValue",
+        "value": "\"\""
+      },
+      {
+        "name": "filesList",
+        "value": "[]"
+      },
+      {
+        "name": "prompt",
+        "value": "`\n\t主述结果：%InquiryMainResults%。\n\t检验检查处方：%InspectionAdvice%\n\t诊断结果：%DiagnosisAdvice%\n\t附言：%InputValue%。\n\t根据主述结果、检验检查处方、诊断结果以及附言，给出康复方案。`"
+      }
+    ],
+    "userPermissions": []
+  },
+  "id": "康复方案_RecoveryObject",
+  "deleted": false,
+  "gitSyncId": "688984c4f032bd71eea01831_68931265ec248529315e3458"
+}
