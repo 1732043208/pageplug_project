@@ -1,0 +1,11 @@
+INSERT INTO product
+  (name, description, type, image, updated)
+VALUES
+  (
+    {{ inp_addProductTitle.text }},
+    {{ inp_addProductDescription.text }},
+		'OTHER',
+		{{inp_addImgUrl.text}},
+		{{new Date().toISOString()}}
+  )
+	RETURNING*;

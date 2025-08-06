@@ -100,7 +100,8 @@
         {"key": "onPageChange"},
         {"key": "onSearchTextChanged"},
         {"key": "onSort"},
-        {"key": "primaryColumns.customColumn1.onClick"}
+        {"key": "primaryColumns.customColumn1.onClick"},
+        {"key": "primaryColumns.customColumn2.onClick"}
     ],
     "primaryColumns": {
         "id_number": {
@@ -350,6 +351,7 @@
         "customColumn2": {
             "boxShadow": "{{data_table.processedTableData.map((currentRow, currentIndex) => ( 'none'))}}",
             "computedValue": "",
+            "onClick": "{{CreatedInquiryData.run().then(() => {\n  showAlert('问诊记录新建成功！', '');\n  navigateTo('问诊记录', {}, 'SAME_WINDOW');\n});}}",
             "buttonColor": "{{data_table.processedTableData.map((currentRow, currentIndex) => ( appsmith.theme.colors.primaryColor))}}",
             "isEditable": false,
             "notation": "standard",

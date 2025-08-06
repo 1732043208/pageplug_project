@@ -1,0 +1,6 @@
+UPDATE product_variant
+  SET sku = {{utils.activeEditProduct ? utils.activeEditProduct.sku : ''}},
+	low_stock = {{utils.activeEditProduct ? utils.activeEditProduct.low_stock : ''}},
+	price = {{inp_addProductSalePrice.text}},
+	cost = {{inp_addProductCostPrice.text}}
+  WHERE id = {{ utils.activeEditProduct ? utils.activeEditProduct.product_variant_id : '' }};

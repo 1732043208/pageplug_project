@@ -1,6 +1,10 @@
 {
   "pages": [
     {
+      "id": "Home",
+      "isDefault": false
+    },
+    {
       "id": "分诊",
       "isDefault": true
     },
@@ -62,10 +66,7 @@
   },
   "unpublishedCustomJSLibs": [
     {
-      "uidString": "FetchEventSource_https://cdn.jsdelivr.net/npm/fetch-event-source@1.0.0-alpha.2/index.min.js"
-    },
-    {
-      "uidString": "marked_https://cdn.jsdelivr.net/npm/marked/marked.min.js"
+      "uidString": "xmlParser_https://cdnjs.cloudflare.com/ajax/libs/fast-xml-parser/3.17.5/parser.min.js"
     }
   ],
   "publishedCustomJSLibs": [],

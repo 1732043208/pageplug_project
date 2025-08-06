@@ -1,0 +1,12 @@
+INSERT INTO product_variant
+  (product_id, sku, price, cost, low_stock)
+VALUES
+  (
+    {{ this.params.productId }},
+		{{ utils.generateRandomId('random', 12) }},
+    {{ inp_addProductSalePrice.text }},
+    {{ inp_addProductCostPrice.text }},
+		10
+  )
+	RETURNING*;
+	

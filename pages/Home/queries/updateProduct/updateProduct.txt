@@ -1,0 +1,6 @@
+UPDATE product
+SET name = {{inp_addProductTitle.text}},
+    description = {{inp_addProductDescription.text}},
+    type = 'OTHER',
+		image = {{inp_addImgUrl.text}}
+WHERE id = {{utils.activeEditProduct ? utils.activeEditProduct.id : ''}};

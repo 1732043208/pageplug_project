@@ -1,0 +1,4 @@
+INSERT INTO public."consultations"
+  ("patient_id")
+VALUES
+  ('{{data_table.triggeredRow.patient_id}}');
