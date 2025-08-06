@@ -18,7 +18,7 @@
     "parentColumnSpace": 12.0703125,
     "dynamicTriggerPathList": [{"key": "onClick"}],
     "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-    "leftColumn": 60,
+    "leftColumn": 61,
     "dynamicBindingPathList": [
         {"key": "buttonColor"},
         {"key": "borderRadius"}

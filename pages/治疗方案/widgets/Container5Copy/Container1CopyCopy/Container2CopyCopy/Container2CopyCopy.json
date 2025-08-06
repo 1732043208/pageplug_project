@@ -73,7 +73,7 @@
     "widgetId": "phf0jeoh6r",
     "containerStyle": "card",
     "minWidth": 450,
-    "isVisible": "{{!TreatObject.adviceResults}}",
+    "isVisible": "{{!TreatObject.medicationContent}}",
     "version": 1,
     "parentId": "9dmxab3m4w",
     "tags": ["通用类"],

@@ -3,10 +3,10 @@ export default {
 	answerValue:"",   //回答
 	filesList:[],  //附件列表
 	prompt:`
-	患者主述：%InquiryMainResults%。
+	主述结果：%InquiryMainResults%。
 	检验检查处方：%InspectionAdvice%
 	附言：%InputValue%。
-	根据患者主述、检验检查处方、以及附言，给出诊断结果。
+	根据主述结果、检验检查处方、以及附言，给出诊断结果。
 	`,
 	//prompt拼接
 	promptSplicing(InquiryMainResults,InspectionAdvice){
@@ -50,7 +50,7 @@ export default {
 		if(!InquiryMainResults) return showAlert('请先执行问诊步骤！')
 		console.log('InquiryMainResults',InquiryMainResults)
 
-		const text = this.promptSplicing(InquiryMainResults)
+		const text = this.promptSplicing(InquiryMainResults,InspectionAdvice)
 		console.log('prompt内容：', text)
 		//清空上次的回答
 		this.answerValue = ''
@@ -63,6 +63,7 @@ export default {
 			const res = await completions.run()
 			this.answerValue = res.choices[0].message.content
 			console.log('this.answerValue',this.answerValue)
+			storeValue('DiagnosisAdvice',this.answerValue)
 		}catch(error){
 			console.log('err',error)
 			showAlert('模型调用失败！', 'error')

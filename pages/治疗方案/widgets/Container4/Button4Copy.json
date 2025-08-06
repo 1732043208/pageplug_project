@@ -27,7 +27,7 @@
         {"key": "borderRadius"},
         {"key": "buttonColor"}
     ],
-    "text": "诊断",
+    "text": "执行",
     "isDisabled": false,
     "key": "9f5ls12flw",
     "isDeprecated": false,
