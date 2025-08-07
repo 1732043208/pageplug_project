@@ -1,5 +1,5 @@
 {
-    "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+    "boxShadow": "none",
     "onSort": "{{SelectQuery.run()}}",
     "isVisibleDownload": true,
     "iconSVG": "/static/media/icon.db8a9cbd.svg",
@@ -13,7 +13,6 @@
         {"key": "derivedColumns.customColumn1.buttonLabel"},
         {"key": "accentColor"},
         {"key": "borderRadius"},
-        {"key": "boxShadow"},
         {"key": "primaryColumns.consultation_id.computedValue"},
         {"key": "primaryColumns.patient_id.computedValue"},
         {"key": "primaryColumns.chief_complaint.computedValue"},
@@ -31,7 +30,7 @@
     "variant": "VARIANT3",
     "defaultSelectedRowIndex": "",
     "accentColor": "{{appsmith.theme.colors.primaryColor}}",
-    "isVisibleFilters": true,
+    "isVisibleFilters": false,
     "isVisible": "true",
     "enableClientSideSearch": true,
     "version": 3,
@@ -56,7 +55,7 @@
         }
     },
     "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-    "columnUpdatedAt": 1754530116042,
+    "columnUpdatedAt": 1754546144350,
     "primaryColumnId": "consultation_id",
     "columnSizeMap": {
         "task": 245,
@@ -79,12 +78,13 @@
     "dynamicPropertyPathList": [{"key": "tableData"}],
     "compactMode": "DEFAULT",
     "displayName": "Table",
-    "bottomRow": 85,
+    "bottomRow": 92,
     "parentRowSpace": 10,
     "columnWidthMap": {
         "consultation_id": 297,
         "updated_at": 1132,
-        "created_at": 717
+        "created_at": 717,
+        "status": 60
     },
     "hideCard": false,
     "parentColumnSpace": 16.3125,
@@ -146,7 +146,7 @@
             "allowCellWrapping": false,
             "index": 1,
             "isDiscardVisible": true,
-            "isVisible": false,
+            "isVisible": true,
             "label": "患者ID",
             "fontStyle": "",
             "textColor": "",

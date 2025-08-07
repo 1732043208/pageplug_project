@@ -56,7 +56,7 @@ export default {
 		// 清空上次回答
 		this.answerValue = ''
 		const params1 = {
-			list:  [
+			data:  [
 				{
 					type:'text',
 					text: this.promptSplicing(InquiryMainResults, InspectionAdvice, DiagnosisAdvice)
@@ -64,10 +64,10 @@ export default {
 				...this.filesList
 			]
 		}
+		console.log('params1',params1)
 		// 治疗措施
-		completions.run(params1).then(res=>{
-			console.log('res',res)
-			this.answerValue =  res.choices[0].message.content
-		})
+		const res = await completions.run(params1)
+		console.log('res',res)
+		this.answerValue =  res.choices[0].message.content
 	}
 }
