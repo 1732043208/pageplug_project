@@ -12,8 +12,8 @@
         "group",
         "container"
     ],
-    "topRow": 175,
-    "bottomRow": 207,
+    "topRow": 183,
+    "bottomRow": 215,
     "parentRowSpace": 10,
     "type": "CONTAINER_WIDGET",
     "hideCard": false,
@@ -77,10 +77,10 @@
     "isLoading": false,
     "mobileTopRow": 2,
     "responsiveBehavior": "fill",
-    "originalTopRow": 175,
+    "originalTopRow": 185,
     "borderRadius": "0.375rem",
     "mobileLeftColumn": 1,
     "maxDynamicHeight": 9000,
-    "originalBottomRow": 207,
+    "originalBottomRow": 217,
     "minDynamicHeight": 10
 }

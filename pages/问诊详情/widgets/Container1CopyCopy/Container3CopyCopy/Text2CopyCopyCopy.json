@@ -26,7 +26,7 @@
     ],
     "shouldTruncate": false,
     "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
-    "text": "分诊建议",
+    "text": "建议",
     "key": "bgtx86yu7w",
     "isDeprecated": false,
     "rightColumn": 15,
