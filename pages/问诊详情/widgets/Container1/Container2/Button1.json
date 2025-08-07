@@ -3,6 +3,7 @@
     "boxShadow": "none",
     "mobileBottomRow": 4,
     "widgetName": "Button1",
+    "onClick": "{{navigateTo('分诊', {}, 'SAME_WINDOW');}}",
     "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
     "displayName": "按钮",
     "iconSVG": "/static/media/icon.05d209fafeb13a8569e3b4e97069d9ee.svg",
@@ -19,7 +20,7 @@
     "mobileRightColumn": 64,
     "animateLoading": false,
     "parentColumnSpace": 22.322265625,
-    "dynamicTriggerPathList": [],
+    "dynamicTriggerPathList": [{"key": "onClick"}],
     "leftColumn": 59,
     "dynamicBindingPathList": [
         {"key": "buttonColor"},

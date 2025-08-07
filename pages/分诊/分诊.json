@@ -2,6 +2,7 @@
   "unpublishedPage": {
     "name": "分诊",
     "slug": "",
+    "customSlug": "",
     "layouts": [
       {
         "viewMode": false,

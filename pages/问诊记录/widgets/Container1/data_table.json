@@ -407,6 +407,7 @@
             "verticalAlignment": "CENTER"
         }
     },
+    "defaultSearchText": "",
     "key": "zba5qel0au",
     "derivedColumns": {"customColumn1": {
         "isCellVisible": true,
