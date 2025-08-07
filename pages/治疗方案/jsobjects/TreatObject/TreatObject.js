@@ -59,7 +59,7 @@ export default {
 		// 清空上次回答
 		this.answerValue = ''
 		const params1 = {
-			list:  [
+			data:  [
 				{
 					type:'text',
 					text: this.promptSplicing(InquiryMainResults, InspectionAdvice, DiagnosisAdvice, '治疗措施')
@@ -74,7 +74,7 @@ export default {
 		})
 
 		const params2 = {
-			list:  [
+			data:  [
 				{
 					type:'text',
 					text: this.promptSplicing(InquiryMainResults, InspectionAdvice, DiagnosisAdvice, '用药处方')
