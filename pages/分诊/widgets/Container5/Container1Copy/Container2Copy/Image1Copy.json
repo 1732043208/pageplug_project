@@ -9,8 +9,8 @@
         "picture",
         "photo"
     ],
-    "topRow": 3,
-    "bottomRow": 10,
+    "topRow": 0,
+    "bottomRow": 7,
     "parentRowSpace": 10,
     "type": "IMAGE_WIDGET",
     "hideCard": false,
