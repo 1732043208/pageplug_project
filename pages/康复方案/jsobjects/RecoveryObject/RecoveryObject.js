@@ -65,9 +65,13 @@ export default {
 			]
 		}
 		console.log('params1',params1)
-		// 治疗措施
-		const res = await completions.run(params1)
-		console.log('res',res)
-		this.answerValue =  res.choices[0].message.content
+		try {
+			// 康复方案
+			const res = await completions.run(params1)
+			console.log('res',res)
+			this.answerValue =  res.choices[0].message.content
+		} catch(err) {
+			showAlert('模型调用失败！')
+		}
 	}
 }

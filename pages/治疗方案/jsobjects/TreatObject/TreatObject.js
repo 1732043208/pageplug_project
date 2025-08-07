@@ -58,6 +58,8 @@ export default {
 		console.log('InquiryMainResults',InquiryMainResults)
 		// 清空上次回答
 		this.answerValue = ''
+
+		// 治疗措施
 		const params1 = {
 			data:  [
 				{
@@ -67,12 +69,7 @@ export default {
 				...this.filesList
 			]
 		}
-		// 治疗措施
-		completions.run(params1).then(res=>{
-			console.log('res',res)
-			this.treatContent =  res.choices[0].message.content
-		})
-
+		// 用药
 		const params2 = {
 			data:  [
 				{
@@ -82,10 +79,26 @@ export default {
 				...this.filesList
 			]
 		}
-		// 用药
-		completions.run(params2).then(res=>{
-			console.log('res',res)
-			this.medicationContent =  res.choices[0].message.content
-		})
+		// // 治疗措施
+		// completions.run(params1).then(res=>{
+		// console.log('res',res)
+		// this.treatContent =  res.choices[0].message.content
+		// })
+		// 
+		// 
+		// // 用药
+		// completions.run(params2).then(res=>{
+		// console.log('res',res)
+		// this.medicationContent =  res.choices[0].message.content
+		// })
+
+		try{
+			const res= 	await Promise.all([completions.run(params1), completions.run(params2)])
+			console.log('res1',res)
+			this.treatContent =  res[0].choices[0].message.content
+			this.medicationContent =  res[1].choices[0].message.content
+		}catch(error){
+			showAlert('模型调用失败！')
+		}
 	}
 }
