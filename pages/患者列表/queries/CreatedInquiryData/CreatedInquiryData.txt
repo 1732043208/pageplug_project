@@ -1,4 +1,4 @@
 INSERT INTO public."consultations"
-  ("patient_id")
+  ("patient_id","created_at")
 VALUES
-  ('{{data_table.triggeredRow.patient_id}}');
+  ('{{data_table.triggeredRow.patient_id}}', '{{this.params.created_at}}')

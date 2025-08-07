@@ -144,7 +144,7 @@
                 "isVisible": true,
                 "label": "出生日期",
                 "originalIdentifier": "birth_date",
-                "timePrecision": "minute",
+                "timePrecision": "None",
                 "borderRadius": "{{((sourceData, formData, fieldState) => (appsmith.theme.borderRadius.appBorderRadius))(insert_form.sourceData, insert_form.formData, insert_form.fieldState)}}",
                 "closeOnSelection": false,
                 "maxDate": "2121-12-31T18:29:00.000Z",
