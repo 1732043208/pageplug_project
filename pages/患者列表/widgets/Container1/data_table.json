@@ -33,7 +33,7 @@
     "leftColumn": 0,
     "delimiter": ",",
     "variant": "VARIANT3",
-    "defaultSelectedRowIndex": "",
+    "defaultSelectedRowIndex": "0",
     "accentColor": "{{appsmith.theme.colors.primaryColor}}",
     "isVisibleFilters": true,
     "isVisible": "true",
