@@ -7,14 +7,14 @@
     "dynamicPropertyPathList": [{"key": "isVisible"}],
     "iconSVG": "/static/media/icon.dd84eb5d6aace47e0ad7bc21ee73c84b.svg",
     "displayName": "容器",
-    "topRow": 138,
+    "topRow": 17,
     "searchTags": [
         "div",
         "parent",
         "group",
         "container"
     ],
-    "bottomRow": 156,
+    "bottomRow": 35,
     "parentRowSpace": 10,
     "type": "CONTAINER_WIDGET",
     "hideCard": false,
@@ -83,10 +83,10 @@
     "renderMode": "CANVAS",
     "mobileTopRow": 10,
     "responsiveBehavior": "fill",
-    "originalTopRow": 138,
+    "originalTopRow": 17,
     "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
     "mobileLeftColumn": 20,
     "maxDynamicHeight": 9000,
-    "originalBottomRow": 156,
+    "originalBottomRow": 35,
     "minDynamicHeight": 10
 }
