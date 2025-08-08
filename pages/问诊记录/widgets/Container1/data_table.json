@@ -23,7 +23,11 @@
         {"key": "primaryColumns.customColumn1.boxShadow"},
         {"key": "primaryColumns.customColumn1.borderRadius"},
         {"key": "primaryColumns.customColumn1.buttonColor"},
-        {"key": "primaryColumns.patient_name.computedValue"}
+        {"key": "primaryColumns.patient_name.computedValue"},
+        {"key": "primaryColumns.current_step.boxShadow"},
+        {"key": "primaryColumns.current_step.borderRadius"},
+        {"key": "primaryColumns.current_step.buttonColor"},
+        {"key": "primaryColumns.current_step.buttonLabel"}
     ],
     "leftColumn": 0,
     "delimiter": ",",
@@ -55,7 +59,7 @@
         }
     },
     "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-    "columnUpdatedAt": 1754546144350,
+    "columnUpdatedAt": 1754615674902,
     "primaryColumnId": "consultation_id",
     "columnSizeMap": {
         "task": 245,
@@ -76,7 +80,7 @@
         "customColumn1"
     ],
     "dynamicPropertyPathList": [{"key": "tableData"}],
-    "compactMode": "DEFAULT",
+    "compactMode": "TALL",
     "displayName": "Table",
     "bottomRow": 92,
     "parentRowSpace": 10,
@@ -376,7 +380,9 @@
             "verticalAlignment": "CENTER"
         },
         "current_step": {
+            "boxShadow": "{{data_table.processedTableData.map((currentRow, currentIndex) => ( 'none'))}}",
             "computedValue": "{{data_table.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"current_step\"]))}}",
+            "buttonColor": "{{data_table.processedTableData.map((currentRow, currentIndex) => ( appsmith.theme.colors.primaryColor))}}",
             "isEditable": false,
             "notation": "standard",
             "alias": "current_step",
@@ -392,14 +398,17 @@
             "allowCellWrapping": false,
             "index": 5,
             "isDiscardVisible": true,
-            "isVisible": true,
+            "isVisible": false,
             "label": "当前步骤",
             "fontStyle": "",
             "textColor": "",
-            "columnType": "text",
+            "buttonLabel": "{{data_table.processedTableData.map((currentRow, currentIndex) => ( currentRow.current_step))}}",
+            "columnType": "button",
             "thousandSeparator": true,
             "horizontalAlignment": "LEFT",
             "isCellEditable": false,
+            "borderRadius": "{{data_table.processedTableData.map((currentRow, currentIndex) => ( appsmith.theme.borderRadius.appBorderRadius))}}",
+            "menuItemsSource": "STATIC",
             "decimals": 0,
             "width": 150,
             "enableFilter": true,
@@ -407,6 +416,7 @@
             "originalId": "current_step",
             "currencyCode": "USD",
             "cellBackground": "",
+            "customAlias": "",
             "verticalAlignment": "CENTER"
         }
     },
