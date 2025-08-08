@@ -1,6 +1,6 @@
 export default {
 	InputValue : "",   //输入
-	answerValue:"",   //主述结果
+	answer: {text: ''},   //主述结果
 	filesList:[], //附件列表
 	//主述结果prompt
 	mainPrompt:`
@@ -40,7 +40,7 @@ export default {
 	async getCompletions(){
 		if(!this.InputValue && !this.filesList.length) return showAlert("请输入您的症状！")
 		//清空上次的回答
-		this.answerValue = ''
+		this.answer.text = ''
 		const text = this.promptSplicing()
 		console.log('prompt内容：', text)
 		Commom.apiSearchContent = [
@@ -51,9 +51,9 @@ export default {
 			console.log(Commom.apiSearchContent)
 			const res = await completions.run()
 			console.log(res)
-			this.answerValue = res.choices[0].message.content
-			storeValue("InquiryMainResults", this.answerValue)
-		}catch(error){
+			this.answer.text = res.choices[0].message.content
+			storeValue("InquiryMainResults", this.answer.text)
+		}catch(error) {
 			console.log('err',error)
 			showAlert('模型调用失败！', 'error')
 		}

@@ -11,7 +11,7 @@
     "topRow": 10,
     "deleteClick": "{{TriageObject.deleteFile(index);}}",
     "type": "CUSTOM_WIDGET",
-    "topRowBeforeCollapse": 11,
+    "topRowBeforeCollapse": 10,
     "dynamicBindingPathList": [
         {"key": "theme"},
         {"key": "borderRadius"},
@@ -22,7 +22,7 @@
     "events": ["deleteClick"],
     "dynamicHeight": "FIXED",
     "isSearchWildcard": true,
-    "bottomRowBeforeCollapse": 22,
+    "bottomRowBeforeCollapse": 21,
     "isVisible": "{{!!TriageObject.filesList.length}}",
     "version": 1,
     "tags": ["数据展示类"],
