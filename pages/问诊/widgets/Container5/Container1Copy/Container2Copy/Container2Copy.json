@@ -13,8 +13,8 @@
         "group",
         "container"
     ],
-    "topRow": 139,
-    "bottomRow": 158,
+    "topRow": 7,
+    "bottomRow": 26,
     "parentRowSpace": 10,
     "type": "CONTAINER_WIDGET",
     "hideCard": false,
@@ -23,7 +23,7 @@
     "animateLoading": false,
     "parentColumnSpace": 16.7578125,
     "dynamicTriggerPathList": [],
-    "leftColumn": 16,
+    "leftColumn": 14,
     "dynamicBindingPathList": [
         {"key": "borderRadius"},
         {"key": "isVisible"}
@@ -68,7 +68,7 @@
     "key": "cxbf4iwo4j",
     "backgroundColor": "#FFFFFF",
     "isDeprecated": false,
-    "rightColumn": 47,
+    "rightColumn": 45,
     "dynamicHeight": "FIXED",
     "widgetId": "xfgounxgx4",
     "containerStyle": "card",

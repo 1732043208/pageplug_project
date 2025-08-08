@@ -34,7 +34,7 @@
     "widgetId": "86wu21h97g",
     "minWidth": 120,
     "isVisible": true,
-    "label": "上传附件",
+    "label": "🔗 附件",
     "maxFileSize": "5",
     "dynamicTyping": true,
     "version": 1,
