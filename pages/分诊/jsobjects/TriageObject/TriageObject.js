@@ -51,19 +51,22 @@ export default {
 			const res = await completions.run()
 			console.log(res)
 			this.answer.text = res.choices[0].message.content
-
-			const params = {
-				nowTime: Math.floor(Date.now() / 1000)
-			}
-			InsertTriage.run(params).then(res=>{
-				showAlert('数据保存成功！', 'success')
-			}).catch(e=>{
-				showAlert('数据写入失败！', 'error')
-			})
-
+			await this.InsertFunction()
 		}catch(error){
 			console.log('err',error)
 			showAlert('模型调用失败！', 'error')
 		}
 	},
+	//保存数据库
+	async InsertFunction(){
+		const params = {
+			nowTime: Math.floor(Date.now() / 1000)
+		}
+		try{
+			const res = await InsertTriage.run(params)
+			showAlert('数据保存成功！', 'success')
+		}catch(error){
+			showAlert('数据写入失败！', 'error')
+		}
+	}
 }
