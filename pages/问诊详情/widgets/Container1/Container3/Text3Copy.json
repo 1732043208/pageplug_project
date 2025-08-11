@@ -22,11 +22,12 @@
     "dynamicBindingPathList": [
         {"key": "truncateButtonColor"},
         {"key": "fontFamily"},
-        {"key": "borderRadius"}
+        {"key": "borderRadius"},
+        {"key": "text"}
     ],
     "shouldTruncate": false,
     "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
-    "text": "建议转入神经内科进行进一步检查和诊断。症状表现符合紧张性头痛特征，需要进行详细问诊和必要的检查以明确诊断。",
+    "text": "{{InquiryDetail.triageInfo.ai_response}}",
     "key": "bgtx86yu7w",
     "isDeprecated": false,
     "rightColumn": 56,

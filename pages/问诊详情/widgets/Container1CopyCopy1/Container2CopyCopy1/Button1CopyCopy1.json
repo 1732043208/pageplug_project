@@ -21,12 +21,12 @@
     "animateLoading": false,
     "parentColumnSpace": 22.322265625,
     "dynamicTriggerPathList": [{"key": "onClick"}],
-    "leftColumn": 59,
+    "leftColumn": 60,
     "dynamicBindingPathList": [
         {"key": "buttonColor"},
         {"key": "borderRadius"}
     ],
-    "text": "重新生成",
+    "text": "生成",
     "isDisabled": false,
     "key": "snedvsv5zq",
     "isDeprecated": false,

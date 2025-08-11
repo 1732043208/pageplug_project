@@ -46,25 +46,24 @@ export default {
 			...this.filesList
 		]
 		console.log('ssss',Commom.apiSearchContent )
+
 		try{
 			const res = await completions.run()
 			console.log(res)
 			this.answer.text = res.choices[0].message.content
-		}catch(error){
-			console.log('err',error)
-			showAlert('模型调用失败！', 'error')
-		}
 
-		try{
 			const params = {
 				nowTime: Math.floor(Date.now() / 1000)
 			}
-			console.log('params',params)
-			await InsertTriage.run(params)
-			showAlert('数据保存成功！', 'success')
+			InsertTriage.run(params).then(res=>{
+				showAlert('数据保存成功！', 'success')
+			}).catch(e=>{
+				showAlert('数据写入失败！', 'error')
+			})
+
 		}catch(error){
-			showAlert('数据写入失败！', 'error')
 			console.log('err',error)
+			showAlert('模型调用失败！', 'error')
 		}
 	},
 }

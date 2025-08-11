@@ -6,7 +6,12 @@
     "pluginType": "JS",
     "actions": [],
     "archivedActions": [],
-    "variables": [],
+    "variables": [
+      {
+        "name": "triageInfo",
+        "value": "{}"
+      }
+    ],
     "userPermissions": []
   },
   "id": "问诊详情_InquiryDetail",
