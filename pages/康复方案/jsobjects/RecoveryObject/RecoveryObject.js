@@ -1,6 +1,8 @@
 export default {
 	InputValue : "",   //输入
-	answerValue:"",   //回答
+	answer:{
+		text:''
+	},   //回答
 	filesList:[],  //附件列表
 	prompt:`
 	主述结果：%InquiryMainResults%。
@@ -54,7 +56,7 @@ export default {
 		if(!InquiryMainResults) return showAlert('请先执行问诊步骤！')
 		console.log('InquiryMainResults',InquiryMainResults)
 		// 清空上次回答
-		this.answerValue = ''
+		this.answer.text = ''
 		const params1 = {
 			data:  [
 				{
@@ -69,7 +71,7 @@ export default {
 			// 康复方案
 			const res = await completions.run(params1)
 			console.log('res',res)
-			this.answerValue =  res.choices[0].message.content
+			this.answer.text=  res.choices[0].message.content
 		} catch(err) {
 			showAlert('模型调用失败！')
 		}
