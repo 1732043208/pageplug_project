@@ -12,6 +12,10 @@
         "value": "'medgemma-27b-it'"
       },
       {
+        "name": "model",
+        "value": "'deepseek-chat'"
+      },
+      {
         "name": "apiSearchContent",
         "value": "[]"
       }

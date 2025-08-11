@@ -56,7 +56,12 @@ export default {
 		}
 
 		try{
-			await InsertTriage.run()
+			const params = {
+				nowTime: Math.floor(Date.now() / 1000)
+			}
+			console.log('params',params)
+			await InsertTriage.run(params)
+			showAlert('数据保存成功！', 'success')
 		}catch(error){
 			showAlert('数据写入失败！', 'error')
 			console.log('err',error)

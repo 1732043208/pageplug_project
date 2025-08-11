@@ -1,6 +1,9 @@
 export default {
 	created () {
-		console.log(Date.now())
-		console.log('22',this.versionId)
+		this.getTriageRecoreds()
 	},
+	async getTriageRecoreds(){
+		const res = await triageRecords.run()
+		console.log('res',res)
+	}
 }

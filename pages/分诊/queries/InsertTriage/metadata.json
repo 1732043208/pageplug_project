@@ -18,7 +18,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "INSERT INTO public.\"triage_records\" (\n\t\"record_id\",\n\t\"version_id\",\n\t\"patient_narrative\",\n\t\"ai_response\",\n\t\"created_at\"\n)  VALUES (\n\t'{{global.URL.queryParams.consultation_id}}',\n\t'{{Date.now()}}',\n\t'{{TriageObject.InputValue}}',\n\t'{{TriageObject.answer.text}}',\n\t'{{Date.now()}}',\n);",
+      "body": "INSERT INTO public.\"triage_records\" (\n\t\"record_id\",\n\t\"version_id\",\n\t\"patient_narrative\",\n\t\"ai_response\",\n\t\"created_at\"\n)  VALUES (\n\t'{{global.URL.queryParams.consultation_id}}',\n\t'{{this.params.nowTime}}',\n\t'{{TriageObject.InputValue}}',\n\t'{{TriageObject.answer.text}}',\n\t'{{this.params.nowTime}}'\n)",
       "selfReferencingDataPaths": [],
       "pluginSpecifiedTemplates": [
         {
@@ -36,10 +36,10 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "Date.now()",
       "TriageObject.InputValue",
       "TriageObject.answer.text",
-      "global.URL.queryParams.consultation_id"
+      "global.URL.queryParams.consultation_id",
+      "this.params.nowTime"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,

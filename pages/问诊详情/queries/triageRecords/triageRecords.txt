@@ -12,4 +12,5 @@ SELECT
     tr.created_at AS 创建时间,
     tr.updated_at AS 更新时间
 FROM triage_records tr
+WHERE tr.record_id = '{{global.URL.queryParams.consultation_id}}'
 ORDER BY tr.created_at DESC;

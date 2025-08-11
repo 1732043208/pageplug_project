@@ -18,20 +18,26 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "SELECT \n    tr.record_id,\n    tr.version_id,\n    tr.nurse_id,\n    tr.patient_narrative AS 患者症状描述,\n    tr.triage_suggestion AS 分诊建议,\n    tr.urgency_level AS 紧急程度,\n    tr.ai_response AS AI回答,\n    tr.ai_generated_at AS AI生成时间,\n    tr.attachment_urls AS 附件,\n    tr.details AS 详细信息,\n    tr.created_at AS 创建时间,\n    tr.updated_at AS 更新时间\nFROM triage_records tr\nORDER BY tr.created_at DESC;",
+      "body": "SELECT \n    tr.record_id,\n    tr.version_id,\n    tr.nurse_id,\n    tr.patient_narrative AS 患者症状描述,\n    tr.triage_suggestion AS 分诊建议,\n    tr.urgency_level AS 紧急程度,\n    tr.ai_response AS AI回答,\n    tr.ai_generated_at AS AI生成时间,\n    tr.attachment_urls AS 附件,\n    tr.details AS 详细信息,\n    tr.created_at AS 创建时间,\n    tr.updated_at AS 更新时间\nFROM triage_records tr\nWHERE tr.record_id = '{{global.URL.queryParams.consultation_id}}'\nORDER BY tr.created_at DESC;",
       "selfReferencingDataPaths": [],
       "pluginSpecifiedTemplates": [
         {
-          "value": true
+          "value": false
         }
       ]
     },
     "executeOnLoad": false,
-    "dynamicBindingPathList": [],
+    "dynamicBindingPathList": [
+      {
+        "key": "body"
+      }
+    ],
     "isValid": true,
     "invalids": [],
     "messages": [],
-    "jsonPathKeys": [],
+    "jsonPathKeys": [
+      "global.URL.queryParams.consultation_id"
+    ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],

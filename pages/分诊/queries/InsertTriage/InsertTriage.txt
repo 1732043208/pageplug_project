@@ -6,8 +6,8 @@ INSERT INTO public."triage_records" (
 	"created_at"
 )  VALUES (
 	'{{global.URL.queryParams.consultation_id}}',
-	'{{Date.now()}}',
+	'{{this.params.nowTime}}',
 	'{{TriageObject.InputValue}}',
 	'{{TriageObject.answer.text}}',
-	'{{Date.now()}}',
-);
+	'{{this.params.nowTime}}'
+)
