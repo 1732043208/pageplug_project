@@ -3,7 +3,7 @@
     "boxShadow": "none",
     "mobileBottomRow": 4,
     "widgetName": "Button1CopyCopy",
-    "onClick": "{{navigateTo('检验检查建议', {}, 'SAME_WINDOW');}}",
+    "onClick": "{{navigateTo('检验检查建议', {\n  \"versionId\": InquiryDetail.versionId,\n  \"consultation_id\": global.URL.queryParams.consultation_id\n}, 'SAME_WINDOW');}}",
     "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
     "displayName": "按钮",
     "iconSVG": "/static/media/icon.05d209fafeb13a8569e3b4e97069d9ee.svg",

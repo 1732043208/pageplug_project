@@ -10,10 +10,9 @@ export default {
 	// 分诊
 	async getTriageRecoreds(){
 		const res = await triageRecords.run()
-		console.log('res',res)
+		console.log('getTriageRecoreds',res)
 		if(res.length) {
 			res.forEach(item=>{
-				console.log('sss',moment(item.created_at * 1000).format('YYYY-MM-DD hh:mm:ss'))
 				item.ai_generated_at_format = moment( item.created_at * 1000 ).format('YYYY-MM-DD hh:mm:ss')
 			})
 			this.triageInfo = res[0]
@@ -22,10 +21,9 @@ export default {
 	// 问诊
 	async getInquiryRecords(){
 		const res = await InquiryRecords.run()
-		console.log('res',res)
+		console.log('getInquiryRecords',res)
 		if(res.length) {
 			res.forEach(item=>{
-				console.log('sss',moment(item.created_at * 1000).format('YYYY-MM-DD hh:mm:ss'))
 				item.ai_generated_at_format = moment( item.created_at * 1000 ).format('YYYY-MM-DD hh:mm:ss')
 			})
 			this.inquiryInfo = res[0]
