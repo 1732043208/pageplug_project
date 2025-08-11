@@ -63,7 +63,7 @@ export default {
 	//保存数据库
 	async	InsertFunction(){
 		const params = {
-			nowTime: Math.floor(Date.now() / 1000)
+			nowTime	: Math.floor(Date.now() / 1000)
 		}
 		try{
 			const res = await InsertInquiry.run(params)

@@ -7,8 +7,8 @@ INSERT INTO public."interview_records" (
 )
   VALUES (
 		'{{global.URL.queryParams.consultation_id}}',
-		'{{Date.now()}}',
+		'{{this.params.nowTime}}',
 		'{{InquiryObject.InputValue}}',
 		'{{InquiryObject.answer.text}}',
-		'{{Date.now()}}',
-	);
+		'{{this.params.nowTime}}'
+	)

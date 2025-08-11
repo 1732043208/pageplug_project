@@ -10,6 +10,10 @@
       {
         "name": "triageInfo",
         "value": "{}"
+      },
+      {
+        "name": "inquiryInfo",
+        "value": "{}"
       }
     ],
     "userPermissions": []

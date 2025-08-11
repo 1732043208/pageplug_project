@@ -13,7 +13,7 @@
           "detachFromLayout": true,
           "widgetId": "0",
           "topRow": 0,
-          "bottomRow": 2150,
+          "bottomRow": 2340,
           "containerStyle": "none",
           "snapRows": 95,
           "parentRowSpace": 1,
@@ -35,7 +35,7 @@
               "confirmBeforeExecute": false,
               "pluginType": "JS",
               "jsonPathKeys": [
-                "function () {\n  InquiryDetail.getTriageRecoreds();\n}"
+                "function () {\n  InquiryDetail.getTriageRecoreds();\n  InquiryDetail.getInquiryRecords();\n}"
               ],
               "timeoutInMillisecond": 10000
             }

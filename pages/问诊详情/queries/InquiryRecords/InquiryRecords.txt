@@ -1,0 +1,10 @@
+SELECT 
+    tr.record_id,
+    tr.version_id,
+    tr.chief_complaint,
+    tr.ai_response,
+    tr.created_at,
+    tr.updated_at
+FROM interview_records tr
+WHERE tr.record_id = '{{global.URL.queryParams.consultation_id}}'
+ORDER BY tr.created_at DESC;
