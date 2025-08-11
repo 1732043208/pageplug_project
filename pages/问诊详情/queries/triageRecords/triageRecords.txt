@@ -1,0 +1,15 @@
+SELECT 
+    tr.record_id,
+    tr.version_id,
+    tr.nurse_id,
+    tr.patient_narrative AS 患者症状描述,
+    tr.triage_suggestion AS 分诊建议,
+    tr.urgency_level AS 紧急程度,
+    tr.ai_response AS AI回答,
+    tr.ai_generated_at AS AI生成时间,
+    tr.attachment_urls AS 附件,
+    tr.details AS 详细信息,
+    tr.created_at AS 创建时间,
+    tr.updated_at AS 更新时间
+FROM triage_records tr
+ORDER BY tr.created_at DESC;

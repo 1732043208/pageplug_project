@@ -12,8 +12,8 @@
         "value": "\"\""
       },
       {
-        "name": "answerValue",
-        "value": "\"\""
+        "name": "answer",
+        "value": "{\n  treatContent: '',\n  medicationContent: ''\n}"
       },
       {
         "name": "filesList",

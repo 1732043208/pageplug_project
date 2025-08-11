@@ -1,6 +1,6 @@
 export default {
 	InputValue : "",   //输入
-	answerValue:"",   //回答
+	answer:{text:''},   //回答
 	filesList:[],  //附件列表
 	prompt:`
 	主述结果：%InquiryMainResults%。
@@ -53,7 +53,7 @@ export default {
 		const text = this.promptSplicing(InquiryMainResults,InspectionAdvice)
 		console.log('prompt内容：', text)
 		//清空上次的回答
-		this.answerValue = ''
+		this.answer.text = ''
 		Commom.apiSearchContent = [
 			{type:'text',text},
 			...this.filesList
@@ -61,9 +61,9 @@ export default {
 		console.log(Commom.apiSearchContent)
 		try{
 			const res = await completions.run()
-			this.answerValue = res.choices[0].message.content
+			this.answer.text = res.choices[0].message.content
 			console.log('this.answerValue',this.answerValue)
-			storeValue('DiagnosisAdvice',this.answerValue)
+			storeValue('DiagnosisAdvice',this.answer)
 		}catch(error){
 			console.log('err',error)
 			showAlert('模型调用失败！', 'error')

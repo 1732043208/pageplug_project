@@ -1,7 +1,6 @@
 export default {
 	created () {
-		Consultation.run().then(res=>{
-			console.log('res',res)
-		})
+		console.log(Date.now())
+		console.log('22',this.versionId)
 	},
 }

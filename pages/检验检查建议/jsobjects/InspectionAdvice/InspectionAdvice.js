@@ -1,6 +1,6 @@
 export default {
 	InputValue : "",   //输入
-	answerValue:"",   //回答
+	answer:{text:''},   //回答
 	filesList:[], //附件列表
 	prompt:`
 	患者主述：%InquiryMainResults%。
@@ -43,7 +43,7 @@ export default {
 		const InquiryMainResults = global.store.InquiryMainResults
 		if(!InquiryMainResults) return showAlert('请先执行问诊步骤！')
 		//清空上次的回答
-		this.answerValue = ''
+		this.answer.text = ''
 		const text = this.promptSplicing(InquiryMainResults)
 		console.log('prompt内容：', text)
 		Commom.apiSearchContent = [
@@ -54,7 +54,7 @@ export default {
 		try{
 			const res = await completions.run()
 			console.log('res',res)
-			this.answerValue = res.choices[0].message.content
+			this.answer.text = res.choices[0].message.content
 			storeValue('InspectionAdvice',this.answerValue)
 		}catch(error){
 			console.log('err',error)

@@ -54,5 +54,12 @@ export default {
 			console.log('err',error)
 			showAlert('模型调用失败！', 'error')
 		}
+
+		try{
+			await InsertTriage.run()
+		}catch(error){
+			showAlert('数据写入失败！', 'error')
+			console.log('err',error)
+		}
 	},
 }

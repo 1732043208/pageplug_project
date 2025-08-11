@@ -1,6 +1,9 @@
 export default {
 	InputValue : "",   //输入
-	answerValue:"",   //回答
+	answer:{
+		treatContent: '',
+		medicationContent: ''
+	},   //回答
 	filesList:[],  //附件列表
 	treatContent:'', //治疗措施
 	medicationContent:'',//用药
@@ -57,7 +60,8 @@ export default {
 		if(!InquiryMainResults) return showAlert('请先执行问诊步骤！')
 		console.log('InquiryMainResults',InquiryMainResults)
 		// 清空上次回答
-		this.answerValue = ''
+		this.answer.treatContent = ''
+		this.answer.medicationContent = ''
 
 		// 治疗措施
 		const params1 = {
@@ -79,24 +83,12 @@ export default {
 				...this.filesList
 			]
 		}
-		// // 治疗措施
-		// completions.run(params1).then(res=>{
-		// console.log('res',res)
-		// this.treatContent =  res.choices[0].message.content
-		// })
-		// 
-		// 
-		// // 用药
-		// completions.run(params2).then(res=>{
-		// console.log('res',res)
-		// this.medicationContent =  res.choices[0].message.content
-		// })
 
 		try{
 			const res= 	await Promise.all([completions.run(params1), completions.run(params2)])
 			console.log('res1',res)
-			this.treatContent =  res[0].choices[0].message.content
-			this.medicationContent =  res[1].choices[0].message.content
+			this.answer.treatContent =  res[0].choices[0].message.content
+			this.answer.medicationContent =  res[1].choices[0].message.content
 		}catch(error){
 			showAlert('模型调用失败！')
 		}

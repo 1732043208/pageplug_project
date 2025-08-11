@@ -1,0 +1,14 @@
+INSERT INTO public."interview_records" (
+	"record_id",
+	"version_id",
+	"chief_complaint",
+	"ai_response",
+	"created_at"
+)
+  VALUES (
+		'{{global.URL.queryParams.consultation_id}}',
+		'{{Date.now()}}',
+		'{{InquiryObject.InputValue}}',
+		'{{InquiryObject.answer.text}}',
+		'{{Date.now()}}',
+	);
