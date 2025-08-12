@@ -64,8 +64,8 @@ export default {
 		try{
 			const uploadFiles = this.filesList.map(item=>item.image_url.url)
 			console.log('uploadFiles',uploadFiles)
-			const uploadResult = 	await  MinIOUpload.run(uploadFiles)
-			console.log('uploadResult',uploadResult)
+			// const uploadResult = 	await  MinIOUpload.run(uploadFiles)
+			// console.log('uploadResult',uploadResult)
 			await InsertTriage.run(params)
 			showAlert('数据保存成功！', 'success')
 		}catch(error){
