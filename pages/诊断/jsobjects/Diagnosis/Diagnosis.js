@@ -64,9 +64,22 @@ export default {
 			this.answer.text = res.choices[0].message.content
 			console.log('this.answerValue',this.answerValue)
 			storeValue('DiagnosisAdvice',this.answer)
+			await this.InsertFunction()
 		}catch(error){
 			console.log('err',error)
 			showAlert('模型调用失败！', 'error')
+		}
+	},
+	//保存数据库
+	async	InsertFunction(){
+		const params = {
+			nowTime	: Math.floor(Date.now() / 1000)
+		}
+		try{
+			const res = await InsertDiagnosis.run(params)
+			showAlert('数据保存成功！', 'success')
+		}catch(error){
+			showAlert('数据写入失败！', 'error')
 		}
 	}
 }

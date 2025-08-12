@@ -22,11 +22,12 @@
     "dynamicBindingPathList": [
         {"key": "truncateButtonColor"},
         {"key": "fontFamily"},
-        {"key": "borderRadius"}
+        {"key": "borderRadius"},
+        {"key": "text"}
     ],
     "shouldTruncate": false,
     "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
-    "text": "头痛持续时间约 2 周，每天都会发作，疼痛强度为中等程度（疼痛评分 5-6 分）。伴有轻微恶心，无呕吐。患者近期工作压力较大，睡眠质量差。",
+    "text": "{{InquiryDetail.DiagnosisInfo.chief_complaint}}",
     "key": "bgtx86yu7w",
     "isDeprecated": false,
     "rightColumn": 56,

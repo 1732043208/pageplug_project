@@ -14,6 +14,14 @@
       {
         "name": "inquiryInfo",
         "value": "{}"
+      },
+      {
+        "name": "InspectionAdviceInfo",
+        "value": "{}"
+      },
+      {
+        "name": "DiagnosisInfo",
+        "value": "{}"
       }
     ],
     "userPermissions": []

@@ -2,7 +2,7 @@
   "pluginType": "DB",
   "pluginId": "postgres-plugin",
   "unpublishedAction": {
-    "name": "InsertInspectionAdvice",
+    "name": "InsertDiagnosis",
     "datasource": {
       "name": "database",
       "pluginId": "postgres-plugin",
@@ -13,12 +13,12 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": "检验检查建议",
+    "pageId": "诊断",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "INSERT INTO public.\"examination_suggestions\" (\n\t\"record_id\",\n\t\"version_id\",\n\t\"chief_complaint\",\n\t\"ai_response\",\n\t\"created_at\"\n)\n  VALUES (\n\t\t'{{global.URL.queryParams.consultation_id}}',\n\t\t'{{this.params.nowTime}}',\n\t\t'{{InspectionAdvice.InputValue}}',\n\t\t'{{InspectionAdvice.answer.text}}',\n\t\t'{{this.params.nowTime}}'\n\t)",
+      "body": "INSERT INTO public.\"diagnosis_results\" (\n\t\"record_id\",\n\t\"version_id\",\n\t\"chief_complaint\",\n\t\"ai_response\",\n\t\"created_at\"\n)\n  VALUES (\n\t\t'{{global.URL.queryParams.consultation_id}}',\n\t\t'{{this.params.nowTime}}',\n\t\t'{{Diagnosis.InputValue}}',\n\t\t'{{Diagnosis.answer.text}}',\n\t\t'{{this.params.nowTime}}'\n\t)",
       "selfReferencingDataPaths": [],
       "pluginSpecifiedTemplates": [
         {
@@ -36,8 +36,8 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "InspectionAdvice.InputValue",
-      "InspectionAdvice.answer.text",
+      "Diagnosis.InputValue",
+      "Diagnosis.answer.text",
       "global.URL.queryParams.consultation_id",
       "this.params.nowTime"
     ],
@@ -45,9 +45,9 @@
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": [],
-    "createdAt": "2025-08-11T03:01:13Z"
+    "createdAt": "2025-08-12T01:37:05Z"
   },
-  "id": "检验检查建议_InsertInspectionAdvice",
+  "id": "诊断_InsertDiagnosis",
   "deleted": false,
-  "gitSyncId": "688984c4f032bd71eea01831_68995cf9ec248529315e34c0"
+  "gitSyncId": "688984c4f032bd71eea01831_689a9ac1ec248529315e34d4"
 }

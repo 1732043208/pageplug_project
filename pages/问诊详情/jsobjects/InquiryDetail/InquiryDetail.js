@@ -1,11 +1,17 @@
 export default {
 	triageInfo:{},  //分诊信息
 	inquiryInfo:{}, //问诊信息
+	InspectionAdviceInfo:{}, //检查检验信息
+	DiagnosisInfo:{}, //诊断信息
 	created () {
 		// 分诊
 		this.getTriageRecoreds()
 		// 问诊
 		this.getInquiryRecords()
+		//检验检查建议
+		this.getInspectionAdviceRecords()
+		// 诊断
+		this.getDiagnosisRecords()
 	},
 	// 分诊
 	async getTriageRecoreds(){
@@ -27,6 +33,28 @@ export default {
 				item.ai_generated_at_format = moment( item.created_at * 1000 ).format('YYYY-MM-DD hh:mm:ss')
 			})
 			this.inquiryInfo = res[0]
+		}
+	},
+	//检验检查建议
+		async getInspectionAdviceRecords(){
+		const res = await InspectionAdviceRecords.run()
+		console.log('getInspectionAdviceRecords',res)
+		if(res.length) {
+			res.forEach(item=>{
+				item.ai_generated_at_format = moment( item.created_at * 1000 ).format('YYYY-MM-DD hh:mm:ss')
+			})
+			this.InspectionAdviceInfo = res[0]
+		}
+	},
+		//诊断
+		async getDiagnosisRecords(){
+		const res = await DiagnosisRecords.run()
+		console.log('getInspectionAdviceRecords',res)
+		if(res.length) {
+			res.forEach(item=>{
+				item.ai_generated_at_format = moment( item.created_at * 1000 ).format('YYYY-MM-DD hh:mm:ss')
+			})
+			this.DiagnosisInfo = res[0]
 		}
 	}
 }
