@@ -27,7 +27,6 @@ export default {
 		files.forEach(item=>{
 			if(item.type.includes("image")) this.filesList.push({type:'image_url',image_url:{url:item.data}})
 		})
-		console.log('filesList', this.filesList)
 	},
 	// 修改输入框内容
 	changeInputValue(value){
@@ -63,9 +62,14 @@ export default {
 			nowTime: Math.floor(Date.now() / 1000)
 		}
 		try{
-			const res = await InsertTriage.run(params)
+			const uploadFiles = this.filesList.map(item=>item.image_url.url)
+			console.log('uploadFiles',uploadFiles)
+			const uploadResult = 	await  MinIOUpload.run(uploadFiles)
+			console.log('uploadResult',uploadResult)
+			await InsertTriage.run(params)
 			showAlert('数据保存成功！', 'success')
 		}catch(error){
+			console.log('error',error)
 			showAlert('数据写入失败！', 'error')
 		}
 	}

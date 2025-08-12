@@ -2,7 +2,7 @@
   "pluginType": "DB",
   "pluginId": "amazons3-plugin",
   "unpublishedAction": {
-    "name": "Query1",
+    "name": "MinIOUpload",
     "datasource": {
       "name": "MinIO",
       "pluginId": "amazons3-plugin",
@@ -21,13 +21,13 @@
       "selfReferencingDataPaths": [],
       "formData": {
         "body": {
-          "data": ""
+          "data": "{{FilePicker1Copy.files[0]}}"
         },
         "bucket": {
           "data": "img"
         },
         "command": {
-          "data": "LIST"
+          "data": "UPLOAD_FILE_FROM_BODY"
         },
         "create": {
           "dataType": {
@@ -46,9 +46,7 @@
               "condition": "AND",
               "children": [
                 {
-                  "condition": "EQ",
-                  "key": "fileName",
-                  "value": "1.jpg"
+                  "condition": "EQ"
                 }
               ]
             }
@@ -72,7 +70,7 @@
           }
         },
         "path": {
-          "data": ""
+          "data": "text"
         },
         "read": {
           "dataType": {
@@ -85,18 +83,24 @@
       }
     },
     "executeOnLoad": false,
-    "dynamicBindingPathList": [],
+    "dynamicBindingPathList": [
+      {
+        "key": "formData.body.data"
+      }
+    ],
     "isValid": true,
     "invalids": [],
     "messages": [],
-    "jsonPathKeys": [],
+    "jsonPathKeys": [
+      "FilePicker1Copy.files[0]"
+    ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": [],
-    "createdAt": "2025-08-08T09:40:11Z"
+    "createdAt": "2025-08-12T07:43:03Z"
   },
-  "id": "分诊_Query1",
+  "id": "分诊_MinIOUpload",
   "deleted": false,
-  "gitSyncId": "688984c4f032bd71eea01831_6895c5fbec248529315e34a7"
+  "gitSyncId": "688984c4f032bd71eea01831_689af087ec248529315e34ec"
 }
