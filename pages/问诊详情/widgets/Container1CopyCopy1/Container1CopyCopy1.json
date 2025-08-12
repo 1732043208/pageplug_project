@@ -77,10 +77,10 @@
     "isLoading": false,
     "mobileTopRow": 2,
     "responsiveBehavior": "fill",
-    "originalTopRow": 163,
+    "originalTopRow": 106,
     "borderRadius": "0.375rem",
     "mobileLeftColumn": 1,
     "maxDynamicHeight": 9000,
-    "originalBottomRow": 195,
+    "originalBottomRow": 138,
     "minDynamicHeight": 10
 }

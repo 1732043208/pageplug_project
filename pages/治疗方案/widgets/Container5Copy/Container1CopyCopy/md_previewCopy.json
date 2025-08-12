@@ -32,7 +32,7 @@
         {"key": "isVisible"}
     ],
     "leftColumn": 0,
-    "defaultModel": "{\n\"content\":\"{{encodeURIComponent(JSON.stringify(TreatObject.medicationContent.text))}}\"\n}",
+    "defaultModel": "{\n\"content\":\"{{encodeURIComponent(JSON.stringify(TreatObject.medicationContent))}}\"\n}",
     "borderWidth": "0",
     "theme": "{{appsmith.theme}}",
     "events": [],

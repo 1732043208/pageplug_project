@@ -1,0 +1,16 @@
+INSERT INTO public."treatment_plans" (
+	"record_id",
+	"version_id",
+	"chief_complaint",
+	"treatment_measures",
+	"medication",
+	"created_at"
+)
+  VALUES (
+		'{{global.URL.queryParams.consultation_id}}',
+		'{{this.params.nowTime}}',
+		'{{TreatObject.InputValue}}',
+		'{{TreatObject.treatContent.text}}',
+		'{{TreatObject.medicationContent.text}}'
+		'{{this.params.nowTime}}'
+	)

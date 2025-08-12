@@ -89,8 +89,21 @@ export default {
 			console.log('res1',res)
 			this.treatContent.text =  res[0].choices[0].message.content
 			this.medicationContent.text =  res[1].choices[0].message.content
+			await this.InsertFunction()
 		}catch(error){
 			showAlert('模型调用失败！')
+		}
+	},
+		//保存数据库
+	async	InsertFunction(){
+		const params = {
+			nowTime	: Math.floor(Date.now() / 1000)
+		}
+		try{
+			const res = await InsertTreat.run(params)
+			showAlert('数据保存成功！', 'success')
+		}catch(error){
+			showAlert('数据写入失败！', 'error')
 		}
 	}
 }

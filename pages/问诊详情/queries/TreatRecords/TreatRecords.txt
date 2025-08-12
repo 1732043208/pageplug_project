@@ -1,0 +1,12 @@
+SELECT 
+    tr.record_id,
+    tr.version_id,
+    tr.chief_complaint,
+    tr.ai_generated_at,
+    tr.treatment_measures,
+		tr.medication,
+    tr.created_at,
+    tr.updated_at
+FROM triage_records tr
+WHERE tr.record_id = '{{global.URL.queryParams.consultation_id}}'
+ORDER BY tr.created_at DESC;

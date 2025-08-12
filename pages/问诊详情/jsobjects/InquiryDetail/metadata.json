@@ -22,6 +22,10 @@
       {
         "name": "DiagnosisInfo",
         "value": "{}"
+      },
+      {
+        "name": "TreatInfo",
+        "value": "{}"
       }
     ],
     "userPermissions": []

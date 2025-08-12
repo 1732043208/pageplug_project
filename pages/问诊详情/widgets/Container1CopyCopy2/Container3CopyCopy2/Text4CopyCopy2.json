@@ -22,11 +22,12 @@
     "dynamicBindingPathList": [
         {"key": "truncateButtonColor"},
         {"key": "fontFamily"},
-        {"key": "borderRadius"}
+        {"key": "borderRadius"},
+        {"key": "text"}
     ],
     "shouldTruncate": false,
     "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
-    "text": "AI 生成时间：2024-01-18 14:30:25 ",
+    "text": "AI 生成时间：{{InquiryDetail.TreatInfo.ai_generated_at_format || ''}}",
     "key": "bgtx86yu7w",
     "isDeprecated": false,
     "rightColumn": 16,
@@ -44,11 +45,11 @@
     "isLoading": false,
     "mobileTopRow": 21,
     "responsiveBehavior": "fill",
-    "originalTopRow": 18,
+    "originalTopRow": 26,
     "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
     "mobileLeftColumn": 0,
     "maxDynamicHeight": 9000,
-    "originalBottomRow": 22,
+    "originalBottomRow": 30,
     "fontSize": "0.875rem",
     "minDynamicHeight": 4
 }
