@@ -4,6 +4,7 @@ export default {
 	InspectionAdviceInfo:{}, //检查检验信息
 	DiagnosisInfo:{}, //诊断信息
 	TreatInfo:{}, //治疗方案
+	recoveryInfo:{}, //康复方案
 	created () {
 		// 分诊
 		this.getTriageRecoreds()
@@ -13,6 +14,10 @@ export default {
 		this.getInspectionAdviceRecords()
 		// 诊断
 		this.getDiagnosisRecords()
+		//治疗方案
+		this.getTreatRecords()
+		//康复方案
+		this.getRecoveryRecords()
 	},
 	// 分诊
 	async getTriageRecoreds(){
@@ -67,6 +72,17 @@ export default {
 				item.ai_generated_at_format = moment( item.created_at * 1000 ).format('YYYY-MM-DD hh:mm:ss')
 			})
 			this.TreatInfo = res[0]
+		}
+	},
+	//康复方案
+	async getRecoveryRecords(){
+		const res = await recoveryRecords.run()
+		console.log('getRecoveryRecords',res)
+		if(res.length) {
+			res.forEach(item=>{
+				item.ai_generated_at_format = moment( item.created_at * 1000 ).format('YYYY-MM-DD hh:mm:ss')
+			})
+			this.recoveryInfo = res[0]
 		}
 	},
 }

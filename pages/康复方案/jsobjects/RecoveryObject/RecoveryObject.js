@@ -72,8 +72,21 @@ export default {
 			const res = await completions.run(params1)
 			console.log('res',res)
 			this.answer.text=  res.choices[0].message.content
+			await this.InsertFunction()
 		} catch(err) {
 			showAlert('模型调用失败！')
+		}
+	},
+			//保存数据库
+	async	InsertFunction(){
+		const params = {
+			nowTime	: Math.floor(Date.now() / 1000)
+		}
+		try{
+			const res = await InsertRecovery.run(params)
+			showAlert('数据保存成功！', 'success')
+		}catch(error){
+			showAlert('数据写入失败！', 'error')
 		}
 	}
 }

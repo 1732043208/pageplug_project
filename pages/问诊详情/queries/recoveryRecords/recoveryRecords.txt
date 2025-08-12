@@ -2,11 +2,9 @@ SELECT
     tr.record_id,
     tr.version_id,
     tr.chief_complaint,
-    tr.ai_generated_at,
-    tr.treatment_measures,
-		tr.medication,
+    tr.ai_response,
     tr.created_at,
     tr.updated_at
-FROM  treatment_plans  tr
+FROM recovery_plans tr
 WHERE tr.record_id = '{{global.URL.queryParams.consultation_id}}'
 ORDER BY tr.created_at DESC;

@@ -7,8 +7,8 @@
         "text",
         "label"
     ],
-    "topRow": 18,
-    "bottomRow": 22,
+    "topRow": 126,
+    "bottomRow": 130,
     "parentRowSpace": 10,
     "type": "TEXT_WIDGET",
     "hideCard": false,
@@ -22,11 +22,12 @@
     "dynamicBindingPathList": [
         {"key": "truncateButtonColor"},
         {"key": "fontFamily"},
-        {"key": "borderRadius"}
+        {"key": "borderRadius"},
+        {"key": "text"}
     ],
     "shouldTruncate": false,
     "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
-    "text": "AI 生成时间：2024-01-18 14:30:25 ",
+    "text": "AI 生成时间：{{InquiryDetail.recoveryInfo.ai_generated_at_format || ''}}",
     "key": "bgtx86yu7w",
     "isDeprecated": false,
     "rightColumn": 16,

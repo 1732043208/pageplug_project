@@ -11,6 +11,6 @@ INSERT INTO public."treatment_plans" (
 		'{{this.params.nowTime}}',
 		'{{TreatObject.InputValue}}',
 		'{{TreatObject.treatContent.text}}',
-		'{{TreatObject.medicationContent.text}}'
+		'{{TreatObject.medicationContent.text}}',
 		'{{this.params.nowTime}}'
 	)

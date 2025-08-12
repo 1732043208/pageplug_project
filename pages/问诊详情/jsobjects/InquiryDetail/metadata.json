@@ -26,6 +26,10 @@
       {
         "name": "TreatInfo",
         "value": "{}"
+      },
+      {
+        "name": "recoveryInfo",
+        "value": "{}"
       }
     ],
     "userPermissions": []

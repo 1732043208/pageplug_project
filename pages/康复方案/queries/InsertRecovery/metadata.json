@@ -2,7 +2,7 @@
   "pluginType": "DB",
   "pluginId": "postgres-plugin",
   "unpublishedAction": {
-    "name": "TreatRecords",
+    "name": "InsertRecovery",
     "datasource": {
       "name": "database",
       "pluginId": "postgres-plugin",
@@ -13,12 +13,12 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": "问诊详情",
+    "pageId": "康复方案",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "SELECT \n    tr.record_id,\n    tr.version_id,\n    tr.chief_complaint,\n    tr.ai_generated_at,\n    tr.treatment_measures,\n\t\ttr.medication,\n    tr.created_at,\n    tr.updated_at\nFROM  treatment_plans  tr\nWHERE tr.record_id = '{{global.URL.queryParams.consultation_id}}'\nORDER BY tr.created_at DESC;",
+      "body": "INSERT INTO public.\"recovery_plans\" (\n\t\"record_id\",\n\t\"version_id\",\n\t\"chief_complaint\",\n\t\"ai_response\",\n\t\"created_at\"\n)\n  VALUES (\n\t\t'{{global.URL.queryParams.consultation_id}}',\n\t\t'{{this.params.nowTime}}',\n\t\t'{{RecoveryObject.InputValue}}',\n\t\t'{{RecoveryObject.answer.text}}',\n\t\t'{{this.params.nowTime}}'\n\t)",
       "selfReferencingDataPaths": [],
       "pluginSpecifiedTemplates": [
         {
@@ -36,15 +36,18 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "global.URL.queryParams.consultation_id"
+      "RecoveryObject.InputValue",
+      "RecoveryObject.answer.text",
+      "global.URL.queryParams.consultation_id",
+      "this.params.nowTime"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": [],
-    "createdAt": "2025-08-12T02:47:49Z"
+    "createdAt": "2025-08-12T05:56:04Z"
   },
-  "id": "问诊详情_TreatRecords",
+  "id": "康复方案_InsertRecovery",
   "deleted": false,
-  "gitSyncId": "688984c4f032bd71eea01831_689aab55ec248529315e34e0"
+  "gitSyncId": "688984c4f032bd71eea01831_689ad774ec248529315e34e4"
 }
