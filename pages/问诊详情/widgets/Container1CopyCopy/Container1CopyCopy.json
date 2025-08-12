@@ -1,5 +1,5 @@
 {
-    "boxShadow": "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
+    "boxShadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
     "mobileBottomRow": 12,
     "widgetName": "Container1CopyCopy",
     "borderColor": "#E0DEDE",
@@ -13,8 +13,8 @@
         "group",
         "container"
     ],
-    "topRow": 152,
-    "bottomRow": 245,
+    "topRow": 156,
+    "bottomRow": 249,
     "parentRowSpace": 10,
     "type": "CONTAINER_WIDGET",
     "hideCard": false,
@@ -78,10 +78,10 @@
     "isLoading": false,
     "mobileTopRow": 2,
     "responsiveBehavior": "fill",
-    "originalTopRow": 152,
+    "originalTopRow": 156,
     "borderRadius": "0.375rem",
     "mobileLeftColumn": 1,
     "maxDynamicHeight": 9000,
-    "originalBottomRow": 245,
+    "originalBottomRow": 249,
     "minDynamicHeight": 10
 }
