@@ -59,7 +59,7 @@
         }
     },
     "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-    "columnUpdatedAt": 1754615674902,
+    "columnUpdatedAt": 1754993026475,
     "primaryColumnId": "consultation_id",
     "columnSizeMap": {
         "task": 245,
@@ -117,7 +117,7 @@
             "allowCellWrapping": false,
             "index": 0,
             "isDiscardVisible": true,
-            "isVisible": true,
+            "isVisible": false,
             "label": "问诊记录ID",
             "fontStyle": "",
             "textColor": "",

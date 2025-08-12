@@ -12,7 +12,7 @@
     "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
     "leftColumn": 0,
     "dynamicBindingPathList": [{"key": "fontFamily"}],
-    "text": "问诊记录",
+    "text": "诊疗记录",
     "labelTextSize": "0.875rem",
     "rightColumn": 54,
     "textAlign": "LEFT",

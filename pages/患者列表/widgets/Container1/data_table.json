@@ -374,7 +374,7 @@
             "isVisible": true,
             "label": "",
             "labelColor": "#FFFFFF",
-            "buttonLabel": "新建问诊",
+            "buttonLabel": "新建诊疗",
             "columnType": "button",
             "thousandSeparator": true,
             "horizontalAlignment": "LEFT",
