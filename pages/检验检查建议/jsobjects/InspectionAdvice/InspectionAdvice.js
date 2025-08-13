@@ -3,6 +3,7 @@ export default {
 	answer:{text:''},   //回答
 	filesList:[], //附件列表
 	uploadFilesList:[], //附件保存列表
+	ImgActive:null, //附件列表高亮索引
 	prompt:`
 	患者主述：%InquiryMainResults%。
 	附言：%InputValue%。
@@ -18,6 +19,10 @@ export default {
 			(text, [pattern, replacement]) => text.replace(new RegExp(pattern), replacement),
 			this.prompt
 		)
+	},
+		// 附件图片预览
+	ImgPreview(index){
+		this.ImgActive = index
 	},
 	// 删除附件列表元素
 	deleteFile(index){

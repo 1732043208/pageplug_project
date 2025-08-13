@@ -24,6 +24,10 @@
         "value": "[]"
       },
       {
+        "name": "ImgActive",
+        "value": "null"
+      },
+      {
         "name": "mainPrompt",
         "value": "`\n\t患者主述：%InputValue%，根据患者主述，把主述分类，并给出类别标题。\n\t要求如下：使用中文回复。\n\t`"
       }

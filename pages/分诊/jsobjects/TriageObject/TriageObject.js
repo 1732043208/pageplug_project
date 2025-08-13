@@ -17,8 +17,8 @@ export default {
 			this.prompt
 		)
 	},
+	// 附件图片预览
 	ImgPreview(index){
-		console.log(index)
 		this.ImgActive = index
 	},
 	// 删除附件列表元素

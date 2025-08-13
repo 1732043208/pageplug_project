@@ -8,6 +8,7 @@ export default {
 	}, //用药回答
 	filesList:[],  //附件列表
 	uploadFilesList:[], //附件保存列表
+	ImgActive:null, //附件列表高亮索引
 	prompt:`
 	主述结果：%InquiryMainResults%。
 	检验检查处方：%InspectionAdvice%
@@ -27,6 +28,10 @@ export default {
 			(text, [pattern, replacement]) => text.replace(new RegExp(pattern), replacement),
 			this.prompt
 		)
+	},
+		// 附件图片预览
+	ImgPreview(index){
+		this.ImgActive = index
 	},
 	// 文件上传
 	async	fileLoad(files){

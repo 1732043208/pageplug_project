@@ -3,6 +3,7 @@ export default {
 	answer:{text:''},   //回答
 	filesList:[],  //附件列表
 	uploadFilesList:[], //附件保存列表
+	ImgActive:null, //附件列表高亮索引
 	prompt:`
 	主述结果：%InquiryMainResults%。
 	检验检查处方：%InspectionAdvice%
@@ -31,6 +32,10 @@ export default {
 			if(item.type.includes("image")) this.filesList.push({type:'image_url',image_url:{url: item.data }})
 		})
 		this.uploadFilesList = files
+	},
+	// 附件图片预览
+	ImgPreview(index){
+		this.ImgActive = index
 	},
 	// 删除附件列表元素
 	deleteFile(index){
@@ -77,7 +82,7 @@ export default {
 	//保存数据库
 	async	InsertFunction(){
 		try{
-				// 附件上传到MinIO
+			// 附件上传到MinIO
 			const uploadResult = 	await  MinIOUpload.run({urls: this.uploadFilesList})
 			console.log('uploadResult',uploadResult)
 
@@ -90,7 +95,7 @@ export default {
 					}
 				})
 			}
-			
+
 			const res = await InsertDiagnosis.run(params)
 			showAlert('数据保存成功！', 'success')
 		}catch(error){

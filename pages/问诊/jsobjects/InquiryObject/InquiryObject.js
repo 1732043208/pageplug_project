@@ -3,6 +3,7 @@ export default {
 	answer: {text: ''},   //主述结果
 	filesList:[], //附件列表
 	uploadFilesList:[], //附件保存列表
+	ImgActive:null, //附件列表高亮索引
 	//主述结果prompt
 	mainPrompt:`
 	患者主述：%InputValue%，根据患者主述，把主述分类，并给出类别标题。
@@ -17,6 +18,10 @@ export default {
 			(text, [pattern, replacement]) => text.replace(new RegExp(pattern), replacement),
 			this.mainPrompt
 		)
+	},
+	// 附件图片预览
+	ImgPreview(index){
+		this.ImgActive = index
 	},
 	// 删除附件列表元素
 	deleteFile(index){
@@ -67,7 +72,7 @@ export default {
 	//保存数据库
 	async	InsertFunction(){
 		try{
-				// 附件上传到MinIO
+			// 附件上传到MinIO
 			const uploadResult = 	await  MinIOUpload.run({urls: this.uploadFilesList})
 			console.log('uploadResult',uploadResult)
 
