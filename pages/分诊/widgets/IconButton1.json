@@ -2,7 +2,7 @@
     "boxShadow": "none",
     "mobileBottomRow": 5,
     "widgetName": "IconButton1",
-    "onClick": "",
+    "onClick": "{{navigateTo('诊疗详情', {\n  \"consultation_id\": global.URL.queryParams.consultation_id\n}, 'SAME_WINDOW');}}",
     "buttonColor": "#231f20",
     "displayName": "图标按钮",
     "iconSVG": "/static/media/icon.b08054586989b185a0801e9a34f8ad49.svg",

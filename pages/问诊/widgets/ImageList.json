@@ -8,7 +8,7 @@
     },
     "isCanvas": false,
     "iconSVG": "/static/media/icon.867bcc8399fa3f897d425d72690b86e4.svg",
-    "topRow": 10,
+    "topRow": 11,
     "deleteClick": "{{InquiryObject.deleteFile(index);}}",
     "type": "CUSTOM_WIDGET",
     "topRowBeforeCollapse": 80,
@@ -38,7 +38,7 @@
         "custom",
         "自定义"
     ],
-    "bottomRow": 21,
+    "bottomRow": 22,
     "parentRowSpace": 10,
     "hideCard": false,
     "mobileRightColumn": 23,
