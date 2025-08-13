@@ -1,0 +1,40 @@
+{
+  "unpublishedCollection": {
+    "name": "InquiryDetail",
+    "pageId": "诊疗详情",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [
+      {
+        "name": "triageInfo",
+        "value": "{}"
+      },
+      {
+        "name": "inquiryInfo",
+        "value": "{}"
+      },
+      {
+        "name": "InspectionAdviceInfo",
+        "value": "{}"
+      },
+      {
+        "name": "DiagnosisInfo",
+        "value": "{}"
+      },
+      {
+        "name": "TreatInfo",
+        "value": "{}"
+      },
+      {
+        "name": "recoveryInfo",
+        "value": "{}"
+      }
+    ],
+    "userPermissions": []
+  },
+  "id": "诊疗详情_InquiryDetail",
+  "deleted": false,
+  "gitSyncId": "688984c4f032bd71eea01831_6892b677ec248529315e33f5"
+}

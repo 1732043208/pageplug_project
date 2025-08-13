@@ -1,0 +1,15 @@
+{
+  "unpublishedCollection": {
+    "name": "JSObject1",
+    "pageId": "患者列表",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [],
+    "userPermissions": []
+  },
+  "id": "患者列表_JSObject1",
+  "deleted": false,
+  "gitSyncId": "688984c4f032bd71eea01831_689be55aec248529315e34fa"
+}

@@ -25,11 +25,11 @@
       "isDefault": false
     },
     {
-      "id": "问诊记录",
+      "id": "诊疗记录",
       "isDefault": true
     },
     {
-      "id": "问诊详情",
+      "id": "诊疗详情",
       "isDefault": false
     },
     {
