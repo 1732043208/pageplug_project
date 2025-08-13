@@ -49,7 +49,7 @@
     "labelTextColor": "#4b5563",
     "key": "094u71u82b",
     "labelTextSize": "1rem",
-    "onTextChanged": "{{InspectionAdvice.changeInputValue(Input1Copy.text);}}",
+    "onTextChanged": "{{RecoveryObject.changeInputValue(Input1Copy.text);}}",
     "isDeprecated": false,
     "rightColumn": 57,
     "widgetId": "1ti53x0zp3",
