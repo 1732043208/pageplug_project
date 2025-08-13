@@ -3,6 +3,7 @@ SELECT
     tr.version_id,
     tr.chief_complaint,
     tr.ai_response,
+		tr.attachment_urls,
     tr.created_at,
     tr.updated_at
 FROM diagnosis_results tr

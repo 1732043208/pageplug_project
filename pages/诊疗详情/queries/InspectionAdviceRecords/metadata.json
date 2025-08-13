@@ -18,7 +18,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "SELECT \n    tr.record_id,\n    tr.version_id,\n    tr.chief_complaint,\n    tr.ai_response,\n    tr.created_at,\n    tr.updated_at\nFROM examination_suggestions tr\nWHERE tr.record_id = '{{global.URL.queryParams.consultation_id}}'\nORDER BY tr.created_at DESC;",
+      "body": "SELECT \n    tr.record_id,\n    tr.version_id,\n    tr.chief_complaint,\n    tr.ai_response,\n\t\ttr.attachment_urls,\n    tr.created_at,\n    tr.updated_at\nFROM examination_suggestions tr\nWHERE tr.record_id = '{{global.URL.queryParams.consultation_id}}'\nORDER BY tr.created_at DESC;",
       "selfReferencingDataPaths": [],
       "pluginSpecifiedTemplates": [
         {

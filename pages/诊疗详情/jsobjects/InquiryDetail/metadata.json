@@ -9,27 +9,27 @@
     "variables": [
       {
         "name": "triageInfo",
-        "value": "{}"
+        "value": "null"
       },
       {
         "name": "inquiryInfo",
-        "value": "{}"
+        "value": "null"
       },
       {
         "name": "InspectionAdviceInfo",
-        "value": "{}"
+        "value": "null"
       },
       {
         "name": "DiagnosisInfo",
-        "value": "{}"
+        "value": "null"
       },
       {
         "name": "TreatInfo",
-        "value": "{}"
+        "value": "null"
       },
       {
         "name": "recoveryInfo",
-        "value": "{}"
+        "value": "null"
       }
     ],
     "userPermissions": []

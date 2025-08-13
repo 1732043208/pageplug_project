@@ -3,6 +3,7 @@ SELECT
     tr.version_id,
     tr.chief_complaint,
     tr.ai_generated_at,
+		tr.attachment_urls,
     tr.treatment_measures,
 		tr.medication,
     tr.created_at,

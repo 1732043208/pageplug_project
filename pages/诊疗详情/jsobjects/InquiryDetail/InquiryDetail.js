@@ -1,10 +1,10 @@
 export default {
-	triageInfo:{},  //分诊信息
-	inquiryInfo:{}, //问诊信息
-	InspectionAdviceInfo:{}, //检查检验信息
-	DiagnosisInfo:{}, //诊断信息
-	TreatInfo:{}, //治疗方案
-	recoveryInfo:{}, //康复方案
+	triageInfo:null,  //分诊信息
+	inquiryInfo:null, //问诊信息
+	InspectionAdviceInfo:null, //检查检验信息
+	DiagnosisInfo:null, //诊断信息
+	TreatInfo:null, //治疗方案
+	recoveryInfo:null, //康复方案
 	created () {
 		// 分诊
 		this.getTriageRecoreds()
