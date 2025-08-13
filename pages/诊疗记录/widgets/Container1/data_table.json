@@ -275,7 +275,7 @@
         "customColumn1": {
             "boxShadow": "{{data_table.processedTableData.map((currentRow, currentIndex) => ( 'none'))}}",
             "computedValue": "",
-            "onClick": "{{navigateTo('问诊详情', {\n\t\"consultation_id\": currentRow.consultation_id,\n\t\"patient_id\":currentRow.patient_id\n}, 'SAME_WINDOW');}}",
+            "onClick": "{{navigateTo('诊疗详情', {\n  \"consultation_id\": currentRow.consultation_id,\n  \"patient_id\": currentRow.patient_id\n}, 'SAME_WINDOW');}}",
             "buttonColor": "{{data_table.processedTableData.map((currentRow, currentIndex) => ( appsmith.theme.colors.primaryColor))}}",
             "isEditable": false,
             "notation": "standard",

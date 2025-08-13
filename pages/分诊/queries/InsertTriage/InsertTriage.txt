@@ -3,11 +3,13 @@ INSERT INTO public."triage_records" (
 	"version_id",
 	"patient_narrative",
 	"ai_response",
+	"attachment_urls",
 	"created_at"
 )  VALUES (
 	'{{global.URL.queryParams.consultation_id}}',
 	'{{this.params.nowTime}}',
 	'{{TriageObject.InputValue}}',
 	'{{TriageObject.answer.text}}',
+	'{{this.params.attachment_urls}}',
 	'{{this.params.nowTime}}'
 )

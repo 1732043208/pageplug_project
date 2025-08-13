@@ -2,7 +2,7 @@
   "pluginType": "DB",
   "pluginId": "amazons3-plugin",
   "unpublishedAction": {
-    "name": "MinIOUpload",
+    "name": "MinIOUploadCopyCopyCopy",
     "datasource": {
       "name": "MinIO",
       "pluginId": "amazons3-plugin",
@@ -13,7 +13,7 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": "分诊",
+    "pageId": "治疗方案",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
@@ -98,9 +98,9 @@
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": [],
-    "createdAt": "2025-08-13T03:59:56Z"
+    "createdAt": "2025-08-13T03:54:24Z"
   },
-  "id": "分诊_MinIOUpload",
+  "id": "治疗方案_MinIOUploadCopyCopyCopy",
   "deleted": false,
-  "gitSyncId": "688984c4f032bd71eea01831_689c0dbcec248529315e350b"
+  "gitSyncId": "688984c4f032bd71eea01831_689c0c70ec248529315e3505"
 }

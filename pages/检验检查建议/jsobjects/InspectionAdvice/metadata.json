@@ -20,6 +20,10 @@
         "value": "[]"
       },
       {
+        "name": "uploadFilesList",
+        "value": "[]"
+      },
+      {
         "name": "prompt",
         "value": "`\n\t患者主述：%InquiryMainResults%。\n\t附言：%InputValue%。\n\t根据主述结果，开出检验/检查处方。\n\t`"
       }

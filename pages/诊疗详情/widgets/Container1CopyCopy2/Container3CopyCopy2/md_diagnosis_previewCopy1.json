@@ -18,7 +18,7 @@
         "自定义"
     ],
     "topRow": 226,
-    "bottomRow": 361,
+    "bottomRow": 230,
     "parentRowSpace": 10,
     "type": "CUSTOM_WIDGET",
     "hideCard": false,
@@ -59,6 +59,6 @@
     "borderRadius": "0.375rem",
     "mobileLeftColumn": 19,
     "maxDynamicHeight": 9000,
-    "originalBottomRow": 361,
+    "originalBottomRow": 230,
     "minDynamicHeight": 4
 }

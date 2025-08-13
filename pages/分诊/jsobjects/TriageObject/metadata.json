@@ -20,6 +20,10 @@
         "value": "[]"
       },
       {
+        "name": "uploadFilesList",
+        "value": "[]"
+      },
+      {
         "name": "prompt",
         "value": "`\n\t患者叙述：%InputValue%，根据患者叙述，推荐一个最合适的科室\n\t`"
       }

@@ -13,7 +13,7 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": "分诊",
+    "pageId": "问诊",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
@@ -98,9 +98,9 @@
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": [],
-    "createdAt": "2025-08-13T03:59:56Z"
+    "createdAt": "2025-08-12T07:43:03Z"
   },
-  "id": "分诊_MinIOUpload",
+  "id": "问诊_MinIOUpload",
   "deleted": false,
-  "gitSyncId": "688984c4f032bd71eea01831_689c0dbcec248529315e350b"
+  "gitSyncId": "688984c4f032bd71eea01831_689af087ec248529315e34ec"
 }

@@ -2,6 +2,7 @@ export default {
 	InputValue : "",   //输入
 	answer: {text:``},   //回答
 	filesList:[], //附件列表
+	uploadFilesList:[], //附件保存列表
 	prompt:`
 	患者叙述：%InputValue%，根据患者叙述，推荐一个最合适的科室
 	`,
@@ -19,14 +20,18 @@ export default {
 	deleteFile(index){
 		console.log(index)
 		this.filesList.splice(index, 1);
+		this.uploadFilesList.splice(index,1)
 	},
 	// 文件上传
-	fileLoad(files){
+	async	fileLoad(files){
 		this.filesList = []
 		console.log('files',files)
 		files.forEach(item=>{
-			if(item.type.includes("image")) this.filesList.push({type:'image_url',image_url:{url:item.data}})
+			const names = item.name.split('.') 
+			item.name = names[0] + '_' + Date.now() + '.' +names[1]
+			if(item.type.includes("image")) this.filesList.push({type:'image_url',image_url:{url: item.data }})
 		})
+		this.uploadFilesList = files
 	},
 	// 修改输入框内容
 	changeInputValue(value){
@@ -58,19 +63,29 @@ export default {
 	},
 	//保存数据库
 	async InsertFunction(){
-		const params = {
-			nowTime: Math.floor(Date.now() / 1000)
-		}
 		try{
-			const uploadFiles = this.filesList.map(item=>item.image_url.url)
-			console.log('uploadFiles',uploadFiles)
-			// const uploadResult = 	await  MinIOUpload.run(uploadFiles)
-			// console.log('uploadResult',uploadResult)
+			// 附件上传到MinIO
+			const uploadResult = 	await  MinIOUpload.run({urls: this.uploadFilesList})
+			console.log('uploadResult',uploadResult)
+
+			const params = {
+				nowTime: Math.floor(Date.now() / 1000),
+				attachment_urls: uploadResult.urls.map(item=>{
+					return {
+						url: item,
+						fileType: item.split('.').pop()
+					}
+				})
+			}
 			await InsertTriage.run(params)
 			showAlert('数据保存成功！', 'success')
 		}catch(error){
 			console.log('error',error)
 			showAlert('数据写入失败！', 'error')
 		}
+	},
+	//返回
+	goBack(){
+		console.log('11',window.history)
 	}
 }
