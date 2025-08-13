@@ -15,14 +15,15 @@
     "dynamicBindingPathList": [
         {"key": "theme"},
         {"key": "borderRadius"},
-        {"key": "defaultModel"}
+        {"key": "defaultModel"},
+        {"key": "isVisible"}
     ],
     "leftColumn": 1,
     "events": ["deleteClick"],
     "dynamicHeight": "FIXED",
     "isSearchWildcard": true,
     "bottomRowBeforeCollapse": 22,
-    "isVisible": true,
+    "isVisible": "{{!!InquiryDetail.triageInfo.attachment_urls.length}}",
     "version": 1,
     "tags": ["数据展示类"],
     "isLoading": false,
@@ -30,7 +31,7 @@
     "originalBottomRow": 22,
     "mobileBottomRow": 135,
     "widgetName": "ImageList",
-    "dynamicPropertyPathList": [],
+    "dynamicPropertyPathList": [{"key": "isVisible"}],
     "displayName": "自定义组件(New)",
     "searchTags": [
         "external",

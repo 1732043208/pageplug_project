@@ -3,6 +3,7 @@ export default {
 	answer: {text:``},   //回答
 	filesList:[], //附件列表
 	uploadFilesList:[], //附件保存列表
+	ImgActive:null, //附件列表高亮索引
 	prompt:`
 	患者叙述：%InputValue%，根据患者叙述，推荐一个最合适的科室
 	`,
@@ -15,6 +16,10 @@ export default {
 			(text, [pattern, replacement]) => text.replace(new RegExp(pattern), replacement),
 			this.prompt
 		)
+	},
+	ImgPreview(index){
+		console.log(index)
+		this.ImgActive = index
 	},
 	// 删除附件列表元素
 	deleteFile(index){
