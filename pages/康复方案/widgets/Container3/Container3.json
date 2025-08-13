@@ -24,7 +24,7 @@
     "animateLoading": false,
     "parentColumnSpace": 23.75,
     "dynamicTriggerPathList": [],
-    "leftColumn": 2,
+    "leftColumn": 7,
     "dynamicBindingPathList": [{"key": "borderRadius"}],
     "children": [{
         "mobileBottomRow": 100,
@@ -66,7 +66,7 @@
     "key": "cxbf4iwo4j",
     "backgroundColor": "{{}}",
     "isDeprecated": false,
-    "rightColumn": 19,
+    "rightColumn": 62,
     "dynamicHeight": "AUTO_HEIGHT",
     "widgetId": "u465vjkxcx",
     "containerStyle": "card",

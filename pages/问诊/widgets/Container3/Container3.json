@@ -14,8 +14,8 @@
         "group",
         "container"
     ],
-    "topRow": 81,
-    "bottomRow": 103,
+    "topRow": 82,
+    "bottomRow": 104,
     "parentRowSpace": 10,
     "type": "CONTAINER_WIDGET",
     "hideCard": false,
@@ -24,7 +24,7 @@
     "animateLoading": false,
     "parentColumnSpace": 23.75,
     "dynamicTriggerPathList": [],
-    "leftColumn": 3,
+    "leftColumn": 7,
     "dynamicBindingPathList": [{"key": "borderRadius"}],
     "children": [{
         "mobileBottomRow": 100,
@@ -66,7 +66,7 @@
     "key": "cxbf4iwo4j",
     "backgroundColor": "{{}}",
     "isDeprecated": false,
-    "rightColumn": 20,
+    "rightColumn": 56,
     "dynamicHeight": "AUTO_HEIGHT",
     "widgetId": "kwernskoll",
     "containerStyle": "card",
@@ -79,10 +79,10 @@
     "isLoading": false,
     "mobileTopRow": 87,
     "responsiveBehavior": "fill",
-    "originalTopRow": 81,
+    "originalTopRow": 82,
     "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
     "mobileLeftColumn": 2,
     "maxDynamicHeight": 9000,
-    "originalBottomRow": 103,
+    "originalBottomRow": 104,
     "minDynamicHeight": 10
 }
