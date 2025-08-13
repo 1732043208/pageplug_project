@@ -18,7 +18,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "INSERT INTO public.\"examination_suggestions\" (\n\t\"record_id\",\n\t\"version_id\",\n\t\"chief_complaint\",\n\t\"ai_response\",\n\t\"created_at\"\n)\n  VALUES (\n\t\t'{{global.URL.queryParams.consultation_id}}',\n\t\t'{{this.params.nowTime}}',\n\t\t'{{InspectionAdvice.InputValue}}',\n\t\t'{{InspectionAdvice.answer.text}}',\n\t\t'{{this.params.nowTime}}'\n\t)",
+      "body": "INSERT INTO public.\"examination_suggestions\" (\n\t\"record_id\",\n\t\"version_id\",\n\t\"chief_complaint\",\n\t\"ai_response\",\n\t\"attachment_urls\",\n\t\"created_at\"\n)\n  VALUES (\n\t\t'{{global.URL.queryParams.consultation_id}}',\n\t\t'{{this.params.nowTime}}',\n\t\t'{{InspectionAdvice.InputValue}}',\n\t\t'{{InspectionAdvice.answer.text}}',\n\t\t'{{this.params.attachment_urls}}',\n\t\t'{{this.params.nowTime}}'\n\t)",
       "selfReferencingDataPaths": [],
       "pluginSpecifiedTemplates": [
         {
@@ -39,6 +39,7 @@
       "InspectionAdvice.InputValue",
       "InspectionAdvice.answer.text",
       "global.URL.queryParams.consultation_id",
+      "this.params.attachment_urls",
       "this.params.nowTime"
     ],
     "userSetOnLoad": false,

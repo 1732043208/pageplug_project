@@ -24,12 +24,8 @@
         "value": "[]"
       },
       {
-        "name": "treatContent",
-        "value": "''"
-      },
-      {
-        "name": "medicationContent",
-        "value": "''"
+        "name": "uploadFilesList",
+        "value": "[]"
       },
       {
         "name": "prompt",

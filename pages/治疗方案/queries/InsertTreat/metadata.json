@@ -18,7 +18,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "INSERT INTO public.\"treatment_plans\" (\n\t\"record_id\",\n\t\"version_id\",\n\t\"chief_complaint\",\n\t\"treatment_measures\",\n\t\"medication\",\n\t\"created_at\"\n)\n  VALUES (\n\t\t'{{global.URL.queryParams.consultation_id}}',\n\t\t'{{this.params.nowTime}}',\n\t\t'{{TreatObject.InputValue}}',\n\t\t'{{TreatObject.treatContent.text}}',\n\t\t'{{TreatObject.medicationContent.text}}',\n\t\t'{{this.params.nowTime}}'\n\t)",
+      "body": "INSERT INTO public.\"treatment_plans\" (\n\t\"record_id\",\n\t\"version_id\",\n\t\"chief_complaint\",\n\t\"treatment_measures\",\n\t\"medication\",\n\t\"attachment_urls\",\n\t\"created_at\"\n)\n  VALUES (\n\t\t'{{global.URL.queryParams.consultation_id}}',\n\t\t'{{this.params.nowTime}}',\n\t\t'{{TreatObject.InputValue}}',\n\t\t'{{TreatObject.treatContent.text}}',\n\t\t'{{TreatObject.medicationContent.text}}',\n\t\t'{{this.params.attachment_urls}}',\n\t\t'{{this.params.nowTime}}'\n\t)",
       "selfReferencingDataPaths": [],
       "pluginSpecifiedTemplates": [
         {
@@ -40,6 +40,7 @@
       "TreatObject.medicationContent.text",
       "TreatObject.treatContent.text",
       "global.URL.queryParams.consultation_id",
+      "this.params.attachment_urls",
       "this.params.nowTime"
     ],
     "userSetOnLoad": false,

@@ -3,6 +3,7 @@ INSERT INTO public."diagnosis_results" (
 	"version_id",
 	"chief_complaint",
 	"ai_response",
+	"attachment_urls",
 	"created_at"
 )
   VALUES (
@@ -10,5 +11,6 @@ INSERT INTO public."diagnosis_results" (
 		'{{this.params.nowTime}}',
 		'{{Diagnosis.InputValue}}',
 		'{{Diagnosis.answer.text}}',
+		'{{this.params.attachment_urls}}',
 		'{{this.params.nowTime}}'
 	)

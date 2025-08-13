@@ -76,10 +76,21 @@ export default {
 	},
 	//保存数据库
 	async	InsertFunction(){
-		const params = {
-			nowTime	: Math.floor(Date.now() / 1000)
-		}
 		try{
+				// 附件上传到MinIO
+			const uploadResult = 	await  MinIOUpload.run({urls: this.uploadFilesList})
+			console.log('uploadResult',uploadResult)
+
+			const params = {
+				nowTime: Math.floor(Date.now() / 1000),
+				attachment_urls: uploadResult.urls.map(item=>{
+					return {
+						url: item,
+						fileType: item.split('.').pop()
+					}
+				})
+			}
+			
 			const res = await InsertDiagnosis.run(params)
 			showAlert('数据保存成功！', 'success')
 		}catch(error){

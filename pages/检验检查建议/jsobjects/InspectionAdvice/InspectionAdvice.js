@@ -69,7 +69,7 @@ export default {
 	//保存数据库
 	async	InsertFunction(){
 		try{
-						// 附件上传到MinIO
+			// 附件上传到MinIO
 			const uploadResult = 	await  MinIOUpload.run({urls: this.uploadFilesList})
 			console.log('uploadResult',uploadResult)
 
@@ -82,7 +82,7 @@ export default {
 					}
 				})
 			}
-			
+
 			const res = await InsertInspectionAdvice.run(params)
 			showAlert('数据保存成功！', 'success')
 		}catch(error){

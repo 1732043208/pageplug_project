@@ -4,6 +4,7 @@ INSERT INTO public."treatment_plans" (
 	"chief_complaint",
 	"treatment_measures",
 	"medication",
+	"attachment_urls",
 	"created_at"
 )
   VALUES (
@@ -12,5 +13,6 @@ INSERT INTO public."treatment_plans" (
 		'{{TreatObject.InputValue}}',
 		'{{TreatObject.treatContent.text}}',
 		'{{TreatObject.medicationContent.text}}',
+		'{{this.params.attachment_urls}}',
 		'{{this.params.nowTime}}'
 	)

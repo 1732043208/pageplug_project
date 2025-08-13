@@ -4,6 +4,7 @@ export default {
 		text:''
 	},   //回答
 	filesList:[],  //附件列表
+	uploadFilesList:[], //附件保存列表
 	prompt:`
 	主述结果：%InquiryMainResults%。
 	检验检查处方：%InspectionAdvice%
@@ -23,19 +24,22 @@ export default {
 			this.prompt
 		)
 	},
-	// 上传附件
-	fileLoad(files){
+	// 文件上传
+	async	fileLoad(files){
 		this.filesList = []
 		console.log('files',files)
 		files.forEach(item=>{
-			if(item.type.includes("image")) this.filesList.push({type:'image_url',image_url:{url:item.data}})
+			const names = item.name.split('.') 
+			item.name = names[0] + '_' + Date.now() + '.' +names[1]
+			if(item.type.includes("image")) this.filesList.push({type:'image_url',image_url:{url: item.data }})
 		})
-		console.log('filesList', this.filesList)
+		this.uploadFilesList = files
 	},
 	// 删除附件列表元素
 	deleteFile(index){
 		console.log(index)
 		this.filesList.splice(index, 1);
+		this.uploadFilesList.splice(index,1)
 	},
 	// 修改输入框内容
 	changeInputValue(value){
@@ -77,12 +81,23 @@ export default {
 			showAlert('模型调用失败！')
 		}
 	},
-			//保存数据库
+	//保存数据库
 	async	InsertFunction(){
-		const params = {
-			nowTime	: Math.floor(Date.now() / 1000)
-		}
 		try{
+				// 附件上传到MinIO
+			const uploadResult = 	await  MinIOUpload.run({urls: this.uploadFilesList})
+			console.log('uploadResult',uploadResult)
+
+			const params = {
+				nowTime: Math.floor(Date.now() / 1000),
+				attachment_urls: uploadResult.urls.map(item=>{
+					return {
+						url: item,
+						fileType: item.split('.').pop()
+					}
+				})
+			}
+			
 			const res = await InsertRecovery.run(params)
 			showAlert('数据保存成功！', 'success')
 		}catch(error){

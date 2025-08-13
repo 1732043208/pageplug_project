@@ -2,7 +2,7 @@
   "pluginType": "DB",
   "pluginId": "amazons3-plugin",
   "unpublishedAction": {
-    "name": "MinIOUploadCopyCopyCopyCopy",
+    "name": "MinIOUpload",
     "datasource": {
       "name": "MinIO",
       "pluginId": "amazons3-plugin",
@@ -100,7 +100,7 @@
     "userPermissions": [],
     "createdAt": "2025-08-13T03:54:28Z"
   },
-  "id": "康复方案_MinIOUploadCopyCopyCopyCopy",
+  "id": "康复方案_MinIOUpload",
   "deleted": false,
   "gitSyncId": "688984c4f032bd71eea01831_689c0c74ec248529315e3507"
 }
