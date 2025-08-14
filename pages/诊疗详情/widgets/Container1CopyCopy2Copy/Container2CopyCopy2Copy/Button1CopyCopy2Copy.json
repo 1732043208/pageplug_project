@@ -3,7 +3,7 @@
     "boxShadow": "none",
     "mobileBottomRow": 4,
     "widgetName": "Button1CopyCopy2Copy",
-    "onClick": "{{navigateTo('康复方案', {\n  \"versionId\": InquiryDetail.versionId,\n  \"consultation_id\": global.URL.queryParams.consultation_id\n}, 'SAME_WINDOW');}}",
+    "onClick": "{{navigateTo('康复方案', {\n  \"versionId\": InquiryDetail.versionId,\n  \"consultation_id\": global.URL.queryParams.consultation_id\n}, 'SAME_WINDOW');\nstoreValue('InquiryMainResults', InquiryDetail.inquiryInfo.ai_response);\nstoreValue('InspectionAdvice', InquiryDetail.InspectionAdviceInfo.ai_response);\nstoreValue('DiagnosisAdvice', InquiryDetail.DiagnosisInfo.ai_response);}}",
     "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
     "displayName": "按钮",
     "iconSVG": "/static/media/icon.05d209fafeb13a8569e3b4e97069d9ee.svg",
