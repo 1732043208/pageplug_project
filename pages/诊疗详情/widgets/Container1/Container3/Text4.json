@@ -27,7 +27,7 @@
     ],
     "shouldTruncate": false,
     "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
-    "text": "AI 生成时间：{{InquiryDetail.triageInfo.ai_generated_at_format ||  ''}}",
+    "text": "AI 生成时间：{{(InquiryDetail.triageInfo && InquiryDetail.triageInfo.ai_generated_at_format) ||  ''}}",
     "key": "bgtx86yu7w",
     "isDeprecated": false,
     "rightColumn": 16,

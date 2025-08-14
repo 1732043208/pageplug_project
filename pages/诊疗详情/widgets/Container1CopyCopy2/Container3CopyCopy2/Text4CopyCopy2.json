@@ -7,8 +7,8 @@
         "text",
         "label"
     ],
-    "topRow": 38,
-    "bottomRow": 42,
+    "topRow": 354,
+    "bottomRow": 358,
     "parentRowSpace": 10,
     "type": "TEXT_WIDGET",
     "hideCard": false,
@@ -27,7 +27,7 @@
     ],
     "shouldTruncate": false,
     "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
-    "text": "AI 生成时间：{{InquiryDetail.TreatInfo.ai_generated_at_format || ''}}",
+    "text": "AI 生成时间：{{(InquiryDetail.TreatInfo && InquiryDetail.TreatInfo.ai_generated_at_format) || ''}}",
     "key": "bgtx86yu7w",
     "isDeprecated": false,
     "rightColumn": 16,
@@ -45,11 +45,11 @@
     "isLoading": false,
     "mobileTopRow": 21,
     "responsiveBehavior": "fill",
-    "originalTopRow": 235,
+    "originalTopRow": 344,
     "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
     "mobileLeftColumn": 0,
     "maxDynamicHeight": 9000,
-    "originalBottomRow": 239,
+    "originalBottomRow": 348,
     "fontSize": "0.875rem",
     "minDynamicHeight": 4
 }

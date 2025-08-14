@@ -7,8 +7,8 @@
         "text",
         "label"
     ],
-    "topRow": 30,
-    "bottomRow": 34,
+    "topRow": 206,
+    "bottomRow": 210,
     "parentRowSpace": 10,
     "type": "TEXT_WIDGET",
     "hideCard": false,
@@ -27,7 +27,7 @@
     ],
     "shouldTruncate": false,
     "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
-    "text": "AI 生成时间：{{InquiryDetail.DiagnosisInfo.ai_generated_at_format || ''}}",
+    "text": "AI 生成时间：{{(InquiryDetail.DiagnosisInfo && InquiryDetail.DiagnosisInfo.ai_generated_at_format) || ''}}",
     "key": "bgtx86yu7w",
     "isDeprecated": false,
     "rightColumn": 16,
@@ -45,11 +45,11 @@
     "isLoading": false,
     "mobileTopRow": 21,
     "responsiveBehavior": "fill",
-    "originalTopRow": 148,
+    "originalTopRow": 206,
     "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
     "mobileLeftColumn": 0,
     "maxDynamicHeight": 9000,
-    "originalBottomRow": 152,
+    "originalBottomRow": 210,
     "fontSize": "0.875rem",
     "minDynamicHeight": 4
 }
