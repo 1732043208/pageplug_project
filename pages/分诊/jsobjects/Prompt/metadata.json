@@ -1,0 +1,24 @@
+{
+  "unpublishedCollection": {
+    "name": "Prompt",
+    "pageId": "分诊",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [
+      {
+        "name": "knowledgePrompt",
+        "value": "``"
+      },
+      {
+        "name": "modelPrompt",
+        "value": "`\n\t患者叙述：%InputValue%，根据患者叙述，推荐一个最合适的科室\n\t`"
+      }
+    ],
+    "userPermissions": []
+  },
+  "id": "分诊_Prompt",
+  "deleted": false,
+  "gitSyncId": "689c384ab966d95ca75eb565_689d795d2ae1de0ef9d775ec"
+}

@@ -4,11 +4,6 @@ export default {
 	filesList:[], //附件列表
 	uploadFilesList:[], //附件保存列表
 	ImgActive:null, //附件列表高亮索引
-	//主述结果prompt
-	mainPrompt:`
-	患者主述：%InputValue%，根据患者主述，把主述分类，并给出类别标题。
-	要求如下：使用中文回复。
-	`, 
 	// prompt拼接替换
 	promptSplicing(){
 		const replacements = {
@@ -16,7 +11,7 @@ export default {
 		}
 		return Object.entries(replacements).reduce(
 			(text, [pattern, replacement]) => text.replace(new RegExp(pattern), replacement),
-			this.mainPrompt
+			Prompt.modelPrompt
 		)
 	},
 	// 附件图片预览

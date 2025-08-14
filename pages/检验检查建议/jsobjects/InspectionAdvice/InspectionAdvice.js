@@ -4,11 +4,6 @@ export default {
 	filesList:[], //附件列表
 	uploadFilesList:[], //附件保存列表
 	ImgActive:null, //附件列表高亮索引
-	prompt:`
-	患者主述：%InquiryMainResults%。
-	附言：%InputValue%。
-	根据主述结果，开出检验/检查处方。
-	`,
 	// prompt拼接
 	promptSplicing(InquiryMainResults){
 		const replacements = {
@@ -17,7 +12,7 @@ export default {
 		}
 		return Object.entries(replacements).reduce(
 			(text, [pattern, replacement]) => text.replace(new RegExp(pattern), replacement),
-			this.prompt
+			Prompt.modelPrompt
 		)
 	},
 	// 附件图片预览

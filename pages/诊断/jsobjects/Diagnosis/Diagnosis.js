@@ -4,12 +4,6 @@ export default {
 	filesList:[],  //附件列表
 	uploadFilesList:[], //附件保存列表
 	ImgActive:null, //附件列表高亮索引
-	prompt:`
-	主述结果：%InquiryMainResults%。
-	检验检查处方：%InspectionAdvice%
-	附言：%InputValue%。
-	根据主述结果、检验检查处方、以及附言，给出诊断结果。
-	`,
 	//prompt拼接
 	promptSplicing(InquiryMainResults,InspectionAdvice){
 		const replacements = {
@@ -19,7 +13,7 @@ export default {
 		}
 		return Object.entries(replacements).reduce(
 			(text, [pattern, replacement]) => text.replace(new RegExp(pattern), replacement),
-			this.prompt
+			Prompt.modelPrompt
 		)
 	},
 	// 文件上传
@@ -96,7 +90,7 @@ export default {
 
 			const res = await InsertDiagnosis.run(params)
 			showAlert('数据保存成功！', 'success')
-			
+
 			// 等待3秒返回详情页
 			await new Promise((resolve) => setTimeout(resolve, 3000))
 			navigateTo('诊疗详情', {

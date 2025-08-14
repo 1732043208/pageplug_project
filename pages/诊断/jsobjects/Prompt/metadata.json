@@ -1,0 +1,24 @@
+{
+  "unpublishedCollection": {
+    "name": "Prompt",
+    "pageId": "诊断",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [
+      {
+        "name": "knowledgePrompt",
+        "value": "``"
+      },
+      {
+        "name": "modelPrompt",
+        "value": "`\n\t主述结果：%InquiryMainResults%。\n\t检验检查处方：%InspectionAdvice%\n\t附言：%InputValue%。\n\t根据主述结果、检验检查处方、以及附言，给出诊断结果。\n\t`"
+      }
+    ],
+    "userPermissions": []
+  },
+  "id": "诊断_Prompt",
+  "deleted": false,
+  "gitSyncId": "689c384ab966d95ca75eb565_689d7ec32ae1de0ef9d775f4"
+}

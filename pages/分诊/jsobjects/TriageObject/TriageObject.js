@@ -4,9 +4,6 @@ export default {
 	filesList:[], //附件列表
 	uploadFilesList:[], //附件保存列表
 	ImgActive:null, //附件列表高亮索引
-	prompt:`
-	患者叙述：%InputValue%，根据患者叙述，推荐一个最合适的科室
-	`,
 	//prompt拼接
 	promptSplicing(){
 		const replacements = {
@@ -14,7 +11,7 @@ export default {
 		}
 		return Object.entries(replacements).reduce(
 			(text, [pattern, replacement]) => text.replace(new RegExp(pattern), replacement),
-			this.prompt
+			Prompt.modelPrompt
 		)
 	},
 	// 附件图片预览

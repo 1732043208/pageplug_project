@@ -6,12 +6,6 @@ export default {
 	filesList:[],  //附件列表
 	uploadFilesList:[], //附件保存列表
 	ImgActive:null, //附件列表高亮索引
-	prompt:`
-	主述结果：%InquiryMainResults%。
-	检验检查处方：%InspectionAdvice%
-	诊断结果：%DiagnosisAdvice%
-	附言：%InputValue%。
-	根据主述结果、检验检查处方、诊断结果以及附言，给出康复方案。`,
 	//prompt拼接
 	promptSplicing(InquiryMainResults,InspectionAdvice,DiagnosisAdvice){
 		const replacements = {
@@ -22,7 +16,7 @@ export default {
 		}
 		return Object.entries(replacements).reduce(
 			(text, [pattern, replacement]) => text.replace(new RegExp(pattern), replacement),
-			this.prompt
+			Prompt.modelPrompt
 		)
 	},
 	// 附件图片预览
