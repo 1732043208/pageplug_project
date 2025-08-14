@@ -61,8 +61,6 @@ export default {
 			const res = await completions.run()
 			console.log(res)
 			this.answer.text = res.choices[0].message.content
-			await this.InsertFunction()
-
 		}catch(error) {
 			console.log('err',error)
 			showAlert('模型调用失败！', 'error')
@@ -86,6 +84,12 @@ export default {
 			}
 			const res = await InsertInquiry.run(params)
 			showAlert('数据保存成功！', 'success')
+
+			// 等待3秒返回详情页
+			await new Promise((resolve) => setTimeout(resolve, 3000))
+			navigateTo('诊疗详情', {
+				"consultation_id": global.URL.queryParams.consultation_id
+			}, 'SAME_WINDOW')
 		}catch(error){
 			showAlert('数据写入失败！', 'error')
 		}
