@@ -1,7 +1,7 @@
 export default {
 	//执行的prompt
 	modelPrompt:`
-	# Role: 智能分诊专家
+# Role: 智能分诊专家
 
 ## Profile
 - language: 中文
