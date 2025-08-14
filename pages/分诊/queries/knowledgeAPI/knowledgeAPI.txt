@@ -1,0 +1,5 @@
+{
+	"question": "{{TriageObject.InputValue}}",
+	"stream": false,
+	"session_id":"{{Commom.knowledge_conversation_id}}"
+	}

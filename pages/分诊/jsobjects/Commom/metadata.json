@@ -12,8 +12,12 @@
         "value": "'medgemma-27b-it'"
       },
       {
-        "name": "model",
-        "value": "'deepseek-chat'"
+        "name": "knowledge_conversation_id",
+        "value": "'09f1cd7dfe4b47669330752ae6b3f228'"
+      },
+      {
+        "name": "knowledge_chat_id",
+        "value": "'0b8535a8765b11f09aab6e3e429cb4e3'"
       },
       {
         "name": "apiSearchContent",

@@ -3,7 +3,7 @@ export default {
 	answer: {text:``},   //回答
 	filesList:[], //附件列表
 	uploadFilesList:[], //附件保存列表
-	ImgActive:null, //附件列表高亮索引
+	ImgActive: null, //附件列表高亮索引
 	//prompt拼接
 	promptSplicing(){
 		const replacements = {
@@ -42,23 +42,39 @@ export default {
 	},
 	// 执行按钮
 	async getCompletions(){
-		if(!this.InputValue && !this.filesList.length) return showAlert("请输入您的症状！")
+		if(!this.InputValue) return showAlert("请输入您的症状！")
 		//清空上次的回答
 		this.answer.text = ''
+		console.log('knowledge_Swtich',knowledge_Swtich)
+
+		let knowledgeAnswer = ''
+		// 知识库检索
+		if(knowledge_Swtich.isSwitchedOn){
+			try{
+				const knowledgeResult = await	knowledgeAPI.run()
+				console.log('knowledgeResult', knowledgeResult)
+				knowledgeAnswer = knowledgeResult.data.answer
+			}catch(error){
+			showAlert('知识库检索失败！', 'error')
+			}
+		}
+
+		// prompt拼接
 		const text = this.promptSplicing()
 		console.log('prompt内容：', text)
+		
+		// 生成模型调用
 		Commom.apiSearchContent = [
 			{type:'text',text:this.promptSplicing()},
 			...this.filesList
 		]
 		console.log('ssss',Commom.apiSearchContent )
-
 		try{
 			const res = await completions.run()
 			console.log(res)
 			this.answer.text = res.choices[0].message.content
 		}catch(error){
-			console.log('err',error)
+			console.log('err', error)
 			showAlert('模型调用失败！', 'error')
 		}
 	},
