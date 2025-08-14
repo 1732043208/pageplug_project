@@ -30,7 +30,7 @@
     "text": "{{InquiryDetail.TreatInfo.chief_complaint}}",
     "key": "bgtx86yu7w",
     "isDeprecated": false,
-    "rightColumn": 56,
+    "rightColumn": 58,
     "textAlign": "LEFT",
     "dynamicHeight": "AUTO_HEIGHT",
     "widgetId": "oxj7ppuczm",

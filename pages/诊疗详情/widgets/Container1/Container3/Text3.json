@@ -30,7 +30,7 @@
     "text": "{{InquiryDetail.triageInfo.patient_narrative}}",
     "key": "bgtx86yu7w",
     "isDeprecated": false,
-    "rightColumn": 56,
+    "rightColumn": 60,
     "textAlign": "LEFT",
     "dynamicHeight": "AUTO_HEIGHT",
     "widgetId": "54mfv82b9h",

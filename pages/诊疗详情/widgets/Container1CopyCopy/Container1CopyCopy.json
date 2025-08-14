@@ -13,8 +13,8 @@
         "group",
         "container"
     ],
-    "topRow": 100,
-    "bottomRow": 224,
+    "topRow": 103,
+    "bottomRow": 222,
     "parentRowSpace": 10,
     "type": "CONTAINER_WIDGET",
     "hideCard": false,
@@ -30,7 +30,7 @@
         "widgetName": "Canvas1CopyCopy",
         "displayName": "Canvas",
         "topRow": 0,
-        "bottomRow": 1240,
+        "bottomRow": 1190,
         "parentRowSpace": 1,
         "type": "CANVAS_WIDGET",
         "canExtend": false,
@@ -78,10 +78,10 @@
     "isLoading": false,
     "mobileTopRow": 2,
     "responsiveBehavior": "fill",
-    "originalTopRow": 100,
+    "originalTopRow": 103,
     "borderRadius": "0.375rem",
     "mobileLeftColumn": 1,
     "maxDynamicHeight": 9000,
-    "originalBottomRow": 224,
+    "originalBottomRow": 222,
     "minDynamicHeight": 10
 }
