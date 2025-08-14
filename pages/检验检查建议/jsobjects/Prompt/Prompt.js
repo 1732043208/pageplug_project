@@ -1,7 +1,4 @@
 export default {
-	// 知识库检索的prompt
-	knowledgePrompt:``,
-
 	//执行的prompt
 	modelPrompt:`
 	患者主述：%InquiryMainResults%。
