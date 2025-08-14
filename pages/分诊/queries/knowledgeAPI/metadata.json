@@ -15,7 +15,7 @@
     },
     "pageId": "分诊",
     "actionConfiguration": {
-      "timeoutInMillisecond": 10000,
+      "timeoutInMillisecond": 60000,
       "paginationType": "NONE",
       "path": "/api/v1/chats/{{Commom.knowledge_chat_id}}/completions",
       "headers": [],

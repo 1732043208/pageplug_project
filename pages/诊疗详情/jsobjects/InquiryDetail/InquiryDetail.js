@@ -25,7 +25,7 @@ export default {
 		console.log('getTriageRecoreds',res)
 		if(res.length) {
 			res.forEach(item=>{
-				item.ai_generated_at_format = moment( item.created_at * 1000 ).format('YYYY-MM-DD hh:mm:ss')
+				item.ai_generated_at_format = moment( item.created_at * 1000 ).format('YYYY-MM-DD HH:mm:ss')
 			})
 			this.triageInfo = res[0]
 		}
@@ -36,7 +36,7 @@ export default {
 		console.log('getInquiryRecords',res)
 		if(res.length) {
 			res.forEach(item=>{
-				item.ai_generated_at_format = moment( item.created_at * 1000 ).format('YYYY-MM-DD hh:mm:ss')
+				item.ai_generated_at_format = moment( item.created_at * 1000 ).format('YYYY-MM-DD HH:mm:ss')
 			})
 			this.inquiryInfo = res[0]
 		}
@@ -47,7 +47,7 @@ export default {
 		console.log('getInspectionAdviceRecords',res)
 		if(res.length) {
 			res.forEach(item=>{
-				item.ai_generated_at_format = moment( item.created_at * 1000 ).format('YYYY-MM-DD hh:mm:ss')
+				item.ai_generated_at_format = moment( item.created_at * 1000 ).format('YYYY-MM-DD HH:mm:ss')
 			})
 			this.InspectionAdviceInfo = res[0]
 		}
@@ -58,7 +58,7 @@ export default {
 		console.log('getDiagnosisRecords',res)
 		if(res.length) {
 			res.forEach(item=>{
-				item.ai_generated_at_format = moment( item.created_at * 1000 ).format('YYYY-MM-DD hh:mm:ss')
+				item.ai_generated_at_format = moment( item.created_at * 1000 ).format('YYYY-MM-DD HH:mm:ss')
 			})
 			this.DiagnosisInfo = res[0]
 		}
@@ -69,7 +69,7 @@ export default {
 		console.log('getTreatRecords',res)
 		if(res.length) {
 			res.forEach(item=>{
-				item.ai_generated_at_format = moment( item.created_at * 1000 ).format('YYYY-MM-DD hh:mm:ss')
+				item.ai_generated_at_format = moment( item.created_at * 1000 ).format('YYYY-MM-DD HH:mm:ss')
 			})
 			this.TreatInfo = res[0]
 		}
@@ -80,7 +80,7 @@ export default {
 		console.log('getRecoveryRecords',res)
 		if(res.length) {
 			res.forEach(item=>{
-				item.ai_generated_at_format = moment( item.created_at * 1000 ).format('YYYY-MM-DD hh:mm:ss')
+				item.ai_generated_at_format = moment( item.created_at * 1000 ).format('YYYY-MM-DD HH:mm:ss')
 			})
 			this.recoveryInfo = res[0]
 		}
