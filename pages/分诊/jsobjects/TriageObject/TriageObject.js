@@ -4,6 +4,7 @@ export default {
 	filesList:[], //附件列表
 	uploadFilesList:[], //附件保存列表
 	ImgActive: null, //附件列表高亮索引
+	
 	//prompt拼接
 	promptSplicing(){
 		const replacements = {
@@ -14,16 +15,19 @@ export default {
 			Prompt.modelPrompt
 		)
 	},
+	
 	// 附件图片预览
 	ImgPreview(index){
 		this.ImgActive = index
 	},
+	
 	// 删除附件列表元素
 	deleteFile(index){
 		console.log(index)
 		this.filesList.splice(index, 1);
 		this.uploadFilesList.splice(index,1)
 	},
+	
 	// 文件上传
 	async	fileLoad(files){
 		this.filesList = []
@@ -35,11 +39,13 @@ export default {
 		})
 		this.uploadFilesList = files
 	},
+	
 	// 修改输入框内容
 	changeInputValue(value){
 		console.log('value',value)
 		this.InputValue = value
 	},
+	
 	// 执行按钮
 	async getCompletions(){
 		if(!this.InputValue) return showAlert("请输入您的症状！")
@@ -65,10 +71,10 @@ export default {
 		
 		// 生成模型调用
 		Commom.apiSearchContent = [
-			{type:'text',text:this.promptSplicing()},
+			{type:'text', text: this.promptSplicing()},
 			...this.filesList
 		]
-		console.log('ssss',Commom.apiSearchContent )
+		console.log('Commom.apiSearchContent', Commom.apiSearchContent )
 		try{
 			const res = await completions.run()
 			console.log(res)
@@ -78,6 +84,7 @@ export default {
 			showAlert('模型调用失败！', 'error')
 		}
 	},
+	
 	//保存数据库
 	async InsertFunction(){
 		try{
