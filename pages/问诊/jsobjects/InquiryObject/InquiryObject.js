@@ -4,26 +4,31 @@ export default {
 	filesList:[], //附件列表
 	uploadFilesList:[], //附件保存列表
 	ImgActive:null, //附件列表高亮索引
-	// prompt拼接替换
-	promptSplicing(){
+
+	//prompt拼接
+	promptSplicing(knowledgeAnswer) {
 		const replacements = {
-			'%InputValue%': this.InputValue
-		}
-		return Object.entries(replacements).reduce(
-			(text, [pattern, replacement]) => text.replace(new RegExp(pattern), replacement),
-			Prompt.modelPrompt
-		)
+			'%InputValue%': this.InputValue,
+			'%knowledgeAnswer%': knowledgeAnswer,
+			// 可以继续添加其他需要替换的占位符
+		};
+		// 使用正则表达式一次性匹配所有占位符
+		const pattern = new RegExp(Object.keys(replacements).join('|'), 'g');
+		return Prompt.modelPrompt.replace(pattern, match => replacements[match]);
 	},
+
 	// 附件图片预览
 	ImgPreview(index){
 		this.ImgActive = index
 	},
+
 	// 删除附件列表元素
 	deleteFile(index){
 		console.log(index)
 		this.filesList.splice(index, 1);
 		this.uploadFilesList.splice(index,1)
 	},
+
 	// 文件上传
 	async	fileLoad(files){
 		this.filesList = []
@@ -35,18 +40,36 @@ export default {
 		})
 		this.uploadFilesList = files
 	},
+
 	// 修改输入框内容
 	changeInputValue(value){
 		console.log('value',value)
 		this.InputValue = value
 	},
+
 	// 执行按钮
 	async getCompletions(){
-		if(!this.InputValue && !this.filesList.length) return showAlert("请输入您的症状！")
+		if(!this.InputValue) return showAlert("请输入您的症状！")
 		//清空上次的回答
 		this.answer.text = ''
-		const text = this.promptSplicing()
+
+		let knowledgeAnswer = ''
+		// 知识库检索
+		if(knowledge_Swtich.isSwitchedOn){
+			try{
+				const knowledgeResult = await	knowledgeAPI.run()
+				console.log('knowledgeResult',  knowledgeResult)
+				knowledgeAnswer = knowledgeResult.data.answer
+			}catch(error){
+				showAlert('知识库检索失败！', 'error')
+			}
+		}
+
+		// prompt拼接
+		const text = this.promptSplicing(knowledgeAnswer)
 		console.log('prompt内容：', text)
+
+		// 生成模型调用
 		Commom.apiSearchContent = [
 			{type:'text',text},
 			...this.filesList
@@ -61,6 +84,7 @@ export default {
 			showAlert('模型调用失败！', 'error')
 		}
 	},
+
 	//保存数据库
 	async	InsertFunction(){
 		try{

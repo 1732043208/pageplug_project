@@ -7,7 +7,6 @@ export default {
 
 	//prompt拼接
 	promptSplicing(knowledgeAnswer) {
-		console.log('knowledgeAnswer1',knowledgeAnswer)
 		const replacements = {
 			'%InputValue%': this.InputValue,
 			'%knowledgeAnswer%': knowledgeAnswer,
@@ -59,7 +58,7 @@ export default {
 		if(knowledge_Swtich.isSwitchedOn){
 			try{
 				const knowledgeResult = await	knowledgeAPI.run()
-				console.log('knowledgeResult1',  knowledgeResult)
+				console.log('knowledgeResult',  knowledgeResult)
 				knowledgeAnswer = knowledgeResult.data.answer
 			}catch(error){
 				showAlert('知识库检索失败！', 'error')
