@@ -71,8 +71,7 @@ export default {
 		try{
 			const res = await completions.run()
 			this.answer.text = res.choices[0].message.content
-			console.log('this.answerValue',this.answerValue)
-			storeValue('DiagnosisAdvice',this.answer)
+			console.log('this.answer.text', this.answer.text)
 			await this.InsertFunction()
 		}catch(error){
 			console.log('err',error)

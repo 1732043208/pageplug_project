@@ -64,7 +64,6 @@ export default {
 			const res = await completions.run()
 			console.log('res',res)
 			this.answer.text = res.choices[0].message.content
-			storeValue('InspectionAdvice',this.answer.text)
 			await this.InsertFunction()
 		}catch(error){
 			console.log('err',error)
