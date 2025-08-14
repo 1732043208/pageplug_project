@@ -18,7 +18,7 @@
     "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
     "parentColumnSpace": 5.9716796875,
     "dynamicTriggerPathList": [],
-    "leftColumn": 10,
+    "leftColumn": 4,
     "dynamicBindingPathList": [
         {"key": "truncateButtonColor"},
         {"key": "fontFamily"},
@@ -29,7 +29,7 @@
     "text": "请在上方输入您的症状描述，点击执行按钮获取分诊建议",
     "key": "2mj0yrn63s",
     "isDeprecated": false,
-    "rightColumn": 57,
+    "rightColumn": 63,
     "textAlign": "CENTER",
     "dynamicHeight": "AUTO_HEIGHT",
     "widgetId": "bpq8ibyr7b",
@@ -48,7 +48,7 @@
     "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
     "mobileLeftColumn": 15,
     "maxDynamicHeight": 9000,
-    "originalBottomRow": 11,
+    "originalBottomRow": 12,
     "fontSize": "1rem",
     "minDynamicHeight": 4
 }

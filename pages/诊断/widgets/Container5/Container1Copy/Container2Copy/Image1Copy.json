@@ -21,7 +21,7 @@
     "imageShape": "RECTANGLE",
     "leftColumn": 28,
     "dynamicBindingPathList": [{"key": "borderRadius"}],
-    "defaultImage": "http://192.168.5.199:8100/api/v1/images/robot-2-fill.jpg",
+    "defaultImage": "https://medminio.ngsk.tech:7001/static/robot.png",
     "flexVerticalAlignment": "start",
     "key": "qs3qsk5g6v",
     "image": "",
