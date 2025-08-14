@@ -1,0 +1,75 @@
+{
+    "boxShadow": "none",
+    "borderColor": "",
+    "srcDoc": {
+        "css": "#app, div {\n  background: transparent;\n}\n\n.flex-box {\n  display: flex;\n  flex-wrap: wrap;\n}\n\n.img-box {\n  margin-right: 10px;\n  position: relative;\n}\n\n.img {\n  height: 100px;\n  border-radius: 4px;\n  cursor: pointer;\n}\n\n.delete-btn {\n  width: 20px;\n  height: 20px;\n  border-radius: 10px;\n  position: absolute;\n  top: 2px;\n  right: 2px;\n  cursor: pointer;\n  text-align: center;\n  line-height: 20px;\n  user-select: none;\n}\n\n.delete-btn:hover {\n  background-color: rgba(255, 255, 255, 0.1);\n  transition: all 0.3s;\n}",
+        "js": "appsmith.onReady(() => {\n  /*\n   * This handler function will get called when parent application is ready.\n   * Initialize your component here\n   * more info - https://docs.appsmith.com/reference/widgets/custom#onready\n   */\n  new Vue({\n    el: \"#app\",\n    data() {\n      return {\n        fileList: appsmith.model.fileList\n      };\n    },\n    methods: {\n      deleteClick(index) {\n        appsmith.triggerEvent(\"deleteClick\", {\n          index\n        });\n      },\n      ImgClick(index) {\n        appsmith.triggerEvent(\"ImgClick\", {\n          index\n        });\n      }\n    },\n    created() {\n      const unlisten = appsmith.onModelChange(newModel => {\n        this.fileList = JSON.parse(newModel.fileList);\n      });\n    }\n  });\n});",
+        "html": "<div id=\"app\">\n\t<div  class=\"flex-box\">\n\t\t<div v-for=\"(item,index) in fileList\" v-if=\"fileList.length\" class=\"img-box\">\n\t\t\t<img :src=\"item\" class=\"img\" @click=\"ImgClick(index)\"/>\n\t\t\t<div class=\"delete-btn\" @click=\"deleteClick(index)\">X<\/div>\n\t\t<\/div>\t\n\t<\/div>\n<\/div>\n<script src=\"//cdnjs.cloudflare.com/ajax/libs/vue/2.1.6/vue.min.js\"><\/script>"
+    },
+    "isCanvas": false,
+    "iconSVG": "/static/media/icon.867bcc8399fa3f897d425d72690b86e4.svg",
+    "topRow": 11,
+    "deleteClick": "{{InquiryObject.deleteFile(index);}}",
+    "type": "CUSTOM_WIDGET",
+    "topRowBeforeCollapse": 11,
+    "dynamicBindingPathList": [
+        {"key": "theme"},
+        {"key": "borderRadius"},
+        {"key": "defaultModel"},
+        {"key": "isVisible"}
+    ],
+    "leftColumn": 7,
+    "events": [
+        "deleteClick",
+        "ImgClick"
+    ],
+    "dynamicHeight": "FIXED",
+    "isSearchWildcard": true,
+    "bottomRowBeforeCollapse": 22,
+    "isVisible": "{{!!InquiryObject.filesList.length}}",
+    "version": 1,
+    "tags": ["数据展示类"],
+    "isLoading": false,
+    "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+    "originalBottomRow": 22,
+    "mobileBottomRow": 135,
+    "widgetName": "ImageList",
+    "dynamicPropertyPathList": [{"key": "isVisible"}],
+    "displayName": "自定义组件(New)",
+    "ImgClick": "{{InquiryObject.ImgPreview(index);\nshowModal('ImgPreviewModal');}}",
+    "searchTags": [
+        "external",
+        "custom",
+        "自定义"
+    ],
+    "bottomRow": 22,
+    "parentRowSpace": 10,
+    "hideCard": false,
+    "mobileRightColumn": 23,
+    "shouldScrollContents": true,
+    "dynamicTriggerPathList": [
+        {"key": "deleteClick"},
+        {"key": "ImgClick"}
+    ],
+    "parentColumnSpace": 22.5625,
+    "defaultModel": "{\n\"fileList\":\"{{InquiryObject.filesList.map(e=>e.image_url.url)}}\"\n}",
+    "borderWidth": "0",
+    "theme": "{{appsmith.theme}}",
+    "key": "rvfcjvgvq3",
+    "backgroundColor": "",
+    "isDeprecated": false,
+    "rightColumn": 55,
+    "widgetId": "jg64cm01m1",
+    "uncompiledSrcDoc": {
+        "css": "#app,div{\n\tbackground:transparent\n}\n.flex-box{\n\tdisplay:flex;\n\tflex-wrap:wrap\n}\n.img-box{\n\tmargin-right:10px;\n\tposition: relative;\n}\n.img{\n\theight:100px;\n\tborder-radius:4px;\n\tcursor: pointer;\n}\n.delete-btn{\n\twidth:20px;\n\theight:20px;\n\tborder-radius:10px;\n\tposition: absolute;\n\ttop: 2px;\n\tright: 2px;\n\tcursor: pointer;\n\ttext-align: center;\n\tline-height: 20px;\n\tuser-select: none;\n}\n\n.delete-btn:hover{\n\tbackground-color: rgba(255, 255, 255, 0.1);\n\ttransition: all 0.3s;\n}",
+        "js": "appsmith.onReady(() => {\n\t/*\n\t * This handler function will get called when parent application is ready.\n\t * Initialize your component here\n\t * more info - https://docs.appsmith.com/reference/widgets/custom#onready\n\t */\n\tnew Vue({\n\t\tel: \"#app\",\n\t\tdata() {\n\t\t\treturn {\n\t\t\t\tfileList:appsmith.model.fileList\n\t\t\t};\n\t\t},\n\t\tmethods:{\n\t\t\tdeleteClick(index) {\n\t\t\t\tappsmith.triggerEvent(\"deleteClick\", { index });\n\t\t\t},\n\t\t\tImgClick(index){\n\t\t\t\tappsmith.triggerEvent(\"ImgClick\", { index });\n\t\t\t}\n\t\t},\n\t\tcreated(){\n\t\t\tconst unlisten = appsmith.onModelChange((newModel) => {\n\t\t\t\tthis.fileList = JSON.parse(newModel.fileList)\n\t\t\t});\n\t\t}\n\t})\n})",
+        "html": "<div id=\"app\">\n\t<div  class=\"flex-box\">\n\t\t<div v-for=\"(item,index) in fileList\" v-if=\"fileList.length\" class=\"img-box\">\n\t\t\t<img :src=\"item\" class=\"img\" @click=\"ImgClick(index)\"/>\n\t\t\t<div class=\"delete-btn\" @click=\"deleteClick(index)\">X<\/div>\n\t\t<\/div>\t\n\t<\/div>\n<\/div>\n<script src=\"//cdnjs.cloudflare.com/ajax/libs/vue/2.1.6/vue.min.js\"><\/script>"
+    },
+    "parentId": "0",
+    "renderMode": "CANVAS",
+    "mobileTopRow": 105,
+    "originalTopRow": 11,
+    "mobileLeftColumn": 0,
+    "maxDynamicHeight": 9000,
+    "minDynamicHeight": 4
+}
