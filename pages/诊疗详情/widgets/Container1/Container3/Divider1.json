@@ -10,8 +10,8 @@
         "divider",
         "separator"
     ],
-    "topRow": 19,
-    "bottomRow": 23,
+    "topRow": 24,
+    "bottomRow": 28,
     "parentRowSpace": 10,
     "type": "DIVIDER_WIDGET",
     "capType": "nc",
