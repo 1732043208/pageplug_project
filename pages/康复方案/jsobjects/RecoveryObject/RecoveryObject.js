@@ -68,7 +68,7 @@ export default {
 
 		let knowledgeAnswer = ''
 		// 知识库检索
-		if(knowledge_Swtich.isSwitchedOn){
+		if(knowledge_Swtich.isSwitchedOn && this.InputValue){
 			try{
 				const knowledgeResult = await	knowledgeAPI.run()
 				console.log('knowledgeResult',  knowledgeResult)
