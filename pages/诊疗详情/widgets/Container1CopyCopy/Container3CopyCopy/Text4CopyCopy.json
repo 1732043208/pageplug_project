@@ -7,8 +7,8 @@
         "text",
         "label"
     ],
-    "topRow": 105,
-    "bottomRow": 109,
+    "topRow": 42,
+    "bottomRow": 46,
     "parentRowSpace": 10,
     "type": "TEXT_WIDGET",
     "hideCard": false,
