@@ -14,7 +14,7 @@
         "container"
     ],
     "topRow": 0,
-    "bottomRow": 25,
+    "bottomRow": 26,
     "parentRowSpace": 10,
     "type": "CONTAINER_WIDGET",
     "hideCard": false,
@@ -30,7 +30,7 @@
         "widgetName": "Canvas2Copy",
         "displayName": "Canvas",
         "topRow": 0,
-        "bottomRow": 250,
+        "bottomRow": 260,
         "parentRowSpace": 1,
         "type": "CANVAS_WIDGET",
         "canExtend": false,
