@@ -31,6 +31,9 @@
           "name": "DiagnosisAdvice"
         },
         {
+          "name": "knowledgeAnswer"
+        },
+        {
           "name": "RequireType"
         }
       ]

@@ -1,28 +1,30 @@
 export default {
 	InputValue : "",   //输入
-	answer:{
-		text:''
-	},   //回答
+	answer:{text:''},   //回答
 	filesList:[],  //附件列表
 	uploadFilesList:[], //附件保存列表
 	ImgActive:null, //附件列表高亮索引
+
 	//prompt拼接
-	promptSplicing(InquiryMainResults,InspectionAdvice,DiagnosisAdvice){
+	promptSplicing(InquiryMainResults, InspectionAdvice, DiagnosisAdvice, knowledgeAnswer) {
 		const replacements = {
+			'%InputValue%': this.InputValue,
 			'%InquiryMainResults%': InquiryMainResults,
 			'%InspectionAdvice%': InspectionAdvice,
 			'%DiagnosisAdvice%': DiagnosisAdvice,
-			'%InputValue%': this.InputValue,
-		}
-		return Object.entries(replacements).reduce(
-			(text, [pattern, replacement]) => text.replace(new RegExp(pattern), replacement),
-			Prompt.modelPrompt
-		)
+			'%knowledgeAnswer%': knowledgeAnswer,
+			// 可以继续添加其他需要替换的占位符
+		};
+		// 使用正则表达式一次性匹配所有占位符
+		const pattern = new RegExp(Object.keys(replacements).join('|'), 'g');
+		return Prompt.modelPrompt.replace(pattern, match => replacements[match]);
 	},
+
 	// 附件图片预览
 	ImgPreview(index){
 		this.ImgActive = index
 	},
+
 	// 文件上传
 	async	fileLoad(files){
 		this.filesList = []
@@ -34,17 +36,20 @@ export default {
 		})
 		this.uploadFilesList = files
 	},
+
 	// 删除附件列表元素
 	deleteFile(index){
 		console.log(index)
 		this.filesList.splice(index, 1);
 		this.uploadFilesList.splice(index,1)
 	},
+
 	// 修改输入框内容
 	changeInputValue(value){
 		console.log('value',value)
 		this.InputValue = value
 	},
+
 	// 获取诊断结果
 	async getAdvice(){
 		//诊断
@@ -60,11 +65,24 @@ export default {
 		console.log('InquiryMainResults',InquiryMainResults)
 		// 清空上次回答
 		this.answer.text = ''
+
+		let knowledgeAnswer = ''
+		// 知识库检索
+		if(knowledge_Swtich.isSwitchedOn){
+			try{
+				const knowledgeResult = await	knowledgeAPI.run()
+				console.log('knowledgeResult',  knowledgeResult)
+				knowledgeAnswer = knowledgeResult.data.answer
+			}catch(error){
+				showAlert('知识库检索失败！', 'error')
+			}
+		}
+
 		const params1 = {
 			data:  [
 				{
 					type:'text',
-					text: this.promptSplicing(InquiryMainResults, InspectionAdvice, DiagnosisAdvice)
+					text: this.promptSplicing(InquiryMainResults,  InspectionAdvice,  DiagnosisAdvice, knowledgeAnswer)
 				},
 				...this.filesList
 			]
