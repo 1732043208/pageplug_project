@@ -15,7 +15,7 @@
     },
     "pageId": "问诊",
     "actionConfiguration": {
-      "timeoutInMillisecond": 60000,
+      "timeoutInMillisecond": 100000,
       "paginationType": "NONE",
       "path": "/api/v1/chats/{{Commom.knowledge_chat_id}}/completions",
       "headers": [],
@@ -51,7 +51,9 @@
       }
     ],
     "isValid": true,
-    "invalids": [],
+    "invalids": [
+      "'Query timeout' field must be an integer between 0 and 60000"
+    ],
     "messages": [],
     "jsonPathKeys": [
       "Commom.knowledge_chat_id",
