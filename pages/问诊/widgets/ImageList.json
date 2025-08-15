@@ -58,7 +58,7 @@
     "key": "rvfcjvgvq3",
     "backgroundColor": "",
     "isDeprecated": false,
-    "rightColumn": 46,
+    "rightColumn": 56,
     "widgetId": "jg64cm01m1",
     "uncompiledSrcDoc": {
         "css": "#app,div{\n\tbackground:transparent\n}\n.flex-box{\n\tdisplay:flex;\n\tflex-wrap:wrap\n}\n.img-box{\n\tmargin-right:10px;\n\tposition: relative;\n}\n.img{\n\theight:100px;\n\tborder-radius:4px;\n\tcursor: pointer;\n}\n.delete-btn{\n\twidth:20px;\n\theight:20px;\n\tborder-radius:10px;\n\tposition: absolute;\n\ttop: 2px;\n\tright: 2px;\n\tcursor: pointer;\n\ttext-align: center;\n\tline-height: 20px;\n\tuser-select: none;\n}\n\n.delete-btn:hover{\n\tbackground-color: rgba(255, 255, 255, 0.1);\n\ttransition: all 0.3s;\n}",
