@@ -9,7 +9,7 @@
     "variables": [
       {
         "name": "modelPrompt",
-        "value": "`\n\t主述结果：%InquiryMainResults%。\n\t检验检查处方：%InspectionAdvice%\n\t附言：%InputValue%。\n\t根据主述结果、检验检查处方、以及附言，给出诊断结果。\n\t`"
+        "value": "`\n\t问诊结果：%InquiryMainResults%。\n\t检验检查处方：%InspectionAdvice%。\n\t附言：%InputValue%。。\n\t知识库检索内容：%knowledgeAnswer%。。\n\t根据主述结果、检验检查处方、附言以及知识库检索内容，给出诊断结果。\n\t`"
       }
     ],
     "userPermissions": []

@@ -1,0 +1,5 @@
+{
+	"question": "{{TreatObject.InputValue}}",
+	"stream": false,
+	"session_id":"{{Commom.knowledge_conversation_id}}"
+	}

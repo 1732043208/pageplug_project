@@ -1,9 +1,10 @@
 export default {
 	//执行的prompt
 	modelPrompt:`
-	主述结果：%InquiryMainResults%。
-	检验检查处方：%InspectionAdvice%
-	附言：%InputValue%。
-	根据主述结果、检验检查处方、以及附言，给出诊断结果。
+	问诊结果：%InquiryMainResults%。
+	检验检查处方：%InspectionAdvice%。
+	附言：%InputValue%。。
+	知识库检索内容：%knowledgeAnswer%。。
+	根据主述结果、检验检查处方、附言以及知识库检索内容，给出诊断结果。
 	`,
 }

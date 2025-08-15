@@ -23,6 +23,9 @@
       "jsArguments": [
         {
           "name": "InquiryMainResults"
+        },
+        {
+          "name": "knowledgeAnswer"
         }
       ]
     },
