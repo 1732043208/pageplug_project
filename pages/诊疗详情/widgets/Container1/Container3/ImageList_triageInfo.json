@@ -28,7 +28,7 @@
     "tags": ["数据展示类"],
     "isLoading": false,
     "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-    "originalBottomRow": 15,
+    "originalBottomRow": 20,
     "mobileBottomRow": 135,
     "widgetName": "ImageList_triageInfo",
     "dynamicPropertyPathList": [{"key": "isVisible"}],
@@ -38,7 +38,7 @@
         "custom",
         "自定义"
     ],
-    "bottomRow": 20,
+    "bottomRow": 15,
     "parentRowSpace": 10,
     "hideCard": false,
     "mobileRightColumn": 23,

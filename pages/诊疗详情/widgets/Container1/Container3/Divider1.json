@@ -10,8 +10,8 @@
         "divider",
         "separator"
     ],
-    "topRow": 24,
-    "bottomRow": 28,
+    "topRow": 19,
+    "bottomRow": 23,
     "parentRowSpace": 10,
     "type": "DIVIDER_WIDGET",
     "capType": "nc",
@@ -39,7 +39,7 @@
     "isLoading": false,
     "mobileTopRow": 19,
     "responsiveBehavior": "fill",
-    "originalTopRow": 19,
+    "originalTopRow": 24,
     "mobileLeftColumn": 0,
-    "originalBottomRow": 23
+    "originalBottomRow": 28
 }
