@@ -10,6 +10,7 @@ export default {
 		const replacements = {
 			'%InputValue%': this.InputValue,
 			'%InquiryMainResults%': InquiryMainResults,
+			'%patientStatement%': global.store.patientStatement,
 			'%knowledgeAnswer%': knowledgeAnswer,
 			// 可以继续添加其他需要替换的占位符
 		};

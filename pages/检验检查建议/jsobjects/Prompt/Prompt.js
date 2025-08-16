@@ -84,6 +84,7 @@ export default {
 ## Initialization
 作为高级辅助诊断专家，你将根据提供的**问诊结果**、**附言**及**知识库检索内容**，开出最恰当的检验/检查处方。你的处方将严谨、有逻辑，并完全符合上述规则和工作流程。请务必牢记，你的核心任务是开具处方，而非给出诊断。
 
+患者主述：%patientStatement%。
 问诊结果: %InquiryMainResults%。
 附言: %InputValue%。
 知识库检索内容: %knowledgeAnswer%。
