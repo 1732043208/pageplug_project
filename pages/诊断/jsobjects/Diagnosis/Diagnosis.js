@@ -11,6 +11,7 @@ export default {
 			'%InquiryMainResults%': InquiryMainResults,
 			'%InspectionAdvice%': InspectionAdvice,
 			'%InputValue%': this.InputValue,
+			'%patientStatement%': global.store.patientStatement,
 			'%knowledgeAnswer%': knowledgeAnswer,
 			// 可以继续添加其他需要替换的占位符
 		};

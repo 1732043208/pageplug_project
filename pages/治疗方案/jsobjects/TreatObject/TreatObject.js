@@ -5,15 +5,16 @@ export default {
 	filesList:[],  //附件列表
 	uploadFilesList:[], //附件保存列表
 	ImgActive:null, //附件列表高亮索引
-	
-		//prompt拼接
+
+	//prompt拼接
 	promptSplicing(InquiryMainResults, InspectionAdvice, DiagnosisAdvice, knowledgeAnswer, RequireType) {
 		const replacements = {
 			'%InputValue%': this.InputValue,
-				'%InquiryMainResults%': InquiryMainResults,
+			'%InquiryMainResults%': InquiryMainResults,
 			'%InspectionAdvice%': InspectionAdvice,
 			'%DiagnosisAdvice%': DiagnosisAdvice,
 			'%RequireType%': RequireType,
+			'%patientStatement%': global.store.patientStatement, //患者主述
 			'%knowledgeAnswer%': knowledgeAnswer,
 			// 可以继续添加其他需要替换的占位符
 		};
@@ -21,12 +22,12 @@ export default {
 		const pattern = new RegExp(Object.keys(replacements).join('|'), 'g');
 		return Prompt.modelPrompt.replace(pattern, match => replacements[match]);
 	},
-	
+
 	// 附件图片预览
 	ImgPreview(index){
 		this.ImgActive = index
 	},
-	
+
 	// 文件上传
 	async	fileLoad(files){
 		this.filesList = []
@@ -38,20 +39,20 @@ export default {
 		})
 		this.uploadFilesList = files
 	},
-	
+
 	// 删除附件列表元素
 	deleteFile(index){
 		console.log(index)
 		this.filesList.splice(index, 1);
 		this.uploadFilesList.splice(index,1)
 	},
-	
+
 	// 修改输入框内容
 	changeInputValue(value){
 		console.log('value',value)
 		this.InputValue = value
 	},
-	
+
 	// 获取诊断结果
 	async getAdvice(){
 		//诊断
@@ -110,7 +111,7 @@ export default {
 			showAlert('模型调用失败！')
 		}
 	},
-	
+
 	//保存数据库
 	async	InsertFunction(){
 		try{

@@ -12,6 +12,7 @@ export default {
 			'%InquiryMainResults%': InquiryMainResults,
 			'%InspectionAdvice%': InspectionAdvice,
 			'%DiagnosisAdvice%': DiagnosisAdvice,
+			'%patientStatement%': global.store.patientStatement,  //患者主述
 			'%knowledgeAnswer%': knowledgeAnswer,
 			// 可以继续添加其他需要替换的占位符
 		};
