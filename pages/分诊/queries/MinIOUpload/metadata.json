@@ -78,7 +78,7 @@
           }
         },
         "smartSubstitution": {
-          "data": true
+          "data": false
         }
       }
     },
