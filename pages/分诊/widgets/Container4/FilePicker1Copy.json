@@ -35,7 +35,7 @@
     "minWidth": 120,
     "isVisible": true,
     "label": "🔗 附件",
-    "maxFileSize": "50",
+    "maxFileSize": "5",
     "dynamicTyping": true,
     "version": 1,
     "fileDataType": "Base64",
