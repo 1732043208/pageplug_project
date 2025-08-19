@@ -15,7 +15,7 @@
     },
     "pageId": "治疗方案",
     "actionConfiguration": {
-      "timeoutInMillisecond": 500000,
+      "timeoutInMillisecond": 1000000,
       "paginationType": "NONE",
       "path": "/v1/chat/completions",
       "headers": [],
@@ -30,6 +30,7 @@
       "body": "{\"model\":\"{{Commom.model}}\",\"temperature\":0.6,\"top_p\":1,\"frequency_penalty\":0,\"presence_penalty\":0,\"messages\":[{\"role\":\"user\",\"content\":\"{{this.params.data}}\"}]}",
       "bodyFormData": [],
       "httpMethod": "POST",
+      "httpVersion": "HTTP11",
       "selfReferencingDataPaths": [],
       "pluginSpecifiedTemplates": [
         {
