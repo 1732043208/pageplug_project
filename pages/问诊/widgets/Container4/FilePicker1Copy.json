@@ -25,7 +25,7 @@
     "dynamicBindingPathList": [],
     "isDisabled": false,
     "key": "6bwm8ropp3",
-    "onFilesSelected": "{{InquiryObject.fileLoad(FilePicker1Copy.files);\nMinIOUpload.run({\n\turls:FilePicker1Copy.files\n});}}",
+    "onFilesSelected": "{{InquiryObject.fileLoad(FilePicker1Copy.files);\nresetWidget(\"FilePicker1Copy\", true);}}",
     "isRequired": false,
     "isDeprecated": false,
     "rightColumn": 64,
