@@ -67,7 +67,7 @@
     "detachFromLayout": true,
     "dynamicHeight": "FIXED",
     "widgetId": "u0q5vnicyu",
-    "canOutsideClickClose": false,
+    "canOutsideClickClose": true,
     "canEscapeKeyClose": true,
     "version": 2,
     "parentId": "0",
