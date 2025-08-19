@@ -52,7 +52,7 @@ export default {
 		if(!this.InputValue) return showAlert("请输入您的症状！")
 		//清空上次的回答
 		this.answer.text = ''
-
+		showModal('Loading')
 		let knowledgeAnswer = ''
 		// 知识库检索
 		if(knowledge_Swtich.isSwitchedOn){
@@ -61,6 +61,7 @@ export default {
 				console.log('knowledgeResult',  knowledgeResult)
 				knowledgeAnswer = knowledgeResult.data.answer
 			}catch(error){
+				closeModal('Loading');
 				showAlert('知识库检索失败！', 'error')
 			}
 		}
@@ -79,6 +80,7 @@ export default {
 			console.log('err',error)
 			showAlert('模型调用失败！', 'error')
 		}
+		closeModal('Loading');
 	},
 
 	//保存数据库

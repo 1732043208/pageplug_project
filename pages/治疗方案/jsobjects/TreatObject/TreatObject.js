@@ -66,6 +66,8 @@ export default {
 		const InquiryMainResults = global.store.InquiryMainResults
 		if(!InquiryMainResults) return showAlert('请先执行问诊步骤！')
 		console.log('InquiryMainResults',InquiryMainResults)
+
+		showModal('Loading')
 		// 清空上次回答
 		this.treatContent.text = ''
 		this.medicationContent.text = ''
@@ -78,6 +80,7 @@ export default {
 				console.log('knowledgeResult',  knowledgeResult)
 				knowledgeAnswer = knowledgeResult.data.answer
 			}catch(error){
+				closeModal('Loading');
 				showAlert('知识库检索失败！', 'error')
 			}
 		}
@@ -110,6 +113,7 @@ export default {
 		}catch(error){
 			showAlert('模型调用失败！')
 		}
+		closeModal('Loading');
 	},
 
 	//保存数据库

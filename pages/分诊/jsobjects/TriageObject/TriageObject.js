@@ -50,6 +50,7 @@ export default {
 	// 执行按钮
 	async getCompletions(){
 		if(!this.InputValue) return showAlert("请输入您的症状！")
+		showModal('Loading')
 		//清空上次的回答
 		this.answer.text = ''
 
@@ -61,6 +62,7 @@ export default {
 				console.log('knowledgeResult',  knowledgeResult)
 				knowledgeAnswer = knowledgeResult.data.answer
 			}catch(error){
+				closeModal('Loading');
 				showAlert('知识库检索失败！', 'error')
 			}
 		}
@@ -83,6 +85,7 @@ export default {
 			console.log('err', error)
 			showAlert('模型调用失败！', 'error')
 		}
+		closeModal('Loading');
 	},
 
 	//保存数据库
@@ -106,9 +109,7 @@ export default {
 
 			// 等待3秒返回详情页
 			await new Promise((resolve) => setTimeout(resolve, 2000))
-			navigateTo('诊疗详情', {
-				"consultation_id": global.URL.queryParams.consultation_id
-			}, 'SAME_WINDOW')
+			navigateTo('诊疗详情', {"consultation_id": global.URL.queryParams.consultation_id}, 'SAME_WINDOW')
 		}catch(error){
 			console.log('error',error)
 			showAlert('数据写入失败！', 'error')

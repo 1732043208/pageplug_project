@@ -61,6 +61,7 @@ export default {
 		if(!InquiryMainResults) return showAlert('请先执行问诊步骤！')
 		console.log('InquiryMainResults',InquiryMainResults)
 
+		showModal('Loading')
 		//清空上次的回答
 		this.answer.text = ''
 
@@ -72,6 +73,7 @@ export default {
 				console.log('knowledgeResult',  knowledgeResult)
 				knowledgeAnswer = knowledgeResult.data.answer
 			}catch(error){
+				closeModal('Loading');
 				showAlert('知识库检索失败！', 'error')
 			}
 		}
@@ -92,6 +94,7 @@ export default {
 			console.log('err',error)
 			showAlert('模型调用失败！', 'error')
 		}
+		closeModal('Loading');
 	},
 
 	//保存数据库

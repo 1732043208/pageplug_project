@@ -54,6 +54,7 @@ export default {
 		// InquiryMainResults 问诊AI生成的内容
 		const InquiryMainResults = global.store.InquiryMainResults
 		if(!InquiryMainResults) return showAlert('请先执行问诊步骤！')
+		showModal('Loading')
 		//清空上次的回答
 		this.answer.text = ''
 		let knowledgeAnswer = ''
@@ -64,12 +65,14 @@ export default {
 				console.log('knowledgeResult',  knowledgeResult)
 				knowledgeAnswer = knowledgeResult.data.answer
 			}catch(error){
+				closeModal('Loading');
 				showAlert('知识库检索失败！', 'error')
 			}
 		}
 
 		const text = this.promptSplicing(InquiryMainResults, knowledgeAnswer)
 		console.log('prompt内容：', text)
+
 		Commom.apiSearchContent = [
 			{type:'text',text},
 			...this.filesList
@@ -83,6 +86,7 @@ export default {
 			console.log('err',error)
 			showAlert('模型调用失败！', 'error')
 		}
+		closeModal('Loading');
 	},
 
 	//保存数据库
