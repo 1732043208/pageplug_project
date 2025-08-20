@@ -2,8 +2,8 @@
   "pluginType": "JS",
   "pluginId": "js-plugin",
   "unpublishedAction": {
-    "name": "promptSplicing",
-    "fullyQualifiedName": "TreatObject.promptSplicing",
+    "name": "modelParamsHandle",
+    "fullyQualifiedName": "TreatObject.modelParamsHandle",
     "datasource": {
       "name": "UNUSED_DATASOURCE",
       "pluginId": "js-plugin",
@@ -23,9 +23,6 @@
       "jsArguments": [
         {
           "name": "knowledgeAnswer"
-        },
-        {
-          "name": "RequireType"
         }
       ]
     },
@@ -42,9 +39,9 @@
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": [],
-    "createdAt": "2025-08-06T09:31:47Z"
+    "createdAt": "2025-08-20T07:39:29Z"
   },
-  "id": "治疗方案_TreatObject.promptSplicing",
+  "id": "治疗方案_TreatObject.modelParamsHandle",
   "deleted": false,
-  "gitSyncId": "688984c4f032bd71eea01831_68932103ec248529315e3466"
+  "gitSyncId": "689c384ab966d95ca75eb565_68a57bb12bba200a2cce7053"
 }
