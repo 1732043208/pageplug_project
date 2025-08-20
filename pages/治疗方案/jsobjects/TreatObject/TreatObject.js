@@ -84,34 +84,23 @@ export default {
 				showAlert('知识库检索失败！', 'error')
 			}
 		}
-		// 治疗措施
-		const params1 = {
-			data:  [
-				{
-					type:'text',
-					text: this.promptSplicing(InquiryMainResults, InspectionAdvice, DiagnosisAdvice, knowledgeAnswer,'治疗措施')
-				},
-				...this.filesList
-			]
-		}
-		// 用药
-		const params2 = {
-			data:  [
-				{
-					type:'text',
-					text: this.promptSplicing(InquiryMainResults, InspectionAdvice, DiagnosisAdvice, knowledgeAnswer,'用药处方')
-				},
-				...this.filesList
-			]
-		}
 
+		// 模型对话传参处理
+		this.modelParamsHandle(knowledgeAnswer)
 		try{
-			const res= 	await Promise.all([completions.run(params1), completions.run(params2)])
+			const res= 	await Promise.all([completions.run({ data: Commom.modelSearchContent1 }), completions.run({ data: Commom.modelSearchContent2 })])
 			console.log('res1',res)
 			this.treatContent.text =  res[0].choices[0].message.content
 			this.medicationContent.text =  res[1].choices[0].message.content
+
+			// 往对话上下文中添加模型回复记录
+			Commom.modelSearchList1.push({"role":"assistant", "content": this.treatContent.text })
+			Commom.modelSearchList2.push({"role":"assistant", "content": this.medicationContent.text })
 		}catch(error){
 			showAlert('模型调用失败！')
+			// 模型调用失败，清除最后一条用户记录
+			Commom.modelSearchList1.pop()
+			Commom.modelSearchList2.pop()
 		}
 		closeModal('Loading');
 	},
@@ -149,33 +138,33 @@ export default {
 	modelParamsHandle(knowledgeAnswer){
 		// prompt拼接
 		const measurePrompt = this.promptSplicing(knowledgeAnswer, '治疗措施')
-		console.log('prompt内容：', text)
-		const text = this.promptSplicing(knowledgeAnswer, '用药处方')
-		console.log('prompt内容：', text)
+		console.log('prompt内容：', measurePrompt)
+		const medicationPrompt = this.promptSplicing(knowledgeAnswer, '用药处方')
+		console.log('prompt内容：', medicationPrompt)
 
 		// 往模型对话列表添加询问记录（治疗措施）
 		Commom.modelSearchList1.push({"role":"user","content": [
-			{type:'text',text},
+			{type:'text',text: measurePrompt},
 			...this.filesList
 		]})
 
 		// 模型对话传参-判断是否有启用上下文（治疗措施）
 		Commom.modelSearchContent1 = context_Swtich.isSwitchedOn 	?  Commom.modelSearchList1  : 
 		[{"role":"user","content": [
-			{type:'text',text},
+			{type:'text',text: measurePrompt},
 			...this.filesList
 		]}]
 
 		// 往模型对话列表添加询问记录（用药方法）
 		Commom.modelSearchList2.push({"role":"user","content": [
-			{type:'text',text},
+			{type:'text',text: medicationPrompt},
 			...this.filesList
 		]})
 
 		// 模型对话传参-判断是否有启用上下文（用药方法）
 		Commom.modelSearchContent2 = context_Swtich.isSwitchedOn 	?  Commom.modelSearchList2  : 
 		[{"role":"user","content": [
-			{type:'text',text},
+			{type:'text',text: medicationPrompt},
 			...this.filesList
 		]}]
 	}
