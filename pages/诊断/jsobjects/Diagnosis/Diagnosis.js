@@ -118,9 +118,7 @@ export default {
 
 			// 等待3秒返回详情页
 			await new Promise((resolve) => setTimeout(resolve, 2000))
-			navigateTo('诊疗详情', {
-				"consultation_id": global.URL.queryParams.consultation_id
-			}, 'SAME_WINDOW')
+			navigateTo('诊疗详情', {"consultation_id": global.URL.queryParams.consultation_id}, 'SAME_WINDOW')
 		}catch(error){
 			showAlert('数据写入失败！', 'error')
 		}
