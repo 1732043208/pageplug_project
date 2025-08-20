@@ -6,12 +6,12 @@ export default {
 	ImgActive:null, //附件列表高亮索引
 
 	//prompt拼接
-	promptSplicing(InquiryMainResults, InspectionAdvice, DiagnosisAdvice, knowledgeAnswer) {
+	promptSplicing(knowledgeAnswer) {
 		const replacements = {
 			'%InputValue%': this.InputValue,
-			'%InquiryMainResults%': InquiryMainResults,
-			'%InspectionAdvice%': InspectionAdvice,
-			'%DiagnosisAdvice%': DiagnosisAdvice,
+			'%InquiryMainResults%': global.store.InquiryMainResults,
+			'%InspectionAdvice%': global.store.InspectionAdvice,
+			'%DiagnosisAdvice%': global.store.DiagnosisAdvice,
 			'%patientStatement%': global.store.patientStatement,  //患者主述
 			'%knowledgeAnswer%': knowledgeAnswer,
 			// 可以继续添加其他需要替换的占位符
@@ -82,23 +82,20 @@ export default {
 			}
 		}
 
-		const params1 = {
-			data:  [
-				{
-					type:'text',
-					text: this.promptSplicing(InquiryMainResults,  InspectionAdvice,  DiagnosisAdvice, knowledgeAnswer)
-				},
-				...this.filesList
-			]
-		}
-		console.log('params1',params1)
+		// 模型对话传参处理
+		this.modelParamsHandle(knowledgeAnswer)
 		try {
 			// 康复方案
-			const res = await completions.run(params1)
+			const res = await completions.run()
 			console.log('res',res)
 			this.answer.text=  res.choices[0].message.content
+			
+			// 往对话上下文中添加模型回复记录
+			Commom.modelSearchList.push({"role":"assistant", "content": this.answer.text})
 		} catch(err) {
 			showAlert('模型调用失败！')
+			// 模型调用失败，清除最后一条用户记录
+			Commom.modelSearchList.pop()
 		}
 		closeModal('Loading');
 	},
@@ -130,5 +127,24 @@ export default {
 		}catch(error){
 			showAlert('数据写入失败！', 'error')
 		}
+	},
+	// 模型对话传参处理
+	modelParamsHandle(knowledgeAnswer){
+		// prompt拼接
+		const text = this.promptSplicing(knowledgeAnswer)
+		console.log('prompt内容：', text)
+
+		// 往模型对话列表添加询问记录
+		Commom.modelSearchList.push({"role":"user","content": [
+			{type:'text',text},
+			...this.filesList
+		]})
+
+		// 模型对话传参-判断是否有启用上下文
+		Commom.modelSearchContent = context_Swtich.isSwitchedOn 	?  Commom.modelSearchList  : 
+		[{"role":"user","content": [
+			{type:'text',text},
+			...this.filesList
+		]}]
 	}
 }

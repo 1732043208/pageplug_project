@@ -27,7 +27,7 @@
       ],
       "encodeParamsToggle": true,
       "queryParameters": [],
-      "body": "{\"model\":\"{{Commom.model}}\",\"temperature\":0.6,\"top_p\":1,\"frequency_penalty\":0,\"presence_penalty\":0,\"messages\":[{\"role\":\"user\",\"content\":\"{{this.params.data}}\"}]}",
+      "body": "{\"model\":\"{{Commom.model}}\",\"temperature\":0.6,\"top_p\":1,\"frequency_penalty\":0,\"presence_penalty\":0,\"messages\":\"{{this.params.data}}\"}",
       "bodyFormData": [],
       "httpMethod": "POST",
       "httpVersion": "HTTP11",
