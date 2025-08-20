@@ -2,8 +2,8 @@
   "pluginType": "JS",
   "pluginId": "js-plugin",
   "unpublishedAction": {
-    "name": "promptSplicing",
-    "fullyQualifiedName": "Diagnosis.promptSplicing",
+    "name": "modelParamsHandle",
+    "fullyQualifiedName": "Diagnosis.modelParamsHandle",
     "datasource": {
       "name": "UNUSED_DATASOURCE",
       "pluginId": "js-plugin",
@@ -39,9 +39,9 @@
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": [],
-    "createdAt": "2025-08-05T07:43:04Z"
+    "createdAt": "2025-08-20T02:47:55Z"
   },
-  "id": "诊断_Diagnosis.promptSplicing",
+  "id": "诊断_Diagnosis.modelParamsHandle",
   "deleted": false,
-  "gitSyncId": "688984c4f032bd71eea01831_6891b608ec248529315e33d9"
+  "gitSyncId": "689c384ab966d95ca75eb565_68a5375b2bba200a2cce704a"
 }

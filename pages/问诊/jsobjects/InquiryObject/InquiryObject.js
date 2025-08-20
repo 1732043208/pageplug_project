@@ -79,6 +79,8 @@ export default {
 		}catch(error) {
 			console.log('err',error)
 			showAlert('模型调用失败！', 'error')
+			// 模型调用失败，清除最后一条用户记录
+			Commom.modelSearchList.pop()
 		}
 		closeModal('Loading');
 	},

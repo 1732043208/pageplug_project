@@ -6,10 +6,10 @@ export default {
 	ImgActive:null, //附件列表高亮索引
 
 	//prompt拼接
-	promptSplicing(InquiryMainResults,InspectionAdvice,knowledgeAnswer) {
+	promptSplicing(knowledgeAnswer) {
 		const replacements = {
-			'%InquiryMainResults%': InquiryMainResults,
-			'%InspectionAdvice%': InspectionAdvice,
+			'%InquiryMainResults%':  global.store.InquiryMainResults,
+			'%InspectionAdvice%':  global.store.InspectionAdvice,
 			'%InputValue%': this.InputValue,
 			'%patientStatement%': global.store.patientStatement,
 			'%knowledgeAnswer%': knowledgeAnswer,
@@ -77,22 +77,21 @@ export default {
 				showAlert('知识库检索失败！', 'error')
 			}
 		}
-		// prompt拼接
-		const text = this.promptSplicing(InquiryMainResults, InspectionAdvice, knowledgeAnswer)
-		console.log('prompt内容：', text)
 
-		Commom.apiSearchContent = [
-			{type:'text',text},
-			...this.filesList
-		]
-		console.log(Commom.apiSearchContent)
+		// 模型对话传参处理
+		this.modelParamsHandle(knowledgeAnswer)
 		try{
 			const res = await completions.run()
 			this.answer.text = res.choices[0].message.content
 			console.log('this.answer.text', this.answer.text)
+
+			// 往对话上下文中添加模型回复记录
+			Commom.modelSearchList.push({"role":"assistant", "content": this.answer.text})
 		}catch(error){
 			console.log('err',error)
 			showAlert('模型调用失败！', 'error')
+			// 模型调用失败，清除最后一条用户记录
+			Commom.modelSearchList.pop()
 		}
 		closeModal('Loading');
 	},
@@ -125,5 +124,25 @@ export default {
 		}catch(error){
 			showAlert('数据写入失败！', 'error')
 		}
+	},
+
+	// 模型对话传参处理
+	modelParamsHandle(knowledgeAnswer){
+		// prompt拼接
+		const text = this.promptSplicing(knowledgeAnswer)
+		console.log('prompt内容：', text)
+
+		// 往模型对话列表添加询问记录
+		Commom.modelSearchList.push({"role":"user","content": [
+			{type:'text',text},
+			...this.filesList
+		]})
+
+		// 模型对话传参-判断是否有启用上下文
+		Commom.modelSearchContent = context_Swtich.isSwitchedOn 	?  Commom.modelSearchList  : 
+		[{"role":"user","content": [
+			{type:'text',text},
+			...this.filesList
+		]}]
 	}
 }

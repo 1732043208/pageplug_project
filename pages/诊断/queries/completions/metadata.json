@@ -27,7 +27,7 @@
       ],
       "encodeParamsToggle": true,
       "queryParameters": [],
-      "body": "{\"model\":\"{{Commom.model}}\",\"temperature\":0.6,\"top_p\":1,\"frequency_penalty\":0,\"presence_penalty\":0,\"messages\":[{\"role\":\"user\",\"content\":\"{{Commom.apiSearchContent}}\"}]}",
+      "body": "{\"model\":\"{{Commom.model}}\",\"temperature\":0.6,\"top_p\":1,\"frequency_penalty\":0,\"presence_penalty\":0,\"messages\":\"{{Commom.modelSearchContent}}\"}",
       "bodyFormData": [],
       "httpMethod": "POST",
       "selfReferencingDataPaths": [],
@@ -52,8 +52,8 @@
     ],
     "messages": [],
     "jsonPathKeys": [
-      "Commom.apiSearchContent",
-      "Commom.model"
+      "Commom.model",
+      "Commom.modelSearchContent"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
