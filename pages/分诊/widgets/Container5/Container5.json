@@ -13,7 +13,7 @@
         "container"
     ],
     "topRow": 53,
-    "bottomRow": 255,
+    "bottomRow": 138,
     "parentRowSpace": 10,
     "type": "CONTAINER_WIDGET",
     "hideCard": false,
@@ -29,7 +29,7 @@
         "widgetName": "Canvas6",
         "displayName": "Canvas",
         "topRow": 0,
-        "bottomRow": 2020,
+        "bottomRow": 850,
         "parentRowSpace": 1,
         "type": "CANVAS_WIDGET",
         "canExtend": false,
