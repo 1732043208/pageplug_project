@@ -1,9 +1,10 @@
 export default {
 	InputValue : "",   //输入
-	answer: {text:'456'},   //回答
+	answer: {text:''},   //回答
 	filesList:[], //附件列表
 	uploadFilesList:[], //附件保存列表
 	ImgActive: null, //附件列表高亮索引
+	isSaveBtnShow: false, //保存按钮是否显示
 
 	//prompt拼接
 	promptSplicing(knowledgeAnswer) {
@@ -50,7 +51,7 @@ export default {
 	// 执行按钮
 	async getCompletions(){
 		if(!this.InputValue) return showAlert("请输入您的症状！")
-		// showModal('Loading')
+		showModal('Loading')
 		//清空上次的回答
 		this.answer.text = ''
 
@@ -62,10 +63,10 @@ export default {
 				console.log('knowledgeResult',  knowledgeResult)
 				knowledgeAnswer = knowledgeResult.data.answer
 			}catch(error){
-				closeModal('Loading');
 				showAlert('知识库检索失败！', 'error')
 			}
 		}
+		closeModal('Loading');
 
 		// prompt拼接
 		const text = this.promptSplicing(knowledgeAnswer)
@@ -79,16 +80,6 @@ export default {
 		console.log('Commom.apiSearchContent', Commom.apiSearchContent )
 
 		this.knowledgeCompletion()
-		return
-		try{
-			const res = await completions.run()
-			console.log(res)
-			this.answer.text = res.choices[0].message.content
-		}catch(error){
-			console.log('err', error)
-			showAlert('模型调用失败！', 'error')
-		}
-		closeModal('Loading');
 	},
 
 	//保存数据库
@@ -118,36 +109,36 @@ export default {
 			showAlert('数据写入失败！', 'error')
 		}
 	},
-	async	knowledgeCompletion() {
-		const params = {
-			"model":Commom.model,
-			"temperature":0.6,
-			"top_p":1,
-			"frequency_penalty":0,
-			"presence_penalty":0,
-			"stream": true,
-			"messages":[{"role":"user","content":Commom.apiSearchContent}]
-		}
 
+	async	knowledgeCompletion() {
 		const ctrl = new AbortController();
 		console.log('ctrl',ctrl)
-		fetch_event_source.fetchEventSource('/v1/chat/completions', {
+		fetch_event_source.fetchEventSource('/v1/chat/completions',  {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
-				'Authorization': 'bearer gpustack_c177941728a02210_1ffd564f407412369c60a51eeda159a8'
+				'Authorization':  Commom.model_key
 			},
 			retry: false, // 完全禁用重试
 			openWhenHidden: true,
 			signal: ctrl.signal,
-			body: JSON.stringify(params),
-			onmessage:(ev)=> {
-				const res = JSON.parse(ev.data)
-				this.answer.text += res.choices[0].delta.content
-				console.log('	this.answer.text',	this.answer.text)
+			body: JSON.stringify(Commom.model_params),
+			onmessage:(e)=> {
+				console.log('e.data',e.data)
+				if (e.data === '[DONE]') {
+					// 处理DONE消息，比如关闭连接、做一些收尾工作等
+					console.log('SSE 连接已完成');
+					this.isSaveBtnShow = true
+					return;
+				}
+
+				const res = JSON.parse(e.data)
+				console.log('res',res)
+				if(res && res.choices.length) this.answer.text += res.choices[0].delta.content
 			},
-			onerror(err) {
+			onerror:(err) =>{
 				console.error('请求出错:', err);
+				showAlert('对话请求发生网络错误或涉及违规话题！')
 				ctrl.abort()
 				throw err 
 			},
@@ -162,6 +153,5 @@ export default {
 				console.log('连接已关闭');
 			}
 		});
-
 	},
 }

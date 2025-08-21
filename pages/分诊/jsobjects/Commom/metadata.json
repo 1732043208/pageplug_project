@@ -20,6 +20,14 @@
         "value": "'0b8535a8765b11f09aab6e3e429cb4e3'"
       },
       {
+        "name": "model_key",
+        "value": "'bearer ' + 'gpustack_c177941728a02210_1ffd564f407412369c60a51eeda159a8'"
+      },
+      {
+        "name": "model_params",
+        "value": "{\n  \"model\": Commom.model,\n  \"temperature\": 0.6,\n  \"top_p\": 1,\n  \"frequency_penalty\": 0,\n  \"presence_penalty\": 0,\n  \"stream\": true,\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": Commom.apiSearchContent\n  }]\n}"
+      },
+      {
         "name": "apiSearchContent",
         "value": "[]"
       }

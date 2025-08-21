@@ -13,7 +13,7 @@
       },
       {
         "name": "answer",
-        "value": "{\n  text: '456'\n}"
+        "value": "{\n  text: ''\n}"
       },
       {
         "name": "filesList",
@@ -26,6 +26,10 @@
       {
         "name": "ImgActive",
         "value": "null"
+      },
+      {
+        "name": "isSaveBtnShow",
+        "value": "false"
       }
     ],
     "userPermissions": []

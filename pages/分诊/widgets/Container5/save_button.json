@@ -41,7 +41,7 @@
     "widgetId": "ixleesgb0g",
     "bottomRowBeforeCollapse": 7,
     "minWidth": 120,
-    "isVisible": "{{!!TriageObject.answer.text}}",
+    "isVisible": "{{!! (TriageObject.isSaveBtnShow &&TriageObject.answer.text)}}",
     "version": 1,
     "recaptchaType": "V3",
     "parentId": "g93whmrgg6",
