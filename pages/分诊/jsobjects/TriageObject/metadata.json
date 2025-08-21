@@ -13,7 +13,7 @@
       },
       {
         "name": "answer",
-        "value": "{\n  text: ``\n}"
+        "value": "{\n  text: '456'\n}"
       },
       {
         "name": "filesList",

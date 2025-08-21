@@ -1,6 +1,6 @@
 export default {
 	InputValue : "",   //输入
-	answer: {text:``},   //回答
+	answer: {text:'456'},   //回答
 	filesList:[], //附件列表
 	uploadFilesList:[], //附件保存列表
 	ImgActive: null, //附件列表高亮索引
@@ -50,7 +50,7 @@ export default {
 	// 执行按钮
 	async getCompletions(){
 		if(!this.InputValue) return showAlert("请输入您的症状！")
-		showModal('Loading')
+		// showModal('Loading')
 		//清空上次的回答
 		this.answer.text = ''
 
@@ -77,6 +77,9 @@ export default {
 			...this.filesList
 		]
 		console.log('Commom.apiSearchContent', Commom.apiSearchContent )
+
+		this.knowledgeCompletion()
+		return
 		try{
 			const res = await completions.run()
 			console.log(res)
@@ -114,5 +117,51 @@ export default {
 			console.log('error',error)
 			showAlert('数据写入失败！', 'error')
 		}
+	},
+	async	knowledgeCompletion() {
+		const params = {
+			"model":Commom.model,
+			"temperature":0.6,
+			"top_p":1,
+			"frequency_penalty":0,
+			"presence_penalty":0,
+			"stream": true,
+			"messages":[{"role":"user","content":Commom.apiSearchContent}]
+		}
+
+		const ctrl = new AbortController();
+		console.log('ctrl',ctrl)
+		fetch_event_source.fetchEventSource('/v1/chat/completions', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+				'Authorization': 'bearer gpustack_c177941728a02210_1ffd564f407412369c60a51eeda159a8'
+			},
+			retry: false, // 完全禁用重试
+			openWhenHidden: true,
+			signal: ctrl.signal,
+			body: JSON.stringify(params),
+			onmessage:(ev)=> {
+				const res = JSON.parse(ev.data)
+				this.answer.text += res.choices[0].delta.content
+				console.log('	this.answer.text',	this.answer.text)
+			},
+			onerror(err) {
+				console.error('请求出错:', err);
+				ctrl.abort()
+				throw err 
+			},
+			onopen(res) {
+				if (res.status !== 200) {
+					console.error('连接失败，HTTP状态码:', res.status);
+					return false; // 可以阻止连接
+				}
+				console.log('连接已打开，状态码:', res.status);
+			},
+			onclose() {
+				console.log('连接已关闭');
+			}
+		});
+
 	},
 }

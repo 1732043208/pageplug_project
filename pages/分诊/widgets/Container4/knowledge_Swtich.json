@@ -33,7 +33,7 @@
     "accentColor": "{{appsmith.theme.colors.primaryColor}}",
     "isVisible": true,
     "label": "使用知识库联想",
-    "defaultSwitchState": true,
+    "defaultSwitchState": false,
     "version": 1,
     "parentId": "dhyv0llqnt",
     "tags": ["选择器组件"],
@@ -41,9 +41,9 @@
     "isLoading": false,
     "mobileTopRow": 44,
     "responsiveBehavior": "fill",
-    "originalTopRow": 18,
+    "originalTopRow": 25,
     "mobileLeftColumn": 0,
     "maxDynamicHeight": 9000,
-    "originalBottomRow": 24,
+    "originalBottomRow": 29,
     "minDynamicHeight": 4
 }

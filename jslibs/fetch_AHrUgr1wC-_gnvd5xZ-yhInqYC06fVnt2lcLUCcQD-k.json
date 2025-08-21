@@ -1,0 +1,11 @@
+{
+  "name": "fetch_event_source",
+  "uidString": "fetch_event_source_https://cdn.jsdelivr.net/npm/@microsoft/fetch-event-source@2.0.1/+esm",
+  "accessor": [
+    "fetch_event_source"
+  ],
+  "url": "https://cdn.jsdelivr.net/npm/@microsoft/fetch-event-source@2.0.1/+esm",
+  "version": "2.0.1",
+  "defs": "{\"!name\":\"LIB/fetch_event_source\",\"fetch_event_source\":{\"EventStreamContentType\":{\"!type\":\"string\"},\"fetchEventSource\":{\"!type\":\"fn()\",\"prototype\":{}}}}",
+  "deleted": false
+}

@@ -67,6 +67,9 @@
   "unpublishedCustomJSLibs": [
     {
       "uidString": "xmlParser_https://cdnjs.cloudflare.com/ajax/libs/fast-xml-parser/3.17.5/parser.min.js"
+    },
+    {
+      "uidString": "fetch_event_source_https://cdn.jsdelivr.net/npm/@microsoft/fetch-event-source@2.0.1/+esm"
     }
   ],
   "publishedCustomJSLibs": [],
