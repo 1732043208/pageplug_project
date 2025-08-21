@@ -111,6 +111,17 @@ export default {
 	},
 
 	async	knowledgeCompletion() {
+		//模型调用参数
+		const params = {
+			"model":Commom.model,
+			"temperature":0.6,
+			"top_p":1,
+			"frequency_penalty":0,
+			"presence_penalty":0,
+			"stream": true,
+			"messages":[{"role":"user","content":Commom.apiSearchContent}]
+		} 
+
 		const ctrl = new AbortController();
 		console.log('ctrl',ctrl)
 		fetch_event_source.fetchEventSource('/v1/chat/completions',  {
@@ -122,7 +133,7 @@ export default {
 			retry: false, // 完全禁用重试
 			openWhenHidden: true,
 			signal: ctrl.signal,
-			body: JSON.stringify(Commom.model_params),
+			body: JSON.stringify(params),
 			onmessage:(e)=> {
 				console.log('e.data',e.data)
 				if (e.data === '[DONE]') {
