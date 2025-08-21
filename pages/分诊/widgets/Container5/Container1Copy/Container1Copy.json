@@ -14,7 +14,7 @@
         "container"
     ],
     "topRow": 0,
-    "bottomRow": 61,
+    "bottomRow": 178,
     "parentRowSpace": 10,
     "type": "CONTAINER_WIDGET",
     "hideCard": false,
@@ -30,7 +30,7 @@
         "widgetName": "Canvas2Copy",
         "displayName": "Canvas",
         "topRow": 0,
-        "bottomRow": 610,
+        "bottomRow": 1780,
         "parentRowSpace": 1,
         "type": "CANVAS_WIDGET",
         "canExtend": false,
@@ -66,7 +66,7 @@
     "backgroundColor": "#FFFFFF",
     "isDeprecated": false,
     "rightColumn": 56,
-    "dynamicHeight": "AUTO_HEIGHT",
+    "dynamicHeight": "FIXED",
     "widgetId": "g2ip2a61s7",
     "containerStyle": "card",
     "minWidth": 450,
@@ -78,10 +78,8 @@
     "isLoading": false,
     "mobileTopRow": 46,
     "responsiveBehavior": "fill",
-    "originalTopRow": 0,
     "borderRadius": "0.8rem",
     "mobileLeftColumn": 7,
     "maxDynamicHeight": 9000,
-    "originalBottomRow": 135,
     "minDynamicHeight": 10
 }
