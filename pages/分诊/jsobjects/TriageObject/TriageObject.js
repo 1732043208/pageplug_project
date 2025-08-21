@@ -123,7 +123,6 @@ export default {
 		} 
 
 		const ctrl = new AbortController();
-		console.log('ctrl',ctrl)
 		fetch_event_source.fetchEventSource('/v1/chat/completions',  {
 			method: 'POST',
 			headers: {

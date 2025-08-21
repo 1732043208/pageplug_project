@@ -33,7 +33,7 @@
     "accentColor": "{{appsmith.theme.colors.primaryColor}}",
     "isVisible": true,
     "label": "使用知识库联想",
-    "defaultSwitchState": false,
+    "defaultSwitchState": true,
     "version": 1,
     "parentId": "dhyv0llqnt",
     "tags": ["选择器组件"],

@@ -7,14 +7,14 @@
     "dynamicPropertyPathList": [{"key": "isVisible"}],
     "iconSVG": "/static/media/icon.dd84eb5d6aace47e0ad7bc21ee73c84b.svg",
     "displayName": "容器",
-    "topRow": 44,
+    "topRow": 41,
     "searchTags": [
         "div",
         "parent",
         "group",
         "container"
     ],
-    "bottomRow": 62,
+    "bottomRow": 59,
     "parentRowSpace": 10,
     "type": "CONTAINER_WIDGET",
     "hideCard": false,
