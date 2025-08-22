@@ -4,6 +4,7 @@
     "widgetName": "Container3Copy",
     "borderColor": "#E0DEDE",
     "isCanvas": true,
+    "dynamicPropertyPathList": [{"key": "isVisible"}],
     "displayName": "容器",
     "iconSVG": "/static/media/icon.dd84eb5d6aace47e0ad7bc21ee73c84b.svg",
     "searchTags": [
@@ -23,7 +24,10 @@
     "parentColumnSpace": 22.634765625,
     "dynamicTriggerPathList": [],
     "leftColumn": 0,
-    "dynamicBindingPathList": [{"key": "borderRadius"}],
+    "dynamicBindingPathList": [
+        {"key": "borderRadius"},
+        {"key": "isVisible"}
+    ],
     "children": [{
         "mobileBottomRow": 100,
         "widgetName": "Canvas3Copy",
@@ -69,7 +73,7 @@
     "widgetId": "3t840603gh",
     "containerStyle": "card",
     "minWidth": 450,
-    "isVisible": true,
+    "isVisible": "{{!!(InquiryDetail.inquiryInfo && InquiryDetail.inquiryInfo.ai_response)}}",
     "version": 1,
     "parentId": "2yaayi6fny",
     "tags": ["通用类"],
