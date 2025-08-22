@@ -59,7 +59,7 @@
   "color": "#C7F3F0",
   "icon": "hospital",
   "unpublishedAppLayout": {
-    "type": "FLUID"
+    "type": "DESKTOP"
   },
   "publishedAppLayout": {
     "type": "FLUID"
