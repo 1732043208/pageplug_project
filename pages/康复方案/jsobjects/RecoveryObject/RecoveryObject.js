@@ -87,6 +87,7 @@ export default {
 		this.modelParamsHandle(knowledgeAnswer)
 		try {
 			await	this.modelCompletion()
+			this.isSaveBtnShow = true
 			// 往对话上下文中添加模型回复记录
 			Commom.modelSearchList.push({"role":"assistant", "content": this.answer.text})
 		} catch(err) {
@@ -172,7 +173,6 @@ export default {
 					if (e.data === '[DONE]') {
 						// 处理DONE消息，比如关闭连接、做一些收尾工作等
 						console.log('SSE 连接已完成');
-						this.isSaveBtnShow = true
 						resolve()
 						return;
 					}

@@ -94,8 +94,7 @@ export default {
 				this.modelCompletion(Commom.modelSearchContent2, '2')
 			])
 			console.log('res1',res)
-			// this.treatContent.text =  res[0].choices[0].message.content
-			// this.medicationContent.text =  res[1].choices[0].message.content
+			this.isSaveBtnShow = true
 
 			// 往对话上下文中添加模型回复记录
 			Commom.modelSearchList1.push({"role":"assistant", "content": this.treatContent.text })
@@ -198,7 +197,6 @@ export default {
 					if (e.data === '[DONE]') {
 						// 处理DONE消息，比如关闭连接、做一些收尾工作等
 						console.log('SSE 连接已完成');
-						this.isSaveBtnShow = true
 						resolve()
 						return;
 					}

@@ -68,7 +68,6 @@ export default {
 			closeModal('Loading');
 		}
 
-
 		// prompt拼接
 		const text = this.promptSplicing(knowledgeAnswer)
 		console.log('prompt内容：', text)
@@ -80,7 +79,13 @@ export default {
 		]
 		console.log('Commom.apiSearchContent', Commom.apiSearchContent )
 
-		await	this.modelCompletion()
+		try{
+			await	this.modelCompletion()
+			this.isSaveBtnShow = true
+		}catch(error) {
+			console.log('err',error)
+			showAlert('模型调用失败！', 'error')
+		}
 	},
 
 	//保存数据库
