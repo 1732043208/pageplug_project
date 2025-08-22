@@ -59,7 +59,7 @@
         }
     },
     "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-    "columnUpdatedAt": 1754993026475,
+    "columnUpdatedAt": 1755850090223,
     "primaryColumnId": "consultation_id",
     "columnSizeMap": {
         "task": 245,
@@ -88,7 +88,7 @@
         "consultation_id": 317,
         "updated_at": 1132,
         "patient_name": 220,
-        "created_at": 717,
+        "created_at": 890,
         "status": 60
     },
     "hideCard": false,
@@ -305,7 +305,7 @@
             "decimals": 0,
             "width": 150,
             "enableFilter": true,
-            "sticky": "right",
+            "sticky": "",
             "originalId": "customColumn1",
             "currencyCode": "USD",
             "customAlias": "",
