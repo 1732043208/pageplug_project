@@ -51,13 +51,13 @@ export default {
 	// 执行按钮
 	async getCompletions(){
 		if(!this.InputValue) return showAlert("请输入您的症状！")
-		showModal('Loading')
 		//清空上次的回答
 		this.answer.text = ''
 
 		let knowledgeAnswer = ''
 		// 知识库检索
 		if(knowledge_Swtich.isSwitchedOn){
+			showModal('Loading')
 			try{
 				const knowledgeResult = await	knowledgeAPI.run()
 				console.log('knowledgeResult',  knowledgeResult)
@@ -65,8 +65,9 @@ export default {
 			}catch(error){
 				showAlert('知识库检索失败！', 'error')
 			}
+			closeModal('Loading');
 		}
-		closeModal('Loading');
+
 
 		// prompt拼接
 		const text = this.promptSplicing(knowledgeAnswer)
@@ -79,7 +80,7 @@ export default {
 		]
 		console.log('Commom.apiSearchContent', Commom.apiSearchContent )
 
-		await	this.knowledgeCompletion()
+		await	this.modelCompletion()
 	},
 
 	//保存数据库
@@ -110,7 +111,7 @@ export default {
 		}
 	},
 
-	knowledgeCompletion() {
+	modelCompletion() {
 		return new Promise((resolve, reject)=>{
 			//模型调用参数
 			const params = {

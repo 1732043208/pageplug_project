@@ -2,8 +2,8 @@
   "pluginType": "JS",
   "pluginId": "js-plugin",
   "unpublishedAction": {
-    "name": "knowledgeCompletion",
-    "fullyQualifiedName": "TriageObject.knowledgeCompletion",
+    "name": "modelCompletion",
+    "fullyQualifiedName": "InspectionAdvice.modelCompletion",
     "datasource": {
       "name": "UNUSED_DATASOURCE",
       "pluginId": "js-plugin",
@@ -13,8 +13,8 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": "分诊",
-    "collectionId": "分诊_TriageObject",
+    "pageId": "检验检查建议",
+    "collectionId": "检验检查建议_InspectionAdvice",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
@@ -35,9 +35,9 @@
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": [],
-    "createdAt": "2025-08-21T08:34:37Z"
+    "createdAt": "2025-08-22T02:28:17Z"
   },
-  "id": "分诊_TriageObject.knowledgeCompletion",
+  "id": "检验检查建议_InspectionAdvice.modelCompletion",
   "deleted": false,
-  "gitSyncId": "689c384ab966d95ca75eb565_68a6da1dd9c1786240a03e0a"
+  "gitSyncId": "689c384ab966d95ca75eb565_68a7d5c1d9c1786240a03e11"
 }
