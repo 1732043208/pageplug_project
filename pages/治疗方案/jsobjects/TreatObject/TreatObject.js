@@ -5,6 +5,7 @@ export default {
 	filesList:[],  //附件列表
 	uploadFilesList:[], //附件保存列表
 	ImgActive:null, //附件列表高亮索引
+	isSaveBtnShow: false, //保存按钮是否显示
 
 	//prompt拼接
 	promptSplicing(knowledgeAnswer, RequireType) {
@@ -67,7 +68,6 @@ export default {
 		if(!InquiryMainResults) return showAlert('请先执行问诊步骤！')
 		console.log('InquiryMainResults',InquiryMainResults)
 
-		showModal('Loading')
 		// 清空上次回答
 		this.treatContent.text = ''
 		this.medicationContent.text = ''
@@ -75,23 +75,27 @@ export default {
 		let knowledgeAnswer = ''
 		// 知识库检索
 		if(knowledge_Swtich.isSwitchedOn && this.InputValue){
+			showModal('Loading')
 			try{
 				const knowledgeResult = await	knowledgeAPI.run()
 				console.log('knowledgeResult',  knowledgeResult)
 				knowledgeAnswer = knowledgeResult.data.answer
 			}catch(error){
-				closeModal('Loading');
 				showAlert('知识库检索失败！', 'error')
 			}
+			closeModal('Loading');
 		}
 
 		// 模型对话传参处理
 		this.modelParamsHandle(knowledgeAnswer)
 		try{
-			const res= 	await Promise.all([completions.run({ data: Commom.modelSearchContent1 }), completions.run({ data: Commom.modelSearchContent2 })])
+			const res= 	await Promise.all([
+				this.modelCompletion(Commom.modelSearchContent1, '1'), 
+				this.modelCompletion(Commom.modelSearchContent2, '2')
+			])
 			console.log('res1',res)
-			this.treatContent.text =  res[0].choices[0].message.content
-			this.medicationContent.text =  res[1].choices[0].message.content
+			// this.treatContent.text =  res[0].choices[0].message.content
+			// this.medicationContent.text =  res[1].choices[0].message.content
 
 			// 往对话上下文中添加模型回复记录
 			Commom.modelSearchList1.push({"role":"assistant", "content": this.treatContent.text })
@@ -102,7 +106,6 @@ export default {
 			Commom.modelSearchList1.pop()
 			Commom.modelSearchList2.pop()
 		}
-		closeModal('Loading');
 	},
 
 	//保存数据库
@@ -165,5 +168,66 @@ export default {
 			{type:'text',text: medicationPrompt},
 			...this.filesList
 		]}]
+	},
+
+	modelCompletion(modelSearchContent, type) {
+		return new Promise((resolve, reject)=>{
+			//模型调用参数
+			const params = {
+				"model":Commom.model,
+				"temperature":0.6,
+				"top_p":1,
+				"frequency_penalty":0,
+				"presence_penalty":0,
+				"stream": true,
+				"messages": modelSearchContent
+			} 
+
+			const ctrl = new AbortController();
+			fetch_event_source.fetchEventSource('/v1/chat/completions',  {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+					'Authorization':  Commom.model_key
+				},
+				retry: false, // 完全禁用重试
+				openWhenHidden: true,
+				signal: ctrl.signal,
+				body: JSON.stringify(params),
+				onmessage:(e)=> {
+					if (e.data === '[DONE]') {
+						// 处理DONE消息，比如关闭连接、做一些收尾工作等
+						console.log('SSE 连接已完成');
+						this.isSaveBtnShow = true
+						resolve()
+						return;
+					}
+
+					const res = JSON.parse(e.data)
+					console.log('res',res)
+					if(res && res.choices.length) {
+						if(type === '1') this.treatContent.text += res.choices[0].delta.content
+						else this.medicationContent.text += res.choices[0].delta.content
+					}
+				},
+				onerror:(err) =>{
+					console.error('请求出错:', err);
+					showAlert('对话请求发生网络错误或涉及违规话题！')
+					ctrl.abort()
+					reject()
+					throw err 
+				},
+				onopen(res) {
+					if (res.status !== 200) {
+						console.error('连接失败，HTTP状态码:', res.status);
+						return false; // 可以阻止连接
+					}
+					console.log('连接已打开，状态码:', res.status);
+				},
+				onclose() {
+					console.log('连接已关闭');
+				}
+			});
+		})
 	}
 }

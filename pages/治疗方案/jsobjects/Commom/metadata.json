@@ -20,6 +20,10 @@
         "value": "'0b8535a8765b11f09aab6e3e429cb4e3'"
       },
       {
+        "name": "model_key",
+        "value": "'bearer ' + 'gpustack_c177941728a02210_1ffd564f407412369c60a51eeda159a8'"
+      },
+      {
         "name": "modelSearchList1",
         "value": "[]"
       },
