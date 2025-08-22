@@ -4,6 +4,7 @@ export default {
 	filesList:[],  //附件列表
 	uploadFilesList:[], //附件保存列表
 	ImgActive:null, //附件列表高亮索引
+	isSaveBtnShow: false, //保存按钮是否显示
 
 	//prompt拼接
 	promptSplicing(knowledgeAnswer) {
@@ -61,30 +62,27 @@ export default {
 		if(!InquiryMainResults) return showAlert('请先执行问诊步骤！')
 		console.log('InquiryMainResults',InquiryMainResults)
 
-		showModal('Loading')
 		//清空上次的回答
 		this.answer.text = ''
 
 		let knowledgeAnswer = ''
 		// 知识库检索
 		if(knowledge_Swtich.isSwitchedOn && this.InputValue){
+			showModal('Loading')
 			try{
 				const knowledgeResult = await	knowledgeAPI.run()
 				console.log('knowledgeResult',  knowledgeResult)
 				knowledgeAnswer = knowledgeResult.data.answer
 			}catch(error){
-				closeModal('Loading');
 				showAlert('知识库检索失败！', 'error')
 			}
+			closeModal('Loading');
 		}
 
 		// 模型对话传参处理
 		this.modelParamsHandle(knowledgeAnswer)
 		try{
-			const res = await completions.run()
-			this.answer.text = res.choices[0].message.content
-			console.log('this.answer.text', this.answer.text)
-
+			await	this.modelCompletion()
 			// 往对话上下文中添加模型回复记录
 			Commom.modelSearchList.push({"role":"assistant", "content": this.answer.text})
 		}catch(error){
@@ -93,7 +91,6 @@ export default {
 			// 模型调用失败，清除最后一条用户记录
 			Commom.modelSearchList.pop()
 		}
-		closeModal('Loading');
 	},
 
 	//保存数据库
@@ -142,5 +139,63 @@ export default {
 			{type:'text',text},
 			...this.filesList
 		]}]
+	},
+
+	modelCompletion() {
+		return new Promise((resolve, reject)=>{
+			//模型调用参数
+			const params = {
+				"model":Commom.model,
+				"temperature":0.6,
+				"top_p":1,
+				"frequency_penalty":0,
+				"presence_penalty":0,
+				"stream": true,
+				"messages": Commom.modelSearchContent
+			} 
+
+			const ctrl = new AbortController();
+			fetch_event_source.fetchEventSource('/v1/chat/completions',  {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+					'Authorization':  Commom.model_key
+				},
+				retry: false, // 完全禁用重试
+				openWhenHidden: true,
+				signal: ctrl.signal,
+				body: JSON.stringify(params),
+				onmessage:(e)=> {
+					if (e.data === '[DONE]') {
+						// 处理DONE消息，比如关闭连接、做一些收尾工作等
+						console.log('SSE 连接已完成');
+						this.isSaveBtnShow = true
+						resolve()
+						return;
+					}
+
+					const res = JSON.parse(e.data)
+					console.log('res',res)
+					if(res && res.choices.length) this.answer.text += res.choices[0].delta.content
+				},
+				onerror:(err) =>{
+					console.error('请求出错:', err);
+					showAlert('对话请求发生网络错误或涉及违规话题！')
+					ctrl.abort()
+					reject()
+					throw err 
+				},
+				onopen(res) {
+					if (res.status !== 200) {
+						console.error('连接失败，HTTP状态码:', res.status);
+						return false; // 可以阻止连接
+					}
+					console.log('连接已打开，状态码:', res.status);
+				},
+				onclose() {
+					console.log('连接已关闭');
+				}
+			});
+		})
 	}
 }
