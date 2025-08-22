@@ -79,7 +79,7 @@ export default {
 		]
 		console.log('Commom.apiSearchContent', Commom.apiSearchContent )
 
-		this.knowledgeCompletion()
+		await	this.knowledgeCompletion()
 	},
 
 	//保存数据库
@@ -110,58 +110,62 @@ export default {
 		}
 	},
 
-	async	knowledgeCompletion() {
-		//模型调用参数
-		const params = {
-			"model":Commom.model,
-			"temperature":0.6,
-			"top_p":1,
-			"frequency_penalty":0,
-			"presence_penalty":0,
-			"stream": true,
-			"messages":[{"role":"user","content":Commom.apiSearchContent}]
-		} 
+	knowledgeCompletion() {
+		return new Promise((resolve, reject)=>{
+			//模型调用参数
+			const params = {
+				"model":Commom.model,
+				"temperature":0.6,
+				"top_p":1,
+				"frequency_penalty":0,
+				"presence_penalty":0,
+				"stream": true,
+				"messages":[{"role":"user","content":Commom.apiSearchContent}]
+			} 
 
-		const ctrl = new AbortController();
-		fetch_event_source.fetchEventSource('/v1/chat/completions',  {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-				'Authorization':  Commom.model_key
-			},
-			retry: false, // 完全禁用重试
-			openWhenHidden: true,
-			signal: ctrl.signal,
-			body: JSON.stringify(params),
-			onmessage:(e)=> {
-				console.log('e.data',e.data)
-				if (e.data === '[DONE]') {
-					// 处理DONE消息，比如关闭连接、做一些收尾工作等
-					console.log('SSE 连接已完成');
-					this.isSaveBtnShow = true
-					return;
-				}
+			const ctrl = new AbortController();
+			fetch_event_source.fetchEventSource('/v1/chat/completions',  {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+					'Authorization':  Commom.model_key
+				},
+				retry: false, // 完全禁用重试
+				openWhenHidden: true,
+				signal: ctrl.signal,
+				body: JSON.stringify(params),
+				onmessage:(e)=> {
+					console.log('e.data',e.data)
+					if (e.data === '[DONE]') {
+						// 处理DONE消息，比如关闭连接、做一些收尾工作等
+						console.log('SSE 连接已完成');
+						this.isSaveBtnShow = true
+						resolve()
+						return;
+					}
 
-				const res = JSON.parse(e.data)
-				console.log('res',res)
-				if(res && res.choices.length) this.answer.text += res.choices[0].delta.content
-			},
-			onerror:(err) =>{
-				console.error('请求出错:', err);
-				showAlert('对话请求发生网络错误或涉及违规话题！')
-				ctrl.abort()
-				throw err 
-			},
-			onopen(res) {
-				if (res.status !== 200) {
-					console.error('连接失败，HTTP状态码:', res.status);
-					return false; // 可以阻止连接
+					const res = JSON.parse(e.data)
+					console.log('res',res)
+					if(res && res.choices.length) this.answer.text += res.choices[0].delta.content
+				},
+				onerror:(err) =>{
+					console.error('请求出错:', err);
+					showAlert('对话请求发生网络错误或涉及违规话题！')
+					ctrl.abort()
+					reject()
+					throw err 
+				},
+				onopen(res) {
+					if (res.status !== 200) {
+						console.error('连接失败，HTTP状态码:', res.status);
+						return false; // 可以阻止连接
+					}
+					console.log('连接已打开，状态码:', res.status);
+				},
+				onclose() {
+					console.log('连接已关闭');
 				}
-				console.log('连接已打开，状态码:', res.status);
-			},
-			onclose() {
-				console.log('连接已关闭');
-			}
-		});
+			});
+		})
 	},
 }
