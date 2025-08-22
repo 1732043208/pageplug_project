@@ -89,11 +89,10 @@ export default {
 		// 模型对话传参处理
 		this.modelParamsHandle(knowledgeAnswer)
 		try{
-			const res= 	await Promise.all([
+			await Promise.all([
 				this.modelCompletion(Commom.modelSearchContent1, '1'), 
 				this.modelCompletion(Commom.modelSearchContent2, '2')
 			])
-			console.log('res1',res)
 			this.isSaveBtnShow = true
 
 			// 往对话上下文中添加模型回复记录
