@@ -39,7 +39,7 @@
     "isDefaultClickDisabled": true,
     "widgetId": "wxi0mwcw6k",
     "minWidth": 120,
-    "isVisible": "{{!!RecoveryObject.answer.text}}",
+    "isVisible": "{{!!(RecoveryObject.isSaveBtnShow && RecoveryObject.answer.text)}}",
     "recaptchaType": "V3",
     "version": 1,
     "parentId": "g93whmrgg6",

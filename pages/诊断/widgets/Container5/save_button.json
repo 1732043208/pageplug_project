@@ -39,7 +39,7 @@
     "isDefaultClickDisabled": true,
     "widgetId": "36cq4u1ws4",
     "minWidth": 120,
-    "isVisible": "{{!!Diagnosis.answer.text}}",
+    "isVisible": "{{!!(Diagnosis.isSaveBtnShow && Diagnosis.answer.text)}}",
     "recaptchaType": "V3",
     "version": 1,
     "parentId": "g93whmrgg6",
