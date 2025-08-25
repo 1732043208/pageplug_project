@@ -145,7 +145,6 @@ export default {
 					if (e.data === '[DONE]') {
 						// 处理DONE消息，比如关闭连接、做一些收尾工作等
 						console.log('SSE 连接已完成');
-						this.isSaveBtnShow = true
 						resolve()
 						return;
 					}
